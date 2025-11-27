@@ -38,4 +38,55 @@
   window.Senkmer = window.Senkmer || {};
   window.Senkmer.escapeHtml = window.escapeHtml;
 
+  // Backend integrasjon (auth, progress, kontakt)
+  const API = {
+    base: 'http://localhost:3001',
+    async register(email, password, display_name){
+      const r = await fetch(`${this.base}/api/auth/register`, {
+        method:'POST', headers:{ 'Content-Type':'application/json' },
+        body: JSON.stringify({ email, password, display_name })
+      });
+      return r.json();
+    },
+    async login(email, password){
+      const r = await fetch(`${this.base}/api/auth/login`, {
+        method:'POST', headers:{ 'Content-Type':'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+      return r.json();
+    },
+    async getProgress(token){
+      const r = await fetch(`${this.base}/api/progress`, { headers:{ Authorization:`Bearer ${token}` }});
+      return r.json();
+    },
+    async setProgress(token, xp, streak){
+      const r = await fetch(`${this.base}/api/progress`, {
+        method:'POST', headers:{ 'Content-Type':'application/json', Authorization:`Bearer ${token}` },
+        body: JSON.stringify({ xp, streak })
+      });
+      return r.json();
+    },
+    async sendContact(payload){
+      const r = await fetch(`${this.base}/api/contact`, { method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify(payload) });
+      return r.json();
+    }
+  };
+  window.SenkmerAPI = API;
+
+  // Oppgaver helpers
+  window.SenkmerAPI.tasks = {
+    async list(token){
+      const r = await fetch(`${API.base}/api/tasks`, { headers:{ Authorization:`Bearer ${token}` }});
+      return r.json();
+    },
+    async create(token, payload){
+      const r = await fetch(`${API.base}/api/tasks`, { method:'POST', headers:{ 'Content-Type':'application/json', Authorization:`Bearer ${token}` }, body: JSON.stringify(payload) });
+      return r.json();
+    },
+    async complete(token, id){
+      const r = await fetch(`${API.base}/api/tasks/${id}/complete`, { method:'POST', headers:{ Authorization:`Bearer ${token}` }});
+      return r.json();
+    }
+  };
+
 })();

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Oppgaver — Senkmer</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="stylesheet" href="/css/theme.css">
+</head>
+<body>
+  <header class="header"><div class="container inner"><a class="brand" href="/pages/hjem.html"><img src="/assets/logo.svg" width="36"> <span class="title">Senkmer</span></a></div></header>
+  <main class="container section">
+    <h1>Oppgaver</h1>
+    <p class="muted">Daglige oppgaver og belønninger. Logg inn for å lagre fremgang.</p>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Dine oppgaver</h3>
+        <ul id="task-list" class="list"></ul>
+        <div id="task-empty" class="muted">Ingen oppgaver enda.</div>
+      </div>
+      <div class="card">
+        <h3>Ny oppgave</h3>
+        <form id="task-form">
+          <label for="t-title">Tittel</label>
+          <input id="t-title" required>
+          <label for="t-desc">Beskrivelse</label>
+          <input id="t-desc">
+          <label for="t-xp">Belønning (XP)</label>
+          <input id="t-xp" type="number" min="1" max="500" value="10" required>
+          <div class="form-actions"><button class="btn btn-primary" type="submit">Legg til</button></div>
+          <div id="task-status" class="muted" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </main>
+  <footer class="footer"><div class="container">© <span id="year"></span> Senkmer</div></footer>
+  <script src="/js/main.js"></script>
+  <script>
+    (function(){
+      const api = window.SenkmerAPI;
+      const token = localStorage.getItem('senkmer_token');
+      const list = document.getElementById('task-list');
+      const empty = document.getElementById('task-empty');
+      const status = document.getElementById('task-status');
+      function render(tasks){
+        list.innerHTML = '';
+        if(!tasks || !tasks.length){ empty.style.display='block'; return; }
+        empty.style.display='none';
+        tasks.forEach(t=>{
+          const li = document.createElement('li');
+          li.className = 'list-item';
+          li.innerHTML = `<strong>${window.escapeHtml(t.title)}</strong> <span class="muted">(+${t.reward_xp} XP)</span> ${t.completed_at?'<span class="badge">Fullført</span>':''}`;
+          if(!t.completed_at){
+            const btn = document.createElement('button');
+            btn.className = 'btn btn-secondary';
+            btn.textContent = 'Fullfør';
+            btn.addEventListener('click', async ()=>{
+              const res = await api.tasks.complete(token, t.id);
+              status.textContent = res.ok ? 'Oppgave fullført!' : 'Feil ved fullføring';
+              load();
+            });
+            li.appendChild(btn);
+          }
+          list.appendChild(li);
+        });
+      }
+      async function load(){
+        if(!token){ status.textContent='Logg inn for å se oppgaver.'; return; }
+        const tasks = await api.tasks.list(token);
+        render(tasks);
+      }
+      document.getElementById('task-form').addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        if(!token){ status.textContent='Du må være innlogget.'; return; }
+        status.textContent = 'Legger til...';
+        const payload = {
+          title: document.getElementById('t-title').value,
+          description: document.getElementById('t-desc').value,
+          reward_xp: Number(document.getElementById('t-xp').value)
+        };
+        const res = await api.tasks.create(token, payload);
+        status.textContent = res.id ? 'Oppgave lagt til!' : 'Feil ved lagring';
+        load();
+      });
+      load();
+    })();
+  </script>
+</body>
+</html>

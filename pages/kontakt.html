@@ -21,7 +21,7 @@
         </div>
         <div class="form-actions">
           <button type="submit" class="btn btn-primary">Send melding</button>
-          <div id="form-result" class="form-result"></div>
+          <div id="form-result" class="form-result" aria-live="polite"></div>
         </div>
       </form>
     </div>
@@ -29,5 +29,27 @@
   <footer class="footer"><div class="container">© <span id="year"></span> Senkmer</div></footer>
   <script src="/js/main.js"></script>
   <script src="/js/chatbot.js"></script>
+  <script>
+    (function(){
+      const api = window.SenkmerAPI;
+      const form = document.getElementById('contact-form');
+      const result = document.getElementById('form-result');
+      form.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        result.textContent = 'Sender...';
+        const payload = {
+          name: document.getElementById('c-name').value,
+          email: document.getElementById('c-email').value,
+          message: document.getElementById('c-message').value
+        };
+        try{
+          const res = await api.sendContact(payload);
+          result.textContent = res.ok ? 'Melding sendt!' : ('Feil: ' + (res.error?.message || 'Ukjent feil'));
+        }catch(err){
+          result.textContent = 'Feil ved sending';
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

@@ -69,19 +69,28 @@
     }, 1200);
   }
 
-  function endQuiz(){
+  async function endQuiz(){
     quizState.active = false;
     qQuestion.textContent = 'Ferdig! Din score: ' + quizState.score + ' / ' + quizData.length;
     qOptions.innerHTML = '';
     if(quizState.score === quizData.length){
       qScore.textContent = 'Perfekt! +50 XP';
     }
+    // Persist progress if logged in
+    try{
+      const token = localStorage.getItem('senkmer_token');
+      if(token && window.SenkmerAPI){
+        const current = await window.SenkmerAPI.getProgress(token);
+        const newXp = (current?.xp || 0) + (quizState.score * 10);
+        const newStreak = (current?.streak || 0);
+        await window.SenkmerAPI.setProgress(token, newXp, newStreak);
+      }
+    }catch(e){ /* ignore errors in demo */ }
   }
 
   // Simuler XP-oppdatering i dashbordet (hvis elementet finnes)
   const xpTotal = document.getElementById('xp-total');
   if(xpTotal){
-    // Simuler litt dynamikk
     setInterval(()=>{
       const current = parseInt(xpTotal.textContent,10)||0;
       if(Math.random()>0.95) xpTotal.textContent = current + Math.floor(Math.random()*10);

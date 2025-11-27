@@ -13,19 +13,26 @@
     <div class="grid-2">
       <div class="card">
         <h3>Logg inn</h3>
-        <form id="login-form">
-          <label>E-post<input type="email" id="login-email"></label>
-          <label>Passord<input type="password" id="login-pass"></label>
+        <form id="form-login">
+          <label for="login-email">E-post</label>
+          <input type="email" id="login-email" required>
+          <label for="login-pass">Passord</label>
+          <input type="password" id="login-pass" required>
           <div class="form-actions"><button class="btn btn-primary" type="submit">Logg inn</button></div>
+          <div id="login-status" class="muted" aria-live="polite"></div>
         </form>
       </div>
       <div class="card">
         <h3>Ny bruker</h3>
-        <form id="register-form">
-          <label>Navn<input id="reg-name"></label>
-          <label>E-post<input id="reg-email"></label>
-          <label>Passord<input type="password" id="reg-pass"></label>
+        <form id="form-register">
+          <label for="reg-name">Navn</label>
+          <input id="reg-name" required>
+          <label for="reg-email">E-post</label>
+          <input id="reg-email" type="email" required>
+          <label for="reg-pass">Passord</label>
+          <input type="password" id="reg-pass" required>
           <div class="form-actions"><button class="btn btn-primary" type="submit">Registrer</button></div>
+          <div id="reg-status" class="muted" aria-live="polite"></div>
         </form>
       </div>
     </div>
@@ -33,5 +40,42 @@
   </main>
   <footer class="footer"><div class="container">© <span id="year"></span> Senkmer</div></footer>
   <script src="/js/main.js"></script>
+  <script>
+    (function(){
+      const api = window.SenkmerAPI;
+      const tokenKey = 'senkmer_token';
+      const statusLogin = document.getElementById('login-status');
+      const statusReg = document.getElementById('reg-status');
+
+      document.getElementById('form-login').addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        statusLogin.textContent = 'Logger inn...';
+        const email = document.getElementById('login-email').value;
+        const pass = document.getElementById('login-pass').value;
+        const res = await api.login(email, pass);
+        if(res.token){
+          localStorage.setItem(tokenKey, res.token);
+          statusLogin.textContent = 'Innlogging vellykket!';
+        } else {
+          statusLogin.textContent = 'Feil: ' + (res.error?.message || 'Ukjent feil');
+        }
+      });
+
+      document.getElementById('form-register').addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        statusReg.textContent = 'Registrerer...';
+        const name = document.getElementById('reg-name').value;
+        const email = document.getElementById('reg-email').value;
+        const pass = document.getElementById('reg-pass').value;
+        const res = await api.register(email, pass, name);
+        if(res.token){
+          localStorage.setItem(tokenKey, res.token);
+          statusReg.textContent = 'Registrering vellykket!';
+        } else {
+          statusReg.textContent = 'Feil: ' + (res.error?.message || 'Ukjent feil');
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
