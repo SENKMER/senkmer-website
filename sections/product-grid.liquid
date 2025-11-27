@@ -1,0 +1,93 @@
+<section class="product-grid">
+  <div class="container">
+    {% if section.settings.heading != blank %}
+      <h2>{{ section.settings.heading }}</h2>
+    {% endif %}
+    <div class="grid">
+      {% for product in collections[section.settings.collection].products limit: section.settings.product_limit %}
+        <div class="product-card">
+          {% if product.featured_image %}
+            <img src="{{ product.featured_image | img_url: '400x' }}" alt="{{ product.title }}" loading="lazy">
+          {% endif %}
+          <h3>{{ product.title }}</h3>
+          <p class="price">{{ product.price | money }}</p>
+          <a href="{{ product.url }}" class="btn btn-secondary">Se produkt</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+.product-grid {
+  padding: 60px 20px;
+}
+.product-grid h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.product-grid .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.product-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+.product-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+.product-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+.product-card .price {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary, #0ea5a0);
+  margin-bottom: 1rem;
+}
+</style>
+
+{% schema %}
+{
+  "name": "Product Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Våre produkter"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "product_limit",
+      "min": 3,
+      "max": 12,
+      "step": 1,
+      "label": "Number of products",
+      "default": 6
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Grid"
+    }
+  ]
+}
+{% endschema %}

@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Spill og belønning — Senkmer</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="stylesheet" href="/css/theme.css">
 </head>
 <body>
@@ -27,10 +28,18 @@
           <div id="quiz-score" class="muted">Poeng: 0</div>
         </div>
       </div>
+      <div class="card">
+        <h3>Minnespill</h3>
+        <p class="muted">Match parene av emoji! Trekk: <span id="memory-moves">0</span></p>
+        <div id="memory-game" class="memory-grid"></div>
+        <button id="reset-memory" class="btn btn-secondary" style="margin-top:1rem">Nytt spill</button>
+      </div>
     </div>
   </main>
   <footer class="footer"><div class="container">© <span id="year"></span> Senkmer</div></footer>
   <script src="/js/main.js"></script>
   <script src="/js/game.js"></script>
+  <script src="/js/animations.js"></script>
+  <script src="/js/memory-game.js"></script>
 </body>
 </html>
