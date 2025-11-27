@@ -1,0 +1,14 @@
+{% comment %} Collection template {% endcomment %}
+<section class="page-width">
+  <header class="section-header">
+    <h1>{{ collection.title }}</h1>
+  </header>
+  <div class="collection-grid">
+    {% for product in collection.products %}
+      <div class="product-card">
+        <a href="{{ product.url }}">{{ product.title }}</a>
+        <p>{{ product.price | money }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>

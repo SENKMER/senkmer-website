@@ -1,0 +1,12 @@
+{
+  "en": {
+    "accessibility": {
+      "skip_to_text": "Skip to main content"
+    }
+  },
+  "no": {
+    "accessibility": {
+      "skip_to_text": "Gå til innholdet"
+    }
+  }
+}

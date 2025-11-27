@@ -1,0 +1,20 @@
+{
+  "da": {
+    "general": {
+      "404": "Siden blev ikke fundet",
+      "no_cookies": "Din browser understøtter ikke cookies"
+    }
+  },
+  "en": {
+    "general": {
+      "404": "Page not found",
+      "no_cookies": "Your browser does not support cookies"
+    }
+  },
+  "no": {
+    "general": {
+      "404": "Siden ble ikke funnet",
+      "no_cookies": "Nettleseren din støtter ikke informasjonskapsler"
+    }
+  }
+}

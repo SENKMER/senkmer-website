@@ -2,11 +2,33 @@
 <html lang="{{ shop.locale }}">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ page_title | escape }}</title>
+    <meta name="description" content="{{ page_description | escape }}">
+    
+    {% if canonical_url != blank %}
+      <link rel="canonical" href="{{ canonical_url }}">
+    {% endif %}
+
     {{ content_for_header }}
-    <link href="{{ 'theme.css' | asset_url }}" rel="stylesheet" type="text/css" />
+    
+    <link href="{{ 'theme.css' | asset_url }}" rel="stylesheet" type="text/css" media="all">
+    <script src="{{ 'theme.js' | asset_url }}" defer></script>
   </head>
   <body>
-    {{ content_for_layout }}
+    <a href="#main" class="skip-to-content">{{ 'accessibility.skip_to_text' | t }}</a>
+    
+    <header class="site-header">
+      <p>{{ shop.name }}</p>
+    </header>
+
+    <main id="main" class="main-content">
+      {{ content_for_layout }}
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}</p>
+    </footer>
   </body>
 </html>

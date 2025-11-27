@@ -1,0 +1,12 @@
+{% comment %} Product template {% endcomment %}
+<div class="product-container">
+  <div class="product-title">
+    <h1>{{ product.title }}</h1>
+  </div>
+  <div class="product-price">
+    <p>{{ product.price | money }}</p>
+  </div>
+  <div class="product-description">
+    {{ product.description }}
+  </div>
+</div>

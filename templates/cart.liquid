@@ -1,0 +1,17 @@
+{% comment %} Cart template {% endcomment %}
+<section class="page-width">
+  <header class="section-header">
+    <h1>{{ page.title }}</h1>
+  </header>
+  {% if cart.item_count > 0 %}
+    <div class="cart-items">
+      {% for item in cart.items %}
+        <div class="cart-item">
+          <p>{{ item.title }} - {{ item.price | money }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>Your cart is empty</p>
+  {% endif %}
+</section>
