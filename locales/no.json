@@ -1,12 +1,11 @@
 {
-  "en": {
-    "accessibility": {
-      "skip_to_text": "Skip to main content"
-    }
+  "accessibility": {
+    "skip_to_text": "Hopp til innholdet"
   },
-  "no": {
-    "accessibility": {
-      "skip_to_text": "Gå til innholdet"
-    }
+  "general": {
+    "404": "Siden ble ikke funnet",
+    "no_cookies": "Nettleseren din støtter ikke informasjonskapsler",
+    "welcome": "Velkommen til butikken vår",
+    "home": "Hjem"
   }
 }

@@ -2,13 +2,25 @@
 <section class="page-width">
   <header class="section-header">
     <h1>{{ collection.title }}</h1>
+    {% if collection.description %}
+      <p>{{ collection.description }}</p>
+    {% endif %}
   </header>
-  <div class="collection-grid">
-    {% for product in collection.products %}
-      <div class="product-card">
-        <a href="{{ product.url }}">{{ product.title }}</a>
-        <p>{{ product.price | money }}</p>
-      </div>
-    {% endfor %}
-  </div>
+
+  {% if collection.products.size > 0 %}
+    <div class="collection-grid">
+      {% for product in collection.products %}
+        <div class="card product-card">
+          {% if product.featured_image %}
+            <img src="{{ product.featured_image | image_url: width: 300 }}" alt="{{ product.title }}" style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius);">
+          {% endif %}
+          <a href="{{ product.url }}" class="card-title">{{ product.title }}</a>
+          <div class="card-price">{{ product.price | money }}</div>
+          <a href="{{ product.url }}" class="btn btn-secondary">View Details</a>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="text-center">No products in this collection.</p>
+  {% endif %}
 </section>

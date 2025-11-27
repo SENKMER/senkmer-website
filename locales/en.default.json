@@ -1,20 +1,11 @@
 {
-  "da": {
-    "general": {
-      "404": "Siden blev ikke fundet",
-      "no_cookies": "Din browser understøtter ikke cookies"
-    }
+  "accessibility": {
+    "skip_to_text": "Skip to main content"
   },
-  "en": {
-    "general": {
-      "404": "Page not found",
-      "no_cookies": "Your browser does not support cookies"
-    }
-  },
-  "no": {
-    "general": {
-      "404": "Siden ble ikke funnet",
-      "no_cookies": "Nettleseren din støtter ikke informasjonskapsler"
-    }
+  "general": {
+    "404": "Page not found",
+    "no_cookies": "Your browser does not support cookies",
+    "welcome": "Welcome to our store",
+    "home": "Home"
   }
 }
