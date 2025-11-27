@@ -108,4 +108,24 @@
     }
   };
 
+  // Last inn felles komponenter (header/footer)
+  window.loadComponents = async function(){
+    try{
+      const headerPh = document.getElementById('header-placeholder');
+      const footerPh = document.getElementById('footer-placeholder');
+      if(headerPh){
+        const h = await fetch('/components/header.html');
+        headerPh.innerHTML = await h.text();
+      }
+      if(footerPh){
+        const f = await fetch('/components/footer.html');
+        footerPh.innerHTML = await f.text();
+        const y = document.getElementById('year');
+        if(y) y.textContent = new Date().getFullYear();
+      }
+    }catch(e){
+      console.error('Kunne ikke laste komponenter', e);
+    }
+  };
+
 })();
