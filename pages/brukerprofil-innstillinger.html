@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brukerprofil / innstillinger – Senkmer</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/theme.css" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <main class="container">
+    <section>
+      <h1>Brukerprofil / innstillinger</h1>
+      <p>Oppdater visningsnavn og se kontoinformasjon.</p>
+      <div id="profile">
+        <p id="user-email">E-post: (ikke innlogget)</p>
+        <label>Visningsnavn
+          <input type="text" id="display-name" placeholder="Ditt navn" />
+        </label>
+        <button id="save-profile">Lagre</button>
+        <p id="status"></p>
+      </div>
+    </section>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script src="/js/main.js"></script>
+  <script>
+    window.loadComponents && window.loadComponents();
+    (function(){
+      const token = localStorage.getItem('token');
+      const emailEl = document.getElementById('user-email');
+      if(!token){ emailEl.textContent = 'E-post: ikke innlogget'; return; }
+      try{
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        emailEl.textContent = 'E-post: ' + payload.email;
+      }catch(e){ emailEl.textContent = 'E-post: (ukjent)'; }
+      const btn = document.getElementById('save-profile');
+      btn.addEventListener('click', async ()=>{
+        const name = document.getElementById('display-name').value.trim();
+        if(name.length < 2){ document.getElementById('status').textContent='Navnet må være minst 2 tegn.'; return; }
+        // Simple update: store locally for now (server-side update could be added)
+        localStorage.setItem('display_name', name);
+        document.getElementById('status').textContent='Lagret!';
+      });
+    })();
+  </script>
+</body>
+</html>

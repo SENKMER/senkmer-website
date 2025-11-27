@@ -21,6 +21,21 @@ app.use(helmet());
 const limiter = rateLimit({ windowMs: 60_000, max: 60 });
 app.use(limiter);
 
+// Strict origin check for state-changing requests
+const ALLOWED_ORIGIN = process.env.CORS_ORIGIN || 'http://localhost:8000';
+app.use((req, res, next) => {
+  if (req.method === 'GET' || req.method === 'OPTIONS') return next();
+  const origin = req.headers.origin || '';
+  const referer = req.headers.referer || '';
+  if (origin && origin !== ALLOWED_ORIGIN) {
+    return res.status(403).json({ error: 'Ugyldig origin' });
+  }
+  if (referer && !referer.startsWith(ALLOWED_ORIGIN)) {
+    return res.status(403).json({ error: 'Ugyldig referer' });
+  }
+  next();
+});
+
 // CSRF (double submit token) for state-changing routes
 const CSRF_HEADER = 'x-csrf-token';
 app.use((req,res,next)=>{
@@ -119,7 +134,12 @@ const contactSchema = z.object({
 });
 
 // Auth routes
-app.post('/api/auth/register', async (req,res)=>{
+// Per-route rate limits
+const authLimiter = rateLimit({ windowMs: 10 * 60_000, max: 20 });
+const loginLimiter = rateLimit({ windowMs: 10 * 60_000, max: 30 });
+const writeLimiter = rateLimit({ windowMs: 60_000, max: 30 });
+
+app.post('/api/auth/register', authLimiter, async (req,res)=>{
   const parse = registerSchema.safeParse(req.body);
   if(!parse.success) return res.status(400).json({ error: parse.error.flatten() });
   const { email, password, display_name } = parse.data;
@@ -135,7 +155,7 @@ app.post('/api/auth/register', async (req,res)=>{
   }
 });
 
-app.post('/api/auth/login', async (req,res)=>{
+app.post('/api/auth/login', loginLimiter, async (req,res)=>{
   const parse = loginSchema.safeParse(req.body);
   if(!parse.success) return res.status(400).json({ error: parse.error.flatten() });
   const { email, password } = parse.data;
@@ -152,7 +172,7 @@ app.get('/api/progress', auth, async (req,res)=>{
   const row = await db.get('SELECT * FROM progress WHERE user_id = ?', [req.user.id]);
   res.json(row || { xp:0, streak:0 });
 });
-app.post('/api/progress', auth, async (req,res)=>{
+app.post('/api/progress', auth, writeLimiter, async (req,res)=>{
   const parse = progressSchema.safeParse(req.body);
   if(!parse.success) return res.status(400).json({ error: parse.error.flatten() });
   const { xp, streak } = parse.data;
@@ -181,7 +201,7 @@ app.get('/api/tasks', auth, async (req,res)=>{
   const rows = await db.all('SELECT * FROM tasks WHERE user_id = ? ORDER BY id DESC', [req.user.id]);
   res.json(rows);
 });
-app.post('/api/tasks', auth, async (req,res)=>{
+app.post('/api/tasks', auth, writeLimiter, async (req,res)=>{
   const parse = taskCreateSchema.safeParse(req.body);
   if(!parse.success) return res.status(400).json({ error: parse.error.flatten() });
   const { title, description, reward_xp } = parse.data;
@@ -189,7 +209,7 @@ app.post('/api/tasks', auth, async (req,res)=>{
   const info = await db.run('INSERT INTO tasks (user_id, title, description, reward_xp, created_at) VALUES (?, ?, ?, ?, ?)', [req.user.id, title, description||null, reward_xp, now]);
   res.json({ id: info.lastID });
 });
-app.post('/api/tasks/:id/complete', auth, async (req,res)=>{
+app.post('/api/tasks/:id/complete', auth, writeLimiter, async (req,res)=>{
   const id = Number(req.params.id);
   const now = new Date().toISOString();
   await db.run('UPDATE tasks SET completed_at = ? WHERE id = ? AND user_id = ?', [now, id, req.user.id]);
@@ -208,7 +228,7 @@ app.get('/api/badges', auth, async (req,res)=>{
 
 // Award badge
 const awardSchema = z.object({ code: z.string().min(2), name: z.string().min(2) });
-app.post('/api/badges/award', auth, async (req,res)=>{
+app.post('/api/badges/award', auth, writeLimiter, async (req,res)=>{
   const parse = awardSchema.safeParse(req.body);
   if(!parse.success) return res.status(400).json({ error: parse.error.flatten() });
   const { code, name } = parse.data;
@@ -240,7 +260,8 @@ const transporter = nodemailer.createTransport({
   secure: false,
   auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS }
 });
-app.post('/api/contact', async (req,res)=>{
+const contactLimiter = rateLimit({ windowMs: 10 * 60_000, max: 10 });
+app.post('/api/contact', contactLimiter, async (req,res)=>{
   const parse = contactSchema.safeParse(req.body);
   if(!parse.success) return res.status(400).json({ error: parse.error.flatten() });
   const { name, email, message } = parse.data;

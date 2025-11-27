@@ -32,6 +32,7 @@
   <footer class="footer"><div class="container">© <span id="year"></span> Senkmer</div></footer>
   <script src="/js/main.js"></script>
   <script src="/js/game.js"></script>
+  <script src="/js/animations.js"></script>
   <script>
     (function(){
       const api = window.SenkmerAPI;
@@ -41,6 +42,7 @@
       const streakEl = document.getElementById('streak');
       const badgeList = document.getElementById('badge-list');
       const badgeEmpty = document.getElementById('badge-empty');
+      let lastLevel = Number(lvlEl.textContent)||1;
       async function load(){
         if(!token) return;
         const p = await api.getProgress(token);
@@ -49,6 +51,7 @@
         streakEl.textContent = p?.streak || 0;
         const lvl = Math.min(100, Math.floor(xp/100)+1);
         lvlEl.textContent = lvl;
+        if(window.confetti && lvl > lastLevel){ window.confetti(lvlEl.parentElement); lastLevel = lvl; }
 
         const badges = await api.badges.list(token);
         badgeList.innerHTML = '';
@@ -56,7 +59,13 @@
         badges.forEach(b=>{
           const li = document.createElement('li');
           li.className = 'list-item';
-          li.textContent = `${b.name}`;
+          const icon = document.createElement('img');
+          icon.src = '/assets/star-icon.svg';
+          icon.width = 16;
+          icon.height = 16;
+          icon.style.marginRight = '6px';
+          li.appendChild(icon);
+          li.appendChild(document.createTextNode(b.name));
           badgeList.appendChild(li);
         });
       }

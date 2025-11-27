@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personvern & sikkerhet – Senkmer</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/theme.css" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script defer src="/js/animations.js"></script>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <main class="container">
+    <section>
+      <h1>Personvern & sikkerhet</h1>
+      <p>Vi tar ditt personvern og din sikkerhet på alvor. Denne siden forklarer hvordan vi behandler data og hvilke tiltak vi bruker.</p>
+      <h2>Data</h2>
+      <ul>
+        <li>Brukerkonto: e-post, passord (bcrypt-hash), visningsnavn</li>
+        <li>Progresjon: XP, streak, nivåer</li>
+        <li>Oppgaver og badges</li>
+      </ul>
+      <h2>Sikkerhetstiltak</h2>
+      <ul>
+        <li>JWT for autentisering</li>
+        <li>CSRF-beskyttelse (double-submit token)</li>
+        <li>Rate-limits per rute</li>
+        <li>Helmet for sikre HTTP-headere</li>
+        <li>Streng origin/referer-kontroll</li>
+      </ul>
+      <p>Kontakt oss hvis du har spørsmål: <a href="/pages/kontakt.html">Kontakt</a></p>
+    </section>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script src="/js/main.js"></script>
+  <script>window.loadComponents && window.loadComponents();</script>
+</body>
+</html>
