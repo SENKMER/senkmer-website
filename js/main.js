@@ -41,6 +41,10 @@
   // Backend integrasjon (auth, progress, kontakt)
   const API = {
     base: 'http://localhost:3001',
+    async csrf(){
+      const r = await fetch(`${this.base}/api/csrf`);
+      return r.json();
+    },
     async register(email, password, display_name){
       const r = await fetch(`${this.base}/api/auth/register`, {
         method:'POST', headers:{ 'Content-Type':'application/json' },
@@ -60,13 +64,15 @@
       return r.json();
     },
     async setProgress(token, xp, streak){
+      const csrf = await this.csrf();
       const r = await fetch(`${this.base}/api/progress`, {
-        method:'POST', headers:{ 'Content-Type':'application/json', Authorization:`Bearer ${token}` },
+        method:'POST', headers:{ 'Content-Type':'application/json', Authorization:`Bearer ${token}`, 'x-csrf-token': csrf.token },
         body: JSON.stringify({ xp, streak })
       });
       return r.json();
     },
     async sendContact(payload){
+      const csrf = await this.csrf();
       const r = await fetch(`${this.base}/api/contact`, { method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify(payload) });
       return r.json();
     }

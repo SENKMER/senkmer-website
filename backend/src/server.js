@@ -21,6 +21,27 @@ app.use(helmet());
 const limiter = rateLimit({ windowMs: 60_000, max: 60 });
 app.use(limiter);
 
+// CSRF (double submit token) for state-changing routes
+const CSRF_HEADER = 'x-csrf-token';
+app.use((req,res,next)=>{
+  if(req.method === 'GET') return next();
+  const csrf = req.headers[CSRF_HEADER];
+  // Accept missing token for pure API clients; tighten in production
+  if(!csrf) return next();
+  const cookie = req.headers['cookie'] || '';
+  const found = /csrf=([^;]+)/.exec(cookie);
+  if(!found || found[1] !== csrf){
+    return res.status(403).json({ error:'CSRF token mismatch' });
+  }
+  next();
+});
+
+app.get('/api/csrf', (req,res)=>{
+  const token = Math.random().toString(36).slice(2);
+  res.setHeader('Set-Cookie', `csrf=${token}; Path=/; HttpOnly; SameSite=Lax`);
+  res.json({ token });
+});
+
 // DB setup (SQLite async)
 let db;
 async function initDb(){

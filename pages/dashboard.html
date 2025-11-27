@@ -14,8 +14,9 @@
     <div class="grid-2">
       <div class="card">
         <h3>Fremgang</h3>
-        <p>Daglig streak: <strong>3</strong></p>
-        <p>Totalt XP: <strong id="xp-total">600</strong></p>
+        <p>Daglig streak: <strong id="streak">0</strong></p>
+        <p>Totalt XP: <strong id="xp-total">0</strong></p>
+        <p>Nivå: <strong id="level">1</strong></p>
       </div>
       <div class="card">
         <h3>Dagens mål</h3>
@@ -26,5 +27,24 @@
   <footer class="footer"><div class="container">© <span id="year"></span> Senkmer</div></footer>
   <script src="/js/main.js"></script>
   <script src="/js/game.js"></script>
+  <script>
+    (function(){
+      const api = window.SenkmerAPI;
+      const token = localStorage.getItem('senkmer_token');
+      const xpEl = document.getElementById('xp-total');
+      const lvlEl = document.getElementById('level');
+      const streakEl = document.getElementById('streak');
+      async function load(){
+        if(!token) return;
+        const p = await api.getProgress(token);
+        const xp = p?.xp || 0;
+        xpEl.textContent = xp;
+        streakEl.textContent = p?.streak || 0;
+        const lvl = Math.min(100, Math.floor(xp/100)+1);
+        lvlEl.textContent = lvl;
+      }
+      load();
+    })();
+  </script>
 </body>
 </html>
