@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Senkmer — Learn, play and grow</title>
+  <meta name="description" content="Senkmer — a playful, polished place to learn, play small gamified challenges, and track progress." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="site">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Sticky Navigation -->
+  <header class="nav-wrap" role="banner">
+    <nav class="nav container" role="navigation" aria-label="Primary">
+      <a class="brand" href="#hero" aria-label="Senkmer home">
+        <!-- simple friendly logo -->
+        <svg width="44" height="44" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#34D399"/><stop offset="1" stop-color="#60A5FA"/></linearGradient></defs>
+          <rect rx="6" width="24" height="24" fill="url(#g)"></rect>
+          <text x="50%" y="58%" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="12" fill="#fff">S</text>
+        </svg>
+        <span class="brand-text">Senkmer</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+
+      <ul id="nav-list" class="nav-list" role="menubar">
+        <li role="none"><a role="menuitem" href="#hero" class="nav-link">Home</a></li>
+        <li role="none"><a role="menuitem" href="#learn" class="nav-link">Learn</a></li>
+        <li role="none"><a role="menuitem" href="#games" class="nav-link">Games</a></li>
+        <li role="none"><a role="menuitem" href="#support" class="nav-link">Support</a></li>
+        <li role="none"><a role="menuitem" href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="main">
+
+    <!-- HERO -->
+    <section id="hero" class="hero container" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <h1 id="hero-title">Senkmer — Learn, play and grow</h1>
+          <p class="lead">
+            Bite-sized learning modules, playful challenges and beautiful progress tracking.
+            Friendly design inspired by Duolingo's fun and Apple's polish.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#learn" class="btn btn-primary">Start learning</a>
+            <button id="hero-try-game" class="btn btn-ghost">Try a game</button>
+          </div>
+
+          <ul class="hero-features">
+            <li><strong>Short modules</strong> — Learn in minutes</li>
+            <li><strong>Games</strong> — Practice while playing</li>
+            <li><strong>Track progress</strong> — Earn XP & levels</li>
+          </ul>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <!-- Decorative illustration-style layout using SVG placeholders -->
+          <svg viewBox="0 0 320 220" class="hero-svg" role="img" aria-hidden="true">
+            <defs>
+              <linearGradient id="hG" x1="0" x2="1">
+                <stop offset="0" stop-color="#60a5fa"/>
+                <stop offset="1" stop-color="#34d399"/>
+              </linearGradient>
+            </defs>
+            <rect rx="18" width="320" height="220" fill="#fff" stroke="#e6edf8" />
+            <g transform="translate(12,12)">
+              <rect width="140" height="60" rx="10" fill="url(#hG)" opacity="0.95"></rect>
+              <rect x="160" width="140" height="40" rx="8" fill="#f8fafc"></rect>
+              <rect x="160" y="56" width="140" height="120" rx="12" fill="#fff" stroke="#e6edf8"></rect>
+              <circle cx="70" cy="120" r="34" fill="#fff" stroke="#e6edf8"></circle>
+              <text x="70" y="125" font-family="Inter, sans-serif" font-size="18" font-weight="700" text-anchor="middle" fill="#111">XP</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="section container" aria-labelledby="features-title">
+      <header class="section-header">
+        <h2 id="features-title">What you can do on Senkmer</h2>
+        <p class="muted">A friendly mix of learning, play and rewards.</p>
+      </header>
+
+      <div class="grid cards grid-3">
+        <article class="card" aria-labelledby="f1">
+          <div class="icon">📘</div>
+          <h3 id="f1">Learn</h3>
+          <p>Short, interactive modules with clear goals. Build knowledge step-by-step.</p>
+        </article>
+
+        <article class="card" aria-labelledby="f2">
+          <div class="icon">🎮</div>
+          <h3 id="f2">Play</h3>
+          <p>Mini-games and challenges that make practice enjoyable — and rewarding.</p>
+        </article>
+
+        <article class="card" aria-labelledby="f3">
+          <div class="icon">📈</div>
+          <h3 id="f3">Grow</h3>
+          <p>Track XP, levels and streaks to stay motivated and celebrate progress.</p>
+        </article>
+
+        <article class="card" aria-labelledby="f4">
+          <div class="icon">🧭</div>
+          <h3 id="f4">Guided paths</h3>
+          <p>Choose a learning path and get recommendations tailored to your goals.</p>
+        </article>
+
+        <article class="card" aria-labelledby="f5">
+          <div class="icon">🤝</div>
+          <h3 id="f5">Community</h3>
+          <p>Join group challenges, compare progress and celebrate milestones together.</p>
+        </article>
+
+        <article class="card" aria-labelledby="f6">
+          <div class="icon">🔒</div>
+          <h3 id="f6">Secure</h3>
+          <p>We prioritize privacy and safe experiences. (Frontend demo — real security in backend later)</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- LEARNING -->
+    <section id="learn" class="section container" aria-labelledby="learn-title">
+      <header class="section-header">
+        <h2 id="learn-title">Learning paths & modules</h2>
+        <p class="muted">Explore curated modules. Earn XP & level up.</p>
+      </header>
+
+      <div class="grid grid-3">
+        <!-- module cards with progress -->
+        <div class="card module" data-module-id="m1" aria-live="polite">
+          <div class="module-head">
+            <h3>Basics: Foundations</h3>
+            <div class="level">Level <span class="level-value">2</span></div>
+          </div>
+          <p>Start with fundamentals and quick exercises.</p>
+          <div class="progress" aria-hidden="false">
+            <div class="progress-bar" style="width: 45%"></div>
+          </div>
+          <div class="module-meta">
+            <span class="xp">XP: <strong>450</strong></span>
+            <button class="btn btn-small btn-primary start-module">Practice</button>
+          </div>
+        </div>
+
+        <div class="card module" data-module-id="m2">
+          <div class="module-head">
+            <h3>Skills: Intermediate</h3>
+            <div class="level">Level <span class="level-value">1</span></div>
+          </div>
+          <p>Build on what you know with mini-lessons.</p>
+          <div class="progress">
+            <div class="progress-bar" style="width: 20%"></div>
+          </div>
+          <div class="module-meta">
+            <span class="xp">XP: <strong>120</strong></span>
+            <button class="btn btn-small btn-primary start-module">Practice</button>
+          </div>
+        </div>
+
+        <div class="card module" data-module-id="m3">
+          <div class="module-head">
+            <h3>Challenges: Advanced</h3>
+            <div class="level">Level <span class="level-value">0</span></div>
+          </div>
+          <p>Timed challenges and mastery checks.</p>
+          <div class="progress">
+            <div class="progress-bar" style="width: 8%"></div>
+          </div>
+          <div class="module-meta">
+            <span class="xp">XP: <strong>30</strong></span>
+            <button class="btn btn-small btn-primary start-module">Practice</button>
+          </div>
+        </div>
+      </div>
+      <p class="muted small">Tip: Click "Practice" on any module to simulate progress and gain XP.</p>
+    </section>
+
+    <!-- GAMES -->
+    <section id="games" class="section container" aria-labelledby="games-title">
+      <header class="section-header">
+        <h2 id="games-title">Games — Practice while having fun</h2>
+        <p class="muted">A tiny interactive quiz to get started.</p>
+      </header>
+
+      <div class="grid grid-2">
+        <div class="card" aria-labelledby="quiz-title">
+          <h3 id="quiz-title">Quick Quiz: Brain Boost</h3>
+          <p class="muted">Answer correctly to earn points. Try to score 3/3!</p>
+
+          <div id="quiz" class="quiz" aria-live="polite">
+            <div id="quiz-question" class="quiz-question">Loading question…</div>
+            <div id="quiz-options" class="quiz-options"></div>
+            <div class="quiz-controls">
+              <button id="quiz-next" class="btn btn-ghost" disabled>Next</button>
+              <button id="quiz-reset" class="btn btn-secondary">Reset</button>
+            </div>
+            <div id="quiz-score" class="quiz-score">Score: 0</div>
+          </div>
+        </div>
+
+        <div class="card" aria-labelledby="game-info">
+          <h3 id="game-info">How the quiz works</h3>
+          <ol>
+            <li>Choose an answer and get instant feedback.</li>
+            <li>Correct answers give points and a small XP boost.</li>
+            <li>Use the Reset button to play again.</li>
+          </ol>
+
+          <div class="play-cta">
+            <button id="start-quiz" class="btn btn-primary">Start Quiz</button>
+            <p class="muted small">This game is fully client-side and safe.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUPPORT / CHATBOT -->
+    <section id="support" class="section container" aria-labelledby="support-title">
+      <header class="section-header">
+        <h2 id="support-title">Help & Support</h2>
+        <p class="muted">FAQ and a simple chatbot to help you get started.</p>
+      </header>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>FAQ</h3>
+          <dl class="faq">
+            <dt>Is Senkmer free?</dt>
+            <dd>Yes — the basic experience is free. (Demo frontend only.)</dd>
+            <dt>How do I track progress?</dt>
+            <dd>Modules and games show XP and progress bars in your dashboard.</dd>
+            <dt>Can I create an account?</dt>
+            <dd>Accounts are planned for later. This demo is frontend-only.</dd>
+            <dt>Where can I report bugs?</dt>
+            <dd>Use the contact form below or email support@senkmer.example (demo).</dd>
+          </dl>
+        </div>
+
+        <div class="card chatbot-card" aria-live="polite">
+          <h3>Chatbot</h3>
+          <div id="chat-window" class="chat-window" role="log" aria-atomic="false">
+            <div class="bot-message">Hi! I'm Senkmer Bot. Ask me about the site or type "contact".</div>
+          </div>
+
+          <form id="chat-form" class="chat-form" aria-label="Chat with Senkmer Bot">
+            <input id="chat-input" type="text" placeholder="Ask a question, e.g. 'How do I earn XP?'" autocomplete="off" />
+            <button class="btn btn-primary" type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section container" aria-labelledby="contact-title">
+      <header class="section-header">
+        <h2 id="contact-title">Contact</h2>
+        <p class="muted">Have feedback or questions? Send us a message.</p>
+      </header>
+
+      <div class="card contact-card">
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="form-grid">
+            <label>
+              <span class="label">Name</span>
+              <input id="c-name" name="name" type="text" required />
+              <small class="error" id="err-name" aria-live="polite"></small>
+            </label>
+
+            <label>
+              <span class="label">Email</span>
+              <input id="c-email" name="email" type="email" required />
+              <small class="error" id="err-email" aria-live="polite"></small>
+            </label>
+
+            <label class="full">
+              <span class="label">Message</span>
+              <textarea id="c-message" name="message" rows="5" required></textarea>
+              <small class="error" id="err-message" aria-live="polite"></small>
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Send message</button>
+            <div id="form-result" class="form-result" aria-live="polite"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#hero">Home</a>
+        <a href="#learn">Learn</a>
+        <a href="#games">Games</a>
+        <a href="#support">Support</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="legal">
+        <small>© <span id="year"></span> Senkmer • <a href="#">Privacy</a> • <a href="#">Terms</a></small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
