@@ -1,0 +1,31 @@
+:root {
+  --primary: #0ea5a0;
+  --accent: #60a5fa;
+  --text: #0b1220;
+  --surface: #f7f9fc;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Inter, system-ui, sans-serif;
+  margin: 0;
+  background: var(--surface);
+  color: var(--text);
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.site-header {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: #fff;
+  padding: 1rem 0;
+}
+.site-footer {
+  padding: 1.25rem 0;
+  text-align: center;
+  border-top: 1px solid #e5e7eb;
+  margin-top: 2rem;
+}

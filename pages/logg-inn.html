@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Logg inn / Registrer — Senkmer</title>
+  <link rel="stylesheet" href="/css/theme.css">
+</head>
+<body>
+  <header class="header"><div class="container inner"><a class="brand" href="/pages/hjem.html"><img src="/assets/logo.svg" width="36"> <span class="title">Senkmer</span></a></div></header>
+  <main class="container section">
+    <h1>Logg inn / Registrer</h1>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Logg inn</h3>
+        <form id="login-form">
+          <label>E-post<input type="email" id="login-email"></label>
+          <label>Passord<input type="password" id="login-pass"></label>
+          <div class="form-actions"><button class="btn btn-primary" type="submit">Logg inn</button></div>
+        </form>
+      </div>
+      <div class="card">
+        <h3>Ny bruker</h3>
+        <form id="register-form">
+          <label>Navn<input id="reg-name"></label>
+          <label>E-post<input id="reg-email"></label>
+          <label>Passord<input type="password" id="reg-pass"></label>
+          <div class="form-actions"><button class="btn btn-primary" type="submit">Registrer</button></div>
+        </form>
+      </div>
+    </div>
+    <p class="muted small">Merk: Dette er en frontend-demo. Ingen konto blir opprettet uten backend.</p>
+  </main>
+  <footer class="footer"><div class="container">© <span id="year"></span> Senkmer</div></footer>
+  <script src="/js/main.js"></script>
+</body>
+</html>

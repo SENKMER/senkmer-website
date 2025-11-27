@@ -1,0 +1,10 @@
+{
+  "no": {
+    "general": {
+      "404": "Siden ble ikke funnet",
+      "welcome": "Velkommen",
+      "cart": "Handlekurv",
+      "search": "Søk"
+    }
+  }
+}

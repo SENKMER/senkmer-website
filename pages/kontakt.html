@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kontakt — Senkmer</title>
+  <link rel="stylesheet" href="/css/theme.css">
+</head>
+<body>
+  <header class="header"><div class="container inner"><a class="brand" href="/pages/hjem.html"><img src="/assets/logo.svg" width="36"> <span class="title">Senkmer</span></a></div></header>
+  <main class="container section">
+    <h1>Kontakt oss</h1>
+    <p>Har du spørsmål eller tilbakemeldinger? Send oss en melding.</p>
+
+    <div class="card contact-card">
+      <form id="contact-form" class="contact-form" novalidate>
+        <div class="form-grid">
+          <label>Navn<input id="c-name" name="name" type="text" required><small id="err-name" class="error"></small></label>
+          <label>E-post<input id="c-email" name="email" type="email" required><small id="err-email" class="error"></small></label>
+          <label class="full">Melding<textarea id="c-message" name="message" rows="6" required></textarea><small id="err-message" class="error"></small></label>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Send melding</button>
+          <div id="form-result" class="form-result"></div>
+        </div>
+      </form>
+    </div>
+  </main>
+  <footer class="footer"><div class="container">© <span id="year"></span> Senkmer</div></footer>
+  <script src="/js/main.js"></script>
+  <script src="/js/chatbot.js"></script>
+</body>
+</html>
