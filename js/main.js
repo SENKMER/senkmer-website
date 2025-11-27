@@ -95,4 +95,17 @@
     }
   };
 
+  // Badges helpers
+  window.SenkmerAPI.badges = {
+    async list(token){
+      const r = await fetch(`${API.base}/api/badges`, { headers:{ Authorization:`Bearer ${token}` }});
+      return r.json();
+    },
+    async award(token, payload){
+      const csrf = await API.csrf();
+      const r = await fetch(`${API.base}/api/badges/award`, { method:'POST', headers:{ 'Content-Type':'application/json', Authorization:`Bearer ${token}`, 'x-csrf-token': csrf.token }, body: JSON.stringify(payload) });
+      return r.json();
+    }
+  };
+
 })();

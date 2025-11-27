@@ -19,6 +19,11 @@
         <p>Nivå: <strong id="level">1</strong></p>
       </div>
       <div class="card">
+        <h3>Badges</h3>
+        <ul id="badge-list" class="list"></ul>
+        <div id="badge-empty" class="muted">Ingen badges enda.</div>
+      </div>
+      <div class="card">
         <h3>Dagens mål</h3>
         <div class="card">Fullfør en modul for ekstra belønning</div>
       </div>
@@ -34,6 +39,8 @@
       const xpEl = document.getElementById('xp-total');
       const lvlEl = document.getElementById('level');
       const streakEl = document.getElementById('streak');
+      const badgeList = document.getElementById('badge-list');
+      const badgeEmpty = document.getElementById('badge-empty');
       async function load(){
         if(!token) return;
         const p = await api.getProgress(token);
@@ -42,6 +49,16 @@
         streakEl.textContent = p?.streak || 0;
         const lvl = Math.min(100, Math.floor(xp/100)+1);
         lvlEl.textContent = lvl;
+
+        const badges = await api.badges.list(token);
+        badgeList.innerHTML = '';
+        if(!badges || !badges.length){ badgeEmpty.style.display='block'; } else { badgeEmpty.style.display='none'; }
+        badges.forEach(b=>{
+          const li = document.createElement('li');
+          li.className = 'list-item';
+          li.textContent = `${b.name}`;
+          badgeList.appendChild(li);
+        });
       }
       load();
     })();

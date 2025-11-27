@@ -206,6 +206,17 @@ app.get('/api/badges', auth, async (req,res)=>{
   res.json(rows);
 });
 
+// Award badge
+const awardSchema = z.object({ code: z.string().min(2), name: z.string().min(2) });
+app.post('/api/badges/award', auth, async (req,res)=>{
+  const parse = awardSchema.safeParse(req.body);
+  if(!parse.success) return res.status(400).json({ error: parse.error.flatten() });
+  const { code, name } = parse.data;
+  const now = new Date().toISOString();
+  await db.run('INSERT INTO badges (user_id, code, name, earned_at) VALUES (?, ?, ?, ?)', [req.user.id, code, name, now]);
+  res.json({ ok:true });
+});
+
 // Pricing packages
 app.get('/api/pricing', (req,res)=>{
   res.json([

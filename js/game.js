@@ -75,6 +75,13 @@
     qOptions.innerHTML = '';
     if(quizState.score === quizData.length){
       qScore.textContent = 'Perfekt! +50 XP';
+      // Award badge for perfect quiz
+      try{
+        const token = localStorage.getItem('senkmer_token');
+        if(token && window.SenkmerAPI){
+          await window.SenkmerAPI.badges.award(token, { code:'perfect_quiz', name:'Perfekt quiz' });
+        }
+      }catch(e){ /* ignore */ }
     }
     // Persist progress if logged in
     try{
