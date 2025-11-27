@@ -288,6 +288,91 @@ app.post('/api/shopify/create-pages', async (req,res)=>{
   }
 });
 
+// Shopify: update menus (main and footer) to Norwegian links
+app.post('/api/shopify/update-menus', async (req,res)=>{
+  const store = process.env.SHOPIFY_STORE_DOMAIN;
+  const token = process.env.SHOPIFY_ADMIN_TOKEN;
+  if(!store || !token) return res.status(400).json({ error: 'Manglende Shopify konfigurasjon' });
+  const base = `https://${store}/admin/api/2024-10`;
+  const headers = { 'X-Shopify-Access-Token': token, 'Content-Type':'application/json' };
+  try{
+    // Fetch pages to get handles
+    const pagesRes = await fetch(`${base}/pages.json`, { headers });
+    const pagesData = await pagesRes.json();
+    const byTitle = (t)=> pagesData.pages?.find(p=>p.title === t);
+    const om = byTitle('Om Senkmer');
+    const kontakt = byTitle('Kontakt oss');
+    const kundeservice = byTitle('Kundeservice');
+    const priser = byTitle('Priser');
+
+    const linksMain = [
+      { title:'Hjem', type:'http', url:'/' },
+      om ? { title:'Om oss', type:'http', url:`/pages/${om.handle}` } : null,
+      priser ? { title:'Priser', type:'http', url:`/pages/${priser.handle}` } : null,
+      kundeservice ? { title:'Kundeservice', type:'http', url:`/pages/${kundeservice.handle}` } : null,
+      kontakt ? { title:'Kontakt', type:'http', url:`/pages/${kontakt.handle}` } : null
+    ].filter(Boolean);
+
+    const linksFooter = [
+      om ? { title:'Om', type:'http', url:`/pages/${om.handle}` } : null,
+      kontakt ? { title:'Kontakt', type:'http', url:`/pages/${kontakt.handle}` } : null,
+      { title:'Personvern', type:'http', url:'/policies/privacy-policy' }
+    ].filter(Boolean);
+
+    // Create or update menus (Shopify Online Store Navigation via menus.json)
+    // Note: Admin API for Navigation is available via REST: /menus.json (2024-10)
+    const mainMenuPayload = { menu: { title:'Hovedmeny', handle:'main-menu', items: linksMain } };
+    const footerMenuPayload = { menu: { title:'Bunnmeny', handle:'footer-menu', items: linksFooter } };
+
+    // Try update then create if not exists
+    async function upsertMenu(payload){
+      const handle = payload.menu.handle;
+      const getR = await fetch(`${base}/menus.json?handle=${handle}`, { headers });
+      const getD = await getR.json();
+      const existing = getD?.menus?.[0];
+      if(existing){
+        const r = await fetch(`${base}/menus/${existing.id}.json`, { method:'PUT', headers, body: JSON.stringify(payload) });
+        return r.json();
+      } else {
+        const r = await fetch(`${base}/menus.json`, { method:'POST', headers, body: JSON.stringify(payload) });
+        return r.json();
+      }
+    }
+
+    const mainResult = await upsertMenu(mainMenuPayload);
+    const footerResult = await upsertMenu(footerMenuPayload);
+    res.json({ main: mainResult, footer: footerResult });
+  }catch(e){
+    res.status(500).json({ error:'Kunne ikke oppdatere menyer' });
+  }
+});
+
+// Shopify: upload logo asset to theme
+app.post('/api/shopify/upload-logo', async (req,res)=>{
+  const store = process.env.SHOPIFY_STORE_DOMAIN;
+  const token = process.env.SHOPIFY_ADMIN_TOKEN;
+  if(!store || !token) return res.status(400).json({ error: 'Manglende Shopify konfigurasjon' });
+  const base = `https://${store}/admin/api/2024-10`;
+  const headers = { 'X-Shopify-Access-Token': token, 'Content-Type':'application/json' };
+  try{
+    // Get active theme
+    const themesRes = await fetch(`${base}/themes.json`, { headers });
+    const themesData = await themesRes.json();
+    const mainTheme = themesData.themes?.find(t=>t.role==='main');
+    if(!mainTheme) return res.status(400).json({ error:'Fant ikke aktivt tema' });
+    // Read local logo.svg
+    const fs = await import('node:fs/promises');
+    const path = '/workspaces/senkmer-website/assets/logo.svg';
+    const content = await fs.readFile(path, 'utf8');
+    const assetPayload = { asset: { key:'assets/logo.svg', value: content } };
+    const r = await fetch(`${base}/themes/${mainTheme.id}/assets.json`, { method:'PUT', headers, body: JSON.stringify(assetPayload) });
+    const data = await r.json();
+    res.json({ uploaded: !!data?.asset, asset: data?.asset });
+  }catch(e){
+    res.status(500).json({ error:'Kunne ikke laste opp logo' });
+  }
+});
+
 app.get('/api/health', (req,res)=>res.json({ ok:true }));
 
 initDb().then(()=>{
