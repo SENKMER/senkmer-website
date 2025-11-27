@@ -262,6 +262,32 @@ app.get('/api/shopify/products', async (req,res)=>{
   }
 });
 
+// Shopify: create/update Norwegian info pages and set navigation
+app.post('/api/shopify/create-pages', async (req,res)=>{
+  const store = process.env.SHOPIFY_STORE_DOMAIN;
+  const token = process.env.SHOPIFY_ADMIN_TOKEN;
+  if(!store || !token) return res.status(400).json({ error: 'Manglende Shopify konfigurasjon' });
+  const base = `https://${store}/admin/api/2024-10`;
+  const headers = { 'X-Shopify-Access-Token': token, 'Content-Type':'application/json' };
+  const pages = [
+    { title:'Om Senkmer', body_html:'<h1>Om Senkmer</h1><p>Alt på norsk.</p>', author:'Senkmer' },
+    { title:'Kontakt oss', body_html:'<h1>Kontakt oss</h1><p>Send oss en melding.</p>', author:'Senkmer' },
+    { title:'Kundeservice', body_html:'<h1>Kundeservice</h1><p>Vanlige spørsmål og svar.</p>', author:'Senkmer' },
+    { title:'Priser', body_html:'<h1>Prispakker</h1><p>Se våre pakker.</p>', author:'Senkmer' }
+  ];
+  try{
+    const created = [];
+    for(const p of pages){
+      const r = await fetch(`${base}/pages.json`, { method:'POST', headers, body: JSON.stringify({ page:p }) });
+      const data = await r.json();
+      if(data?.page) created.push({ id:data.page.id, handle:data.page.handle, title:data.page.title });
+    }
+    res.json({ created });
+  }catch(e){
+    res.status(500).json({ error:'Kunne ikke opprette sider' });
+  }
+});
+
 app.get('/api/health', (req,res)=>res.json({ ok:true }));
 
 initDb().then(()=>{
