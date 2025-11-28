@@ -1,349 +1,620 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Priser – Senkmer AS</title>
-  <meta name="description" content="Senkmer tilbyr 10 prisplaner for privatpersoner, bedrifter, skoler og organisasjoner. Finn pakken som passer deg.">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="/css/theme.css" />
-  <link rel="stylesheet" href="/css/pages.css" />
-  <style>
-    .pricing-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin:2rem 0}
-    .pricing-card{background:#fff; border-radius:var(--radius-lg); padding:2rem; box-shadow:var(--shadow-md); border:2px solid transparent; transition:var(--transition)}
-    .pricing-card:hover{border-color:var(--primary); transform:translateY(-4px)}
-    .pricing-card.featured{border-color:var(--accent); background:linear-gradient(135deg, rgba(14,165,160,0.05), rgba(96,165,250,0.05))}
-    .pricing-card h3{margin:0 0 0.5rem; font-size:1.5rem; color:var(--primary)}
-    .pricing-card .price{font-size:2.5rem; font-weight:800; color:var(--text); margin:0.5rem 0}
-    .pricing-card .price span{font-size:1rem; font-weight:400; color:var(--muted)}
-    .pricing-card p{color:var(--muted); margin:0.5rem 0 1rem}
-    .pricing-card ul{list-style:none; padding:0; margin:1rem 0}
-    .pricing-card ul li{padding:0.5rem 0; border-bottom:1px solid rgba(0,0,0,0.05)}
-    .pricing-card ul li:before{content:'✓'; color:var(--success); font-weight:700; margin-right:0.5rem}
-    .pricing-card .btn{width:100%; margin-top:1rem}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SENKMER priser - finn den perfekte pakken for din bedrift">
+    <title>Priser - SENKMER</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+    <link rel="icon" type="image/svg+xml" href="/assets/img/logo.svg">
 </head>
-<body class="page-priser">
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="/pages/hovedside/hjem.html" aria-label="Gå til hjem">
-        <img src="/assets/logo.svg" alt="Senkmer logo" width="40" height="40">
-        <span class="brand-title">Senkmer</span>
-      </a>
-      <nav class="nav" role="navigation">
-        <a href="/pages/hovedside/hjem.html">Hjem</a>
-        <a href="/pages/informasjon/om-oss.html">Om oss</a>
-        <a href="/pages/priser/priser.html">Priser</a>
-        <a href="/pages/spill.html">Spill</a>
-        <a href="/pages/oppgaver.html">Oppgaver</a>
-        <a href="/pages/dashboard.html">Dashboard</a>
-        <a href="/pages/kundeservice-chatbot.html">Kundeservice</a>
-        <a href="/pages/faq/faq.html">FAQ</a>
-        <a href="/pages/blogg.html">Blogg</a>
-        <a href="/pages/kundeservice/kontakt.html">Kontakt</a>
-        <a href="/pages/logg-inn.html">Logg inn</a>
-      </nav>
-      <button class="hamburger" aria-label="Åpne meny" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="container">
-      <h1 class="hero-title">Velg pakken som passer deg</h1>
-      <p class="hero-subtitle">
-        Fleksible prisplaner for alle – fra privatpersoner til store organisasjoner. 
-        Alle planer inkluderer GDPR-sikkerhet og norsk support.
-      </p>
-    </div>
-  </section>
-
-  <!-- Pricing Cards -->
-  <section style="padding: 4rem 0; background: white;">
-    <div class="container">
-      <div class="pricing-grid">
+<body>
+    <div id="header-container"></div>
+    
+    <main class="page-content">
+        <section class="page-hero" style="background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);">
+            <div class="container">
+                <h1 class="page-title fade-in">Transparente priser</h1>
+                <p class="page-subtitle fade-in-delay-1">Velg pakken som passer din bedrift best</p>
+                <img src="/assets/img/pricing-plans.svg" alt="Prispakker" style="max-width: 350px; margin: 2rem auto; display: block;">
+            </div>
+        </section>
         
-        <!-- 1. Gratis -->
-        <div class="pricing-card">
-          <div class="pricing-tier">GRATIS</div>
-          <div class="pricing-price">0 <span class="currency">kr/mnd</span></div>
-          <p class="pricing-description">
-            Perfekt for å teste plattformen og komme i gang med læring.
-          </p>
-          <ul class="pricing-features">
-            <li>Grunnleggende læringsspill</li>
-            <li>5 daglige oppgaver</li>
-            <li>XP og nivåsystem</li>
-            <li>Chatbot-støtte</li>
-            <li>1 merkeutmerkelse per måned</li>
-          </ul>
-          <a href="/pages/logg-inn.html" class="pricing-cta">Kom i gang gratis</a>
-        </div>
-
-        <!-- 2. Starter -->
-        <div class="pricing-card">
-          <div class="pricing-tier">STARTER</div>
-          <div class="pricing-price">99 <span class="currency">kr/mnd</span></div>
-          <p class="pricing-description">
-            For privatpersoner som vil ta læringen til neste nivå.
-          </p>
-          <ul class="pricing-features">
-            <li>Alt i Gratis-planen</li>
-            <li>Ubegrensede daglige oppgaver</li>
-            <li>Alle læringsspill</li>
-            <li>5 merker per måned</li>
-            <li>Detaljert statistikk</li>
-          </ul>
-          <a href="/pages/logg-inn.html" class="pricing-cta">Velg Starter</a>
-        </div>
-
-        <!-- 3. Basic -->
-        <div class="pricing-card">
-          <div class="pricing-tier">BASIC</div>
-          <div class="pricing-price">199 <span class="currency">kr/mnd</span></div>
-          <p class="pricing-description">
-            Mer avanserte funksjoner for seriøse lærende.
-          </p>
-          <ul class="pricing-features">
-            <li>Alt i Starter-planen</li>
-            <li>Personlig læringsplan</li>
-            <li>Ukentlige rapporter</li>
-            <li>Ubegrensede merker</li>
-            <li>Prioritert chatbot-støtte</li>
-            <li>Eksporter data (CSV)</li>
-          </ul>
-          <a href="/pages/logg-inn.html" class="pricing-cta">Velg Basic</a>
-        </div>
-
-        <!-- 4. Standard (Featured) -->
-        <div class="pricing-card featured">
-          <div class="pricing-badge">MEST POPULÆR</div>
-          <div class="pricing-tier">STANDARD</div>
-          <div class="pricing-price">399 <span class="currency">kr/mnd</span></div>
-          <p class="pricing-description">
-            Den ultimate pakken for enkeltbrukere. Best valuta for pengene.
-          </p>
-          <ul class="pricing-features">
-            <li>Alt i Basic-planen</li>
-            <li>AI-personaliserte anbefalinger</li>
-            <li>Månedlige 1-til-1 veiledninger</li>
-            <li>Spesialtilpassede oppgaver</li>
-            <li>Premium merker og belønninger</li>
-            <li>API-tilgang (grunnleggende)</li>
-          </ul>
-          <a href="/pages/logg-inn.html" class="pricing-cta">Velg Standard</a>
-        </div>
-
-        <!-- 5. Pro -->
-        <div class="pricing-card">
-          <div class="pricing-tier">PRO</div>
-          <div class="pricing-price">699 <span class="currency">kr/mnd</span></div>
-          <p class="pricing-description">
-            For profesjonelle brukere og små team (opptil 3 brukere).
-          </p>
-          <ul class="pricing-features">
-            <li>Alt i Standard-planen</li>
-            <li>Opptil 3 brukere inkludert</li>
-            <li>Team-statistikk og oversikt</li>
-            <li>Dedikert kundestøtte</li>
-            <li>Full API-tilgang</li>
-            <li>Egendefinerte integrasjoner</li>
-          </ul>
-          <a href="/pages/logg-inn.html" class="pricing-cta">Velg Pro</a>
-        </div>
-
-        <!-- 6. Team -->
-        <div class="pricing-card">
-          <div class="pricing-tier">TEAM</div>
-          <div class="pricing-price">1 999 <span class="currency">kr/mnd</span></div>
-          <p class="pricing-description">
-            For små bedrifter og team (5-15 brukere).
-          </p>
-          <ul class="pricing-features">
-            <li>Alt i Pro-planen</li>
-            <li>Opptil 15 brukere</li>
-            <li>Admin-panel for teamledere</li>
-            <li>Avanserte rapporter</li>
-            <li>Onboarding-støtte</li>
-            <li>Månedlige webinarer</li>
-          </ul>
-          <a href="/pages/kundeservice/kontakt.html" class="pricing-cta">Kontakt oss</a>
-        </div>
-
-        <!-- 7. Bedrift -->
-        <div class="pricing-card">
-          <div class="pricing-tier">BEDRIFT</div>
-          <div class="pricing-price">4 999 <span class="currency">kr/mnd</span></div>
-          <p class="pricing-description">
-            For mellomstore bedrifter (15-50 brukere).
-          </p>
-          <ul class="pricing-features">
-            <li>Alt i Team-planen</li>
-            <li>Opptil 50 brukere</li>
-            <li>Dedikert kontoansvarlig</li>
-            <li>Tilpassede læringsprogrammer</li>
-            <li>SSO (Single Sign-On)</li>
-            <li>SLA-garanti (99,9% oppetid)</li>
-          </ul>
-          <a href="/pages/kundeservice/kontakt.html" class="pricing-cta">Kontakt oss</a>
-        </div>
-
-        <!-- 8. Bedrift Premium -->
-        <div class="pricing-card">
-          <div class="pricing-tier">BEDRIFT PREMIUM</div>
-          <div class="pricing-price">9 999 <span class="currency">kr/mnd</span></div>
-          <p class="pricing-description">
-            For større bedrifter (50-150 brukere).
-          </p>
-          <ul class="pricing-features">
-            <li>Alt i Bedrift-planen</li>
-            <li>Opptil 150 brukere</li>
-            <li>White-label muligheter</li>
-            <li>Avansert API-integrasjon</li>
-            <li>Prioritert utviklingsstøtte</li>
-            <li>Kvartalsvis forretningsgjennomgang</li>
-          </ul>
-          <a href="/pages/kundeservice/kontakt.html" class="pricing-cta">Kontakt oss</a>
-        </div>
-
-        <!-- 9. Skole/Organisasjon -->
-        <div class="pricing-card">
-          <div class="pricing-tier">SKOLE / ORGANISASJON</div>
-          <div class="pricing-price">14 999 <span class="currency">kr/mnd</span></div>
-          <p class="pricing-description">
-            Spesialtilpasset for skoler og organisasjoner (150-500 brukere).
-          </p>
-          <ul class="pricing-features">
-            <li>Alt i Bedrift Premium-planen</li>
-            <li>Opptil 500 brukere</li>
-            <li>Klasserom-/avdelingsadministrasjon</li>
-            <li>Pedagogiske verktøy for lærere</li>
-            <li>GDPR-utvidet støtte for barn</li>
-            <li>Opplæring for ansatte</li>
-          </ul>
-          <a href="/pages/kundeservice/kontakt.html" class="pricing-cta">Kontakt oss</a>
-        </div>
-
-        <!-- 10. Enterprise -->
-        <div class="pricing-card">
-          <div class="pricing-tier">ENTERPRISE</div>
-          <div class="pricing-price" style="font-size: 2rem;">Tilpasset pris</div>
-          <p class="pricing-description">
-            For store organisasjoner med 500+ brukere. Alt tilpasset dine behov.
-          </p>
-          <ul class="pricing-features">
-            <li>Alt i Skole/Organisasjon-planen</li>
-            <li>Ubegrenset antall brukere</li>
-            <li>Fullt tilpasset løsning</li>
-            <li>Dedikert teknisk team</li>
-            <li>On-premise hosting-mulighet</li>
-            <li>24/7 premium support</li>
-            <li>Juridisk og compliance-støtte</li>
-          </ul>
-          <a href="/pages/kundeservice/kontakt.html" class="pricing-cta">Kontakt oss</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section style="padding: 4rem 0; background: linear-gradient(180deg, #fef3c7 0%, #ffffff 100%);">
-    <div class="container">
-      <div style="max-width: 800px; margin: 0 auto;">
-        <h2 style="font-size: 2.5rem; font-weight: 800; margin: 0 0 3rem; color: #0f172a; text-align: center;">
-          Ofte stilte spørsmål
-        </h2>
-
-        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-          <div style="background: white; padding: 2rem; border-radius: 16px; border: 2px solid #fde68a;">
-            <h3 style="font-size: 1.3rem; font-weight: 700; margin: 0 0 1rem; color: #0f172a;">
-              Kan jeg bytte plan senere?
-            </h3>
-            <p style="color: #64748b; line-height: 1.7; margin: 0;">
-              Ja! Du kan oppgradere eller nedgradere planen din når som helst. Endringer trer i kraft ved neste faktureringsdato.
-            </p>
-          </div>
-
-          <div style="background: white; padding: 2rem; border-radius: 16px; border: 2px solid #fde68a;">
-            <h3 style="font-size: 1.3rem; font-weight: 700; margin: 0 0 1rem; color: #0f172a;">
-              Hva skjer hvis jeg kansellerer?
-            </h3>
-            <p style="color: #64748b; line-height: 1.7; margin: 0;">
-              Du kan kansellere når som helst. Abonnementet ditt fortsetter til slutten av perioden du har betalt for. Ingen bindingstid.
-            </p>
-          </div>
-
-          <div style="background: white; padding: 2rem; border-radius: 16px; border: 2px solid #fde68a;">
-            <h3 style="font-size: 1.3rem; font-weight: 700; margin: 0 0 1rem; color: #0f172a;">
-              Hvilke betalingsmåter godtar dere?
-            </h3>
-            <p style="color: #64748b; line-height: 1.7; margin: 0;">
-              Vi godtar alle større kredittkort, Vipps og fakturavalg for bedrifter. Alle betalinger er sikre og krypterte.
-            </p>
-          </div>
-
-          <div style="background: white; padding: 2rem; border-radius: 16px; border: 2px solid #fde68a;">
-            <h3 style="font-size: 1.3rem; font-weight: 700; margin: 0 0 1rem; color: #0f172a;">
-              Er det mulig med prøveperiode?
-            </h3>
-            <p style="color: #64748b; line-height: 1.7; margin: 0;">
-              Ja! Gratis-planen er tilgjengelig uten tidsbegrensning. Betalte planer kan prøves gratis i 14 dager (kontakt oss).
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section style="padding: 5rem 0; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
-    <div class="container">
-      <div style="max-width: 700px; margin: 0 auto; text-align: center; color: white;">
-        <h2 style="font-size: 2.5rem; font-weight: 800; margin: 0 0 1.5rem;">
-          Usikker på hvilken plan som passer?
-        </h2>
-        <p style="font-size: 1.2rem; line-height: 1.7; margin: 0 0 2.5rem; opacity: 0.95;">
-          Vi hjelper deg gjerne! Kontakt oss for en uforpliktende samtale om dine behov.
-        </p>
-        <a href="/pages/kundeservice/kontakt.html" 
-           style="display: inline-block; background: white; color: #d97706; 
-                  padding: 1rem 2.5rem; border-radius: 12px; font-weight: 700; 
-                  text-decoration: none; font-size: 1.1rem; 
-                  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);">
-          Kontakt oss →
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <nav class="footer-nav" aria-label="Bunntekst navigasjon">
-        <a href="/pages/hovedside/hjem.html">Hjem</a>
-        <a href="/pages/informasjon/om-oss.html">Om oss</a>
-        <a href="/pages/priser/priser.html">Priser</a>
-        <a href="/pages/faq/faq.html">FAQ</a>
-        <a href="/pages/blogg.html">Blogg</a>
-        <a href="/pages/kundeservice/kontakt.html">Kontakt</a>
-        <a href="/pages/kundeservice-chatbot.html">Kundeservice</a>
-        <a href="/pages/personvern-sikkerhet.html">Personvern & sikkerhet</a>
-        <a href="/pages/tjenestevilkar.html">Tjenestevilkår</a>
-      </nav>
-      <div class="footer-legal">
-        <small>
-          <img src="/assets/logo.svg" alt="Senkmer" width="24" height="24" style="vertical-align:middle"> 
-          © <span id="year">2025</span> Senkmer • 
-          <a href="/pages/personvern-sikkerhet.html">Personvern</a> • 
-          <a href="/pages/faq.html#vilkar">Vilkår</a>
-        </small>
-      </div>
-    </div>
-  </footer>
-  <script src="/js/main.js"></script>
+        <!-- Pricing Toggle -->
+        <section style="padding: 2rem 0; background: white;">
+            <div class="container" style="text-align: center;">
+                <div class="pricing-toggle">
+                    <button class="toggle-btn active" data-period="monthly">Månedlig</button>
+                    <button class="toggle-btn" data-period="yearly">Årlig <span class="save-badge">Spar 20%</span></button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Main Pricing Plans -->
+        <section class="pricing-section">
+            <div class="container">
+                <h2 class="section-title">Abonnementspakker</h2>
+                
+                <div class="pricing-grid">
+                    <!-- Starter -->
+                    <div class="pricing-card">
+                        <div class="plan-header">
+                            <h3 class="plan-name">Starter</h3>
+                            <p class="plan-description">Perfekt for oppstart og småbedrifter</p>
+                        </div>
+                        <div class="plan-price">
+                            <span class="price monthly">2 990 kr</span>
+                            <span class="price yearly hidden">2 392 kr</span>
+                            <span class="price-period">/mnd</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>✅ Enkel nettside (5 sider)</li>
+                            <li>✅ Mobilvennlig design</li>
+                            <li>✅ Gratis domene første år</li>
+                            <li>✅ SSL-sertifikat (HTTPS)</li>
+                            <li>✅ Kontaktskjema</li>
+                            <li>✅ E-postsupport</li>
+                            <li>✅ Månedlig statistikk</li>
+                        </ul>
+                        <a href="/pages/kontakt.html" class="btn btn-primary btn-block">Velg Starter</a>
+                    </div>
+                    
+                    <!-- Profesjonell -->
+                    <div class="pricing-card featured">
+                        <div class="popular-badge">⭐ Mest populær</div>
+                        <div class="plan-header">
+                            <h3 class="plan-name">Profesjonell</h3>
+                            <p class="plan-description">For voksende bedrifter</p>
+                        </div>
+                        <div class="plan-price">
+                            <span class="price monthly">4 990 kr</span>
+                            <span class="price yearly hidden">3 992 kr</span>
+                            <span class="price-period">/mnd</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>✅ Alt i Starter</li>
+                            <li>✅ Ubegrenset sider</li>
+                            <li>✅ Avansert SEO-optimalisering</li>
+                            <li>✅ Blogg-funksjonalitet</li>
+                            <li>✅ Sosiale medier integrasjon</li>
+                            <li>✅ Grunnleggende e-postmarkedsføring</li>
+                            <li>✅ Prioritert support</li>
+                            <li>✅ Ukentlig analyse-rapporter</li>
+                        </ul>
+                        <a href="/pages/kontakt.html" class="btn btn-primary btn-block btn-large">Velg Profesjonell</a>
+                    </div>
+                    
+                    <!-- E-handel -->
+                    <div class="pricing-card">
+                        <div class="plan-header">
+                            <h3 class="plan-name">E-handel</h3>
+                            <p class="plan-description">Komplett nettbutikk</p>
+                        </div>
+                        <div class="plan-price">
+                            <span class="price monthly">8 990 kr</span>
+                            <span class="price yearly hidden">7 192 kr</span>
+                            <span class="price-period">/mnd</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>✅ Alt i Profesjonell</li>
+                            <li>✅ Ubegrenset produkter</li>
+                            <li>✅ Betalingsintegrasjon (Vipps, kort)</li>
+                            <li>✅ Ordre-håndtering</li>
+                            <li>✅ Lagerstyring</li>
+                            <li>✅ Kundeadministrasjon</li>
+                            <li>✅ Avansert analyse</li>
+                            <li>✅ E-postmarkedsføring (1000 kontakter)</li>
+                            <li>✅ 24/7 prioritert support</li>
+                        </ul>
+                        <a href="/pages/kontakt.html" class="btn btn-primary btn-block">Velg E-handel</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Enterprise Plans -->
+        <section class="enterprise-section" style="background: var(--color-bg-alt); padding: 4rem 0;">
+            <div class="container">
+                <h2 class="section-title">Premium-pakker</h2>
+                
+                <div class="pricing-grid">
+                    <!-- Premium -->
+                    <div class="pricing-card premium">
+                        <div class="plan-header">
+                            <h3 class="plan-name">Premium</h3>
+                            <p class="plan-description">For etablerte bedrifter</p>
+                        </div>
+                        <div class="plan-price">
+                            <span class="price monthly">12 990 kr</span>
+                            <span class="price yearly hidden">10 392 kr</span>
+                            <span class="price-period">/mnd</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>✅ Alt i E-handel</li>
+                            <li>✅ Mobilapp (iOS eller Android)</li>
+                            <li>✅ AI Chatbot</li>
+                            <li>✅ Flerspråklig støtte (3 språk)</li>
+                            <li>✅ E-postmarkedsføring (5000 kontakter)</li>
+                            <li>✅ Avansert integrasjoner</li>
+                            <li>✅ Dedikert kundekonsulent</li>
+                            <li>✅ Månedlig strategimøte</li>
+                        </ul>
+                        <a href="/pages/kontakt.html" class="btn btn-primary btn-block">Velg Premium</a>
+                    </div>
+                    
+                    <!-- Enterprise -->
+                    <div class="pricing-card enterprise">
+                        <div class="popular-badge" style="background: linear-gradient(135deg, #F59E0B, #D97706);">👑 Enterprise</div>
+                        <div class="plan-header">
+                            <h3 class="plan-name">Enterprise</h3>
+                            <p class="plan-description">Skreddersydd for store organisasjoner</p>
+                        </div>
+                        <div class="plan-price">
+                            <span class="price">Fra 24 990 kr</span>
+                            <span class="price-period">/mnd</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>✅ Alt i Premium</li>
+                            <li>✅ Mobilapp (iOS + Android)</li>
+                            <li>✅ Skreddersydde funksjoner</li>
+                            <li>✅ Ubegrenset e-postmarkedsføring</li>
+                            <li>✅ White-label løsning</li>
+                            <li>✅ API-tilgang</li>
+                            <li>✅ Dedikert supportteam 24/7</li>
+                            <li>✅ SLA-garantier</li>
+                            <li>✅ Ukentlige rapporter og møter</li>
+                        </ul>
+                        <a href="/pages/kontakt.html" class="btn btn-primary btn-block btn-large">Kontakt oss</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- One-time Services -->
+        <section class="onetime-section" style="padding: 4rem 0;">
+            <div class="container">
+                <h2 class="section-title">Engangstjenester</h2>
+                <p style="text-align: center; max-width: 700px; margin: 0 auto 3rem; color: var(--color-text-secondary);">
+                    Foretrekker du en engangsinvestering? Vi tilbyr også prosjektbaserte løsninger.
+                </p>
+                
+                <div class="onetime-grid">
+                    <div class="onetime-card">
+                        <h3>🌐 Nettside Pakke</h3>
+                        <p>Profesjonell nettside med moderne design</p>
+                        <div class="onetime-price">Fra 14 990 kr</div>
+                        <ul class="onetime-features">
+                            <li>5-10 sider</li>
+                            <li>Responsivt design</li>
+                            <li>SEO-optimalisert</li>
+                            <li>6 mnd gratis hosting</li>
+                        </ul>
+                        <a href="/pages/kontakt.html" class="btn btn-secondary">Bestill</a>
+                    </div>
+                    
+                    <div class="onetime-card">
+                        <h3>🛍️ Nettbutikk Pakke</h3>
+                        <p>Komplett e-handelsløsning</p>
+                        <div class="onetime-price">Fra 39 990 kr</div>
+                        <ul class="onetime-features">
+                            <li>Ubegrenset produkter</li>
+                            <li>Betalingsløsning</li>
+                            <li>Ordre-system</li>
+                            <li>6 mnd gratis hosting</li>
+                        </ul>
+                        <a href="/pages/kontakt.html" class="btn btn-secondary">Bestill</a>
+                    </div>
+                    
+                    <div class="onetime-card">
+                        <h3>📱 Mobilapp Pakke</h3>
+                        <p>Native app for iOS eller Android</p>
+                        <div class="onetime-price">Fra 79 990 kr</div>
+                        <ul class="onetime-features">
+                            <li>iOS eller Android</li>
+                            <li>Moderne design</li>
+                            <li>Push-varsler</li>
+                            <li>App Store publisering</li>
+                        </ul>
+                        <a href="/pages/kontakt.html" class="btn btn-secondary">Bestill</a>
+                    </div>
+                    
+                    <div class="onetime-card">
+                        <h3>🚀 Full Pakke</h3>
+                        <p>Alt-i-ett løsning</p>
+                        <div class="onetime-price">Fra 149 990 kr</div>
+                        <ul class="onetime-features">
+                            <li>Nettside + Nettbutikk</li>
+                            <li>Mobilapp (iOS + Android)</li>
+                            <li>Integrasjoner</li>
+                            <li>1 år gratis hosting</li>
+                        </ul>
+                        <a href="/pages/kontakt.html" class="btn btn-secondary">Bestill</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Add-ons Pricing -->
+        <section class="addons-pricing" style="background: var(--color-bg-alt); padding: 4rem 0;">
+            <div class="container">
+                <h2 class="section-title">Tilleggsmoduler</h2>
+                
+                <div class="addon-pricing-grid">
+                    <div class="addon-price-card">
+                        <span class="addon-icon">🤖</span>
+                        <h4>AI Chatbot</h4>
+                        <div class="addon-amount">1 490 kr/mnd</div>
+                    </div>
+                    
+                    <div class="addon-price-card">
+                        <span class="addon-icon">📊</span>
+                        <h4>Avansert Analyse</h4>
+                        <div class="addon-amount">990 kr/mnd</div>
+                    </div>
+                    
+                    <div class="addon-price-card">
+                        <span class="addon-icon">📧</span>
+                        <h4>E-postmarkedsføring</h4>
+                        <div class="addon-amount">Fra 790 kr/mnd</div>
+                    </div>
+                    
+                    <div class="addon-price-card">
+                        <span class="addon-icon">🔒</span>
+                        <h4>Ekstra Sikkerhet</h4>
+                        <div class="addon-amount">590 kr/mnd</div>
+                    </div>
+                    
+                    <div class="addon-price-card">
+                        <span class="addon-icon">🌍</span>
+                        <h4>Flerspråklig</h4>
+                        <div class="addon-amount">1 290 kr/mnd</div>
+                    </div>
+                    
+                    <div class="addon-price-card">
+                        <span class="addon-icon">⚡</span>
+                        <h4>Hastighetsboost</h4>
+                        <div class="addon-amount">690 kr/mnd</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- FAQ Mini -->
+        <section class="pricing-faq" style="padding: 4rem 0;">
+            <div class="container" style="max-width: 800px;">
+                <h2 class="section-title">Spørsmål om priser?</h2>
+                
+                <div class="mini-faq">
+                    <div class="faq-item">
+                        <h4>Hva er inkludert i alle pakker?</h4>
+                        <p>Alle pakker inkluderer hosting, SSL-sertifikat, teknisk support, regelmessige oppdateringer og sikkerhetskopier.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Kan jeg bytte pakke senere?</h4>
+                        <p>Ja, du kan oppgradere eller nedgradere når som helst. Endringer trer i kraft fra neste faktureringsperiode.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Er det noen bindingstid?</h4>
+                        <p>Nei, alle våre abonnementer er uten bindingstid. Du kan si opp når som helst med 7 dagers varsel.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Tilbyr dere rabatt for årlig betaling?</h4>
+                        <p>Ja! Ved årlig betaling får du 20% rabatt sammenlignet med månedlig betaling.</p>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="/pages/faq.html" class="btn btn-secondary">Se alle spørsmål</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Klar til å komme i gang?</h2>
+                    <p>Start din 14-dagers gratis prøveperiode i dag</p>
+                    <a href="/pages/kontakt.html" class="btn btn-primary btn-large">Kontakt oss nå</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <div id="footer-container"></div>
+    <div id="chatbot-container"></div>
+    
+    <script src="/assets/js/components.js"></script>
+    <script src="/assets/js/main.js"></script>
+    
+    <style>
+        .pricing-toggle {
+            display: inline-flex;
+            background: var(--color-bg-alt);
+            padding: 0.5rem;
+            border-radius: 3rem;
+            gap: 0.5rem;
+        }
+        
+        .toggle-btn {
+            padding: 0.75rem 2rem;
+            border: none;
+            background: transparent;
+            border-radius: 2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--color-text);
+        }
+        
+        .toggle-btn.active {
+            background: white;
+            color: var(--color-primary);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .save-badge {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            margin-left: 0.5rem;
+        }
+        
+        .pricing-section, .enterprise-section {
+            padding: 4rem 0;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s ease;
+            position: relative;
+            border: 2px solid transparent;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-2xl);
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--color-primary);
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+        
+        .pricing-card.premium {
+            border-color: #8B5CF6;
+        }
+        
+        .pricing-card.enterprise {
+            border-color: #F59E0B;
+            background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 50%, white 50%);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 700;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .plan-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .plan-name {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-text);
+        }
+        
+        .plan-description {
+            color: var(--color-text-secondary);
+            margin: 0;
+        }
+        
+        .plan-price {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--color-primary);
+            display: inline-block;
+        }
+        
+        .price.hidden {
+            display: none;
+        }
+        
+        .price-period {
+            font-size: 1.125rem;
+            color: var(--color-text-secondary);
+        }
+        
+        .plan-features {
+            list-style: none;
+            margin: 2rem 0;
+            min-height: 300px;
+        }
+        
+        .plan-features li {
+            padding: 0.75rem 0;
+            color: var(--color-text);
+            border-bottom: 1px solid var(--color-border);
+        }
+        
+        .plan-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .onetime-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .onetime-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+        }
+        
+        .onetime-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .onetime-price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--color-primary);
+            margin: 1.5rem 0;
+        }
+        
+        .onetime-features {
+            list-style: none;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+        
+        .onetime-features li {
+            padding: 0.5rem 0;
+            color: var(--color-text-secondary);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .onetime-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: bold;
+        }
+        
+        .addon-pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .addon-price-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .addon-price-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .addon-icon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+        
+        .addon-amount {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-top: 1rem;
+        }
+        
+        .mini-faq {
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .mini-faq .faq-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .mini-faq .faq-item h4 {
+            color: var(--color-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .mini-faq .faq-item p {
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .pricing-card.featured {
+                transform: scale(1);
+            }
+            
+            .pricing-card.featured:hover {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+    
+    <script>
+        // Pricing toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleBtns = document.querySelectorAll('.toggle-btn');
+            const monthlyPrices = document.querySelectorAll('.price.monthly');
+            const yearlyPrices = document.querySelectorAll('.price.yearly');
+            
+            toggleBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const period = this.getAttribute('data-period');
+                    
+                    // Update active state
+                    toggleBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Toggle prices
+                    if (period === 'yearly') {
+                        monthlyPrices.forEach(p => p.classList.add('hidden'));
+                        yearlyPrices.forEach(p => p.classList.remove('hidden'));
+                    } else {
+                        monthlyPrices.forEach(p => p.classList.remove('hidden'));
+                        yearlyPrices.forEach(p => p.classList.add('hidden'));
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

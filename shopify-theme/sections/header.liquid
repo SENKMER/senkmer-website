@@ -1,0 +1,41 @@
+<header class="site-header" id="header">
+  <div class="header-container">
+    <a href="/" class="logo">
+      {% if section.settings.logo %}
+        <img src="{{ section.settings.logo | img_url: '150x' }}" alt="{{ shop.name }}">
+      {% else %}
+        <img src="{{ 'logo.svg' | asset_url }}" alt="{{ shop.name }}">
+      {% endif %}
+    </a>
+    
+    <nav class="main-nav" id="main-nav">
+      <ul>
+        <li><a href="/">Hjem</a></li>
+        <li><a href="/pages/om-oss">Om oss</a></li>
+        <li><a href="/pages/tjenester">Tjenester</a></li>
+        <li><a href="/pages/priser">Priser</a></li>
+        <li><a href="/pages/butikk">Butikk</a></li>
+        <li><a href="/pages/kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    }
+  ]
+}
+{% endschema %}

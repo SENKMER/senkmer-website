@@ -1,0 +1,109 @@
+<footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      <div class="footer-column">
+        <img src="{{ 'logo.svg' | asset_url }}" alt="{{ shop.name }}" class="footer-logo">
+        <p class="footer-description">
+          {{ section.settings.footer_description }}
+        </p>
+        <div class="social-links">
+          {% if section.settings.facebook_url != blank %}
+            <a href="{{ section.settings.facebook_url }}" aria-label="Facebook" target="_blank">
+              <i class="icon-facebook"></i>
+            </a>
+          {% endif %}
+          {% if section.settings.instagram_url != blank %}
+            <a href="{{ section.settings.instagram_url }}" aria-label="Instagram" target="_blank">
+              <i class="icon-instagram"></i>
+            </a>
+          {% endif %}
+          {% if section.settings.linkedin_url != blank %}
+            <a href="{{ section.settings.linkedin_url }}" aria-label="LinkedIn" target="_blank">
+              <i class="icon-linkedin"></i>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Snarveier</h3>
+        <ul>
+          <li><a href="/">Hjem</a></li>
+          <li><a href="/pages/om-oss">Om oss</a></li>
+          <li><a href="/pages/tjenester">Tjenester</a></li>
+          <li><a href="/pages/butikk">Butikk</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="/pages/kontakt">Kontakt oss</a></li>
+          <li><a href="/pages/faq">FAQ</a></li>
+          <li><a href="/pages/personvern-sikkerhet">Personvern</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Kontakt</h3>
+        <ul class="contact-info">
+          <li><i class="icon-email"></i> {{ section.settings.contact_email }}</li>
+          <li><i class="icon-phone"></i> {{ section.settings.contact_phone }}</li>
+          <li><i class="icon-location"></i> {{ section.settings.contact_location }}</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. Alle rettigheter reservert.</p>
+      <p class="footer-credits">Utviklet med ❤️ i Norge</p>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "footer_description",
+      "label": "Footer Beskrivelse",
+      "default": "Din partner for digitale løsninger og innovasjon."
+    },
+    {
+      "type": "text",
+      "id": "contact_email",
+      "label": "E-post",
+      "default": "contact@senkmer.no"
+    },
+    {
+      "type": "text",
+      "id": "contact_phone",
+      "label": "Telefon",
+      "default": "+47 123 45 678"
+    },
+    {
+      "type": "text",
+      "id": "contact_location",
+      "label": "Lokasjon",
+      "default": "Oslo, Norge"
+    },
+    {
+      "type": "url",
+      "id": "facebook_url",
+      "label": "Facebook URL"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "url",
+      "id": "linkedin_url",
+      "label": "LinkedIn URL"
+    }
+  ]
+}
+{% endschema %}

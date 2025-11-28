@@ -1,0 +1,32 @@
+<svg width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EC4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#BE185D;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="600" fill="#fdf2f8"/>
+  
+  <!-- Shopping bag -->
+  <path d="M 200 250 L 200 200 Q 200 150 250 150 L 350 150 Q 400 150 400 200 L 400 250" 
+        fill="none" stroke="url(#shopGrad)" stroke-width="6" stroke-linecap="round"/>
+  <rect x="180" y="250" width="240" height="220" rx="15" fill="white" stroke="url(#shopGrad)" stroke-width="4"/>
+  
+  <!-- Items in bag -->
+  <rect x="220" y="290" width="60" height="60" rx="8" fill="url(#shopGrad)" opacity="0.2"/>
+  <rect x="220" y="295" width="60" height="8" rx="4" fill="url(#shopGrad)" opacity="0.4"/>
+  <rect x="220" y="310" width="45" height="8" rx="4" fill="url(#shopGrad)" opacity="0.4"/>
+  
+  <rect x="300" y="290" width="60" height="60" rx="8" fill="#10B981" opacity="0.2"/>
+  <circle cx="330" cy="320" r="15" fill="#10B981" opacity="0.4"/>
+  
+  <rect x="220" y="370" width="140" height="60" rx="8" fill="#F59E0B" opacity="0.2"/>
+  <rect x="230" y="385" width="120" height="8" rx="4" fill="#F59E0B" opacity="0.4"/>
+  <rect x="230" y="400" width="90" height="8" rx="4" fill="#F59E0B" opacity="0.4"/>
+  
+  <!-- Price tag -->
+  <circle cx="380" cy="300" r="30" fill="url(#shopGrad)"/>
+  <text x="380" y="310" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" fill="white">kr</text>
+</svg>
