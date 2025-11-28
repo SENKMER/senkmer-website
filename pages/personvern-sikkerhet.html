@@ -3,33 +3,140 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Personvern & sikkerhet – Senkmer</title>
+  <title>Personvern & sikkerhet – Senkmer AS</title>
+  <meta name="description" content="Senkmer AS tar personvern og sikkerhet på alvor. Vi er GDPR-samsvarende og bruker moderne sikkerhetstiltak for å beskytte dine data.">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="/css/theme.css" />
-  <link rel="stylesheet" href="/styles.css" />
   <script defer src="/js/animations.js"></script>
 </head>
 <body>
   <div id="header-placeholder"></div>
-  <main class="container">
-    <section>
-      <h1>Personvern & sikkerhet</h1>
-      <p>Vi tar ditt personvern og din sikkerhet på alvor. Denne siden forklarer hvordan vi behandler data og hvilke tiltak vi bruker.</p>
-      <h2>Data</h2>
-      <ul>
-        <li>Brukerkonto: e-post, passord (bcrypt-hash), visningsnavn</li>
-        <li>Progresjon: XP, streak, nivåer</li>
-        <li>Oppgaver og badges</li>
+  <main class="container section">
+    <h1>Personvern & sikkerhet</h1>
+    <p class="lead">Senkmer AS tar ditt personvern og din sikkerhet på alvor. Denne siden forklarer hvordan vi samler inn, behandler og beskytter dine personopplysninger i samsvar med GDPR (General Data Protection Regulation) og norsk lov.</p>
+
+    <section class="card" style="margin:2rem 0; padding:2rem">
+      <h2>1. Dataansvarlig</h2>
+      <p><strong>Bedriftsnavn:</strong> Senkmer AS</p>
+      <p><strong>Org.nr:</strong> 000 000 000 (placeholder)</p>
+      <p><strong>E-post:</strong> <a href="mailto:contact@senkmer.no">contact@senkmer.no</a></p>
+      <p><strong>Personvernansvarlig:</strong> <a href="mailto:privacy@senkmer.no">privacy@senkmer.no</a></p>
+    </section>
+
+    <section class="card" style="margin:2rem 0; padding:2rem">
+      <h2>2. Hvilke data samler vi inn?</h2>
+      <p>Når du bruker Senkmer, samler vi inn følgende typer personopplysninger:</p>
+      <ul style="line-height:1.8">
+        <li><strong>Brukerkonto:</strong> E-postadresse, passord (kryptert med bcrypt), visningsnavn (valgfritt).</li>
+        <li><strong>Progresjon:</strong> XP (erfaringspoeng), streak (daglige pålogginger), nivå, badges tjent.</li>
+        <li><strong>Oppgaver og aktivitet:</strong> Fullførte oppgaver, quiz-resultater, interaksjoner med plattformen.</li>
+        <li><strong>Teknisk informasjon:</strong> IP-adresse, nettlesertype, enhet, cookies for autentisering (JWT).</li>
+        <li><strong>Kommunikasjon:</strong> Meldinger sendt via kontaktskjema, chatbot-henvendelser, e-post til support.</li>
       </ul>
-      <h2>Sikkerhetstiltak</h2>
-      <ul>
-        <li>JWT for autentisering</li>
-        <li>CSRF-beskyttelse (double-submit token)</li>
-        <li>Rate-limits per rute</li>
-        <li>Helmet for sikre HTTP-headere</li>
-        <li>Streng origin/referer-kontroll</li>
+    </section>
+
+    <section class="card" style="margin:2rem 0; padding:2rem">
+      <h2>3. Hvordan bruker vi dine data?</h2>
+      <p>Vi bruker personopplysninger til følgende formål:</p>
+      <ul style="line-height:1.8">
+        <li>Autentisering og administrasjon av brukerkonto.</li>
+        <li>Levering av tjenester (læringsmoduler, spill, oppgaver, dashboard).</li>
+        <li>Måling av fremgang (XP, nivåer, badges, streaks).</li>
+        <li>Kundeservice og support (svar på henvendelser via e-post og chatbot).</li>
+        <li>Forbedring av plattformen (analyse av bruksmønstre for bedre brukeropplevelse).</li>
+        <li>Markedsføring (kun hvis du har samtykket til nyhetsbrev).</li>
       </ul>
-      <p>Kontakt oss hvis du har spørsmål: <a href="/pages/kontakt.html">Kontakt</a></p>
+    </section>
+
+    <section class="card" style="margin:2rem 0; padding:2rem">
+      <h2>4. Hvordan beskytter vi dine data?</h2>
+      <p>Senkmer bruker moderne sikkerhetstiltak for å beskytte dine personopplysninger:</p>
+      <ul style="line-height:1.8">
+        <li><strong>Bcrypt-kryptering:</strong> Alle passord krypteres med bcrypt (10 runder) før lagring.</li>
+        <li><strong>JWT-autentisering:</strong> Sikker token-basert autentisering med korte utløpstider (7 dager).</li>
+        <li><strong>CSRF-beskyttelse:</strong> Double-submit token for å forhindre Cross-Site Request Forgery angrep.</li>
+        <li><strong>Rate-limiting:</strong> Strenge rate-limits per rute (20-30 forespørsler per 10 min) for å forhindre misbruk.</li>
+        <li><strong>Helmet.js:</strong> Sikre HTTP-headere for beskyttelse mot XSS, clickjacking og andre angrep.</li>
+        <li><strong>Origin/referer-kontroll:</strong> Kun tillatte domener kan gjøre API-forespørsler.</li>
+        <li><strong>HTTPS:</strong> All kommunikasjon mellom klient og server er kryptert med TLS/SSL.</li>
+        <li><strong>Regelmessige sikkerhetsoppdateringer:</strong> Alle avhengigheter oppdateres regelmessig.</li>
+      </ul>
+    </section>
+
+    <section class="card" style="margin:2rem 0; padding:2rem">
+      <h2>5. Cookies</h2>
+      <p>Senkmer bruker cookies for følgende formål:</p>
+      <ul style="line-height:1.8">
+        <li><strong>Autentisering:</strong> JWT-token lagres i localStorage for å holde deg innlogget.</li>
+        <li><strong>CSRF-beskyttelse:</strong> En CSRF-token lagres i en HttpOnly cookie.</li>
+        <li><strong>Analyse (valgfritt):</strong> Hvis du samtykker, bruker vi Google Analytics for å forbedre plattformen.</li>
+      </ul>
+      <p>Du kan når som helst slette cookies i nettleserens innstillinger. Merk at dette vil logge deg ut.</p>
+    </section>
+
+    <section class="card" style="margin:2rem 0; padding:2rem">
+      <h2>6. Deling av data med tredjeparter</h2>
+      <p>Senkmer deler <strong>ikke</strong> dine personopplysninger med tredjeparter for markedsføringsformål. Vi deler kun data i følgende tilfeller:</p>
+      <ul style="line-height:1.8">
+        <li><strong>Tekniske leverandører:</strong> Hosting (f.eks. AWS, Azure), e-posttjeneste (f.eks. SendGrid), betalingsløsninger (f.eks. Stripe) – kun nødvendig data.</li>
+        <li><strong>Juridiske krav:</strong> Hvis vi er pålagt av lov å dele data med myndigheter.</li>
+      </ul>
+      <p>Alle tredjeparter er GDPR-samsvarende og har undertegnet databehandleravtaler.</p>
+    </section>
+
+    <section class="card" style="margin:2rem 0; padding:2rem">
+      <h2>7. Dine rettigheter (GDPR)</h2>
+      <p>Som bruker av Senkmer har du følgende rettigheter i henhold til GDPR:</p>
+      <ul style="line-height:1.8">
+        <li><strong>Rett til innsyn:</strong> Du kan be om en kopi av alle data vi har om deg.</li>
+        <li><strong>Rett til retting:</strong> Du kan be om å rette unøyaktige eller ufullstendige opplysninger.</li>
+        <li><strong>Rett til sletting:</strong> Du kan be om å få slettet dine personopplysninger (med visse unntak).</li>
+        <li><strong>Rett til dataportabilitet:</strong> Du kan be om å få dine data i et strukturert, maskinlesbart format.</li>
+        <li><strong>Rett til å motsette seg behandling:</strong> Du kan motsette deg visse typer behandling (f.eks. markedsføring).</li>
+        <li><strong>Rett til å trekke tilbake samtykke:</strong> Hvis behandling er basert på samtykke, kan du trekke dette tilbake når som helst.</li>
+      </ul>
+      <p>For å utøve dine rettigheter, kontakt oss på <a href="mailto:privacy@senkmer.no">privacy@senkmer.no</a>. Vi svarer innen 30 dager.</p>
+    </section>
+
+    <section class="card" style="margin:2rem 0; padding:2rem">
+      <h2>8. Hvor lenge lagrer vi data?</h2>
+      <p>Vi lagrer personopplysninger så lenge det er nødvendig for å levere tjenesten eller oppfylle juridiske forpliktelser:</p>
+      <ul style="line-height:1.8">
+        <li><strong>Brukerkonto:</strong> Så lenge kontoen er aktiv. Etter sletting, anonymiseres eller slettes data innen 30 dager.</li>
+        <li><strong>Progresjon og aktivitet:</strong> Lagres så lenge kontoen er aktiv.</li>
+        <li><strong>Kommunikasjon (e-post, chatbot):</strong> Lagres i opptil 2 år for support og juridiske formål.</li>
+        <li><strong>Tekniske logger (IP, nettleser):</strong> Lagres i opptil 90 dager for sikkerhet og feilsøking.</li>
+      </ul>
+    </section>
+
+    <section class="card" style="margin:2rem 0; padding:2rem">
+      <h2>9. Sikkerhetshendelser</h2>
+      <p>I tilfelle et databrudd vil vi:</p>
+      <ul style="line-height:1.8">
+        <li>Varsle Datatilsynet innen 72 timer (i henhold til GDPR).</li>
+        <li>Informere berørte brukere så snart som mulig.</li>
+        <li>Iverksette tiltak for å begrense skadevirkningene.</li>
+      </ul>
+    </section>
+
+    <section class="card" style="margin:2rem 0; padding:2rem">
+      <h2>10. Endringer i personvernerklæringen</h2>
+      <p>Vi kan oppdatere denne personvernerklæringen fra tid til annen. Vesentlige endringer vil bli kommunisert via e-post eller på plattformen. Siste oppdatering: <strong>28. november 2025</strong>.</p>
+    </section>
+
+    <section class="card" style="margin:2rem 0; padding:2rem">
+      <h2>11. Kontakt oss</h2>
+      <p>Har du spørsmål om personvern eller sikkerhet? Kontakt oss:</p>
+      <p><strong>E-post (generell):</strong> <a href="mailto:contact@senkmer.no">contact@senkmer.no</a></p>
+      <p><strong>E-post (personvern):</strong> <a href="mailto:privacy@senkmer.no">privacy@senkmer.no</a></p>
+      <p><strong>E-post (support):</strong> <a href="mailto:support@senkmer.no">support@senkmer.no</a></p>
+      <p>Du kan også sende en melding via vårt <a href="/pages/kontakt.html">kontaktskjema</a>.</p>
+    </section>
+
+    <section style="text-align:center; margin:3rem 0; padding:2rem; background:#fff; border-radius:16px">
+      <h2>Klar til å komme i gang?</h2>
+      <p>Les våre <a href="/pages/tjenestevilkar.html">tjenestevilkår</a> og opprett en konto i dag.</p>
+      <a href="/pages/logg-inn.html" class="btn btn-primary">Registrer deg gratis</a>
     </section>
   </main>
   <div id="footer-placeholder"></div>

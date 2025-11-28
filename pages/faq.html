@@ -2,26 +2,161 @@
 <html lang="no">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>FAQ — Senkmer</title>
+  <title>Ofte stilte spørsmål (FAQ) — Senkmer AS</title>
+  <meta name="description" content="Finn svar på de vanligste spørsmålene om Senkmer – registrering, priser, sikkerhet, XP-system, badges og mer.">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="stylesheet" href="/css/theme.css">
+  <style>
+    details{margin:1rem 0; padding:1rem; background:#fff; border-radius:var(--radius); box-shadow:var(--shadow-sm); cursor:pointer; transition:var(--transition)}
+    details:hover{box-shadow:var(--shadow-md)}
+    summary{font-weight:700; font-size:1.05rem; padding:0.5rem 0; list-style:none}
+    summary::-webkit-details-marker{display:none}
+    summary::before{content:'▸ '; color:var(--primary); margin-right:0.5rem; transition:var(--transition)}
+    details[open] summary::before{content:'▾ '}
+    details p{padding:0.75rem 0 0; color:var(--muted); line-height:1.7}
+  </style>
 </head>
 <body>
-  <header class="header"><div class="container inner"><a class="brand" href="/pages/hjem.html"><img src="/assets/logo.svg" width="36"> <span class="title">Senkmer</span></a></div></header>
+  <div id="header-placeholder"></div>
   <main class="container section">
-    <h1>Vanlige spørsmål (FAQ)</h1>
-    <dl>
-      <dt>Er Senkmer gratis?</dt>
-      <dd>Ja — grunnfunksjonene i denne demoen er gratis.</dd>
-      <dt>Hvordan tjener jeg XP?</dt>
-      <dd>Fullfør moduler, gjennomfør spill og oppnå daglige mål.</dd>
-      <dt>Hvordan oppretter jeg konto?</dt>
-      <dd>Konto-funksjonalitet planlegges. Denne demoen er frontend-only.</dd>
-      <dt>Hvordan rapporterer jeg en feil?</dt>
-      <dd>Bruk kontaktskjemaet eller send epost til support@senkmer.example.</dd>
-    </dl>
+    <h1>Ofte stilte spørsmål (FAQ)</h1>
+    <p class="lead">Finn svar på de vanligste spørsmålene om Senkmer. Hvis du ikke finner det du leter etter, <a href="/pages/kontakt.html">kontakt oss</a>.</p>
+
+    <section style="margin:2rem 0">
+      <h2>Kom i gang</h2>
+      <details>
+        <summary>Hvordan registrerer jeg meg?</summary>
+        <p>Gå til <a href="/pages/logg-inn.html">Logg inn</a>, klikk "Registrer deg", fyll ut e-post og passord, og klikk "Registrer". Du får en bekreftelse og kan logge inn umiddelbart. Ingen e-postbekreftelse er nødvendig for gratis-kontoen.</p>
+      </details>
+      <details>
+        <summary>Er Senkmer gratis?</summary>
+        <p>Ja! Vi tilbyr en gratis plan med grunnleggende funksjoner. For full tilgang til alle moduler, badges og AI-veiledning, kan du oppgradere til en betalt plan. Se <a href="/pages/priser.html">priser</a> for detaljer.</p>
+      </details>
+      <details>
+        <summary>Hvordan logger jeg inn?</summary>
+        <p>Gå til <a href="/pages/logg-inn.html">Logg inn</a>, skriv inn e-post og passord, og klikk "Logg inn". Du blir automatisk omdirigert til ditt <a href="/pages/dashboard.html">Dashboard</a>.</p>
+      </details>
+      <details>
+        <summary>Hvordan endrer jeg passordet mitt?</summary>
+        <p>Logg inn, gå til <a href="/pages/brukerprofil-innstillinger.html">Brukerprofil</a>, og klikk "Endre passord". Du vil få en bekreftelse på e-post.</p>
+      </details>
+    </section>
+
+    <section style="margin:2rem 0">
+      <h2>XP, nivåer og badges</h2>
+      <details>
+        <summary>Hva er XP?</summary>
+        <p>XP (erfaringspoeng) er poeng du tjener ved å fullføre oppgaver, quiz og utfordringer. Hver 100 XP øker nivået ditt med 1. XP vises i ditt <a href="/pages/dashboard.html">Dashboard</a>.</p>
+      </details>
+      <details>
+        <summary>Hvordan tjener jeg XP?</summary>
+        <p>Du tjener XP ved å: (1) Fullføre daglige oppgaver i <a href="/pages/oppgaver.html">Oppgaver</a>, (2) Fullføre quiz i <a href="/pages/spill.html">Spill</a>, (3) Fullføre utfordringer, (4) Holde en daglig streak (pålogging hver dag).</p>
+      </details>
+      <details>
+        <summary>Hva er badges?</summary>
+        <p>Badges er unike belønninger for spesielle prestasjoner, f.eks. "Perfekt quiz" (100% riktig), "7-dagers streak", "Første oppgave fullført", osv. Du kan se dine badges i <a href="/pages/dashboard.html">Dashboard</a>.</p>
+      </details>
+      <details>
+        <summary>Hvordan tjener jeg badges?</summary>
+        <p>Badges tildeles automatisk når du oppnår spesifikke mål. For eksempel: Fullfør en quiz med 100% riktig, logg inn 7 dager på rad, eller fullfør 10 oppgaver.</p>
+      </details>
+      <details>
+        <summary>Hva er en streak?</summary>
+        <p>En streak er antall påfølgende dager du logger inn på Senkmer. Streaks gir bonuspoeng og motiverer til daglig læring. Se din streak i <a href="/pages/dashboard.html">Dashboard</a>.</p>
+      </details>
+    </section>
+
+    <section style="margin:2rem 0">
+      <h2>Priser og betaling</h2>
+      <details>
+        <summary>Hvilke betalingsmetoder aksepterer dere?</summary>
+        <p>Vi aksepterer kredittkort (Visa, Mastercard), Vipps (planlagt) og faktura for bedriftskunder. Betalinger behandles sikkert av Stripe.</p>
+      </details>
+      <details>
+        <summary>Kan jeg kansellere abonnementet mitt?</summary>
+        <p>Ja! Du kan kansellere når som helst uten bindingstid. Logg inn, gå til <a href="/pages/brukerprofil-innstillinger.html">Brukerprofil</a>, og klikk "Kanseller abonnement". Du vil fortsatt ha tilgang til slutten av faktureringsperioden.</p>
+      </details>
+      <details>
+        <summary>Får jeg refundering hvis jeg kansellerer?</summary>
+        <p>Nei, vi refunderer ikke for påbegynt måned. Hvis du kansellerer, vil du ha tilgang til slutten av faktureringsperioden.</p>
+      </details>
+      <details>
+        <summary>Kan jeg bytte plan?</summary>
+        <p>Ja! Du kan oppgradere eller nedgradere når som helst. Oppgraderinger gjelder umiddelbart, mens nedgraderinger gjelder fra neste faktureringsperiode.</p>
+      </details>
+      <details>
+        <summary>Tilbyr dere rabatt for studenter eller bedrifter?</summary>
+        <p>Ja! Vi tilbyr spesialpriser for studenter (20% rabatt), skoler og bedrifter. Kontakt oss på <a href="mailto:sales@senkmer.no">sales@senkmer.no</a> for et tilbud.</p>
+      </details>
+    </section>
+
+    <section style="margin:2rem 0">
+      <h2>Sikkerhet og personvern</h2>
+      <details>
+        <summary>Er Senkmer sikkert?</summary>
+        <p>Ja! Vi bruker moderne sikkerhetstiltak: bcrypt-kryptering for passord, JWT-autentisering, CSRF-beskyttelse, rate-limiting, og HTTPS for all kommunikasjon. Les mer på <a href="/pages/personvern-sikkerhet.html">Personvern & sikkerhet</a>.</p>
+      </details>
+      <details>
+        <summary>Hvordan beskytter dere mine personopplysninger?</summary>
+        <p>Vi er GDPR-samsvarende og lagrer kun nødvendige data (e-post, passord-hash, progresjon). Vi deler aldri data med tredjeparter for markedsføringsformål. Les vår <a href="/pages/personvern-sikkerhet.html">personvernerklæring</a>.</p>
+      </details>
+      <details>
+        <summary>Kan jeg slette kontoen min?</summary>
+        <p>Ja. Kontakt <a href="mailto:support@senkmer.no">support@senkmer.no</a> med forespørsel om sletting. Vi vil bekrefte identitet og slette all data innen 30 dager i samsvar med GDPR.</p>
+      </details>
+      <details>
+        <summary>Bruker dere cookies?</summary>
+        <p>Ja, vi bruker cookies for autentisering (JWT-token i localStorage) og CSRF-beskyttelse. Vi bruker ikke sporings-cookies uten ditt samtykke. Les mer i vår <a href="/pages/personvern-sikkerhet.html">personvernerklæring</a>.</p>
+      </details>
+    </section>
+
+    <section style="margin:2rem 0">
+      <h2>Teknisk support</h2>
+      <details>
+        <summary>Hvordan kontakter jeg support?</summary>
+        <p>Send e-post til <a href="mailto:support@senkmer.no">support@senkmer.no</a>, bruk vårt <a href="/pages/kontakt.html">kontaktskjema</a>, eller chat med vår <a href="/pages/kundeservice-chatbot.html">AI-chatbot</a> for rask hjelp. Åpningstider: Man-Fre 09:00-16:00.</p>
+      </details>
+      <details>
+        <summary>Hvor raskt får jeg svar fra support?</summary>
+        <p>Vi svarer vanligvis innen 24 timer på hverdager. Betalte planer med prioritet support får svar innen 4 timer.</p>
+      </details>
+      <details>
+        <summary>Hvordan rapporterer jeg en feil?</summary>
+        <p>Send e-post til <a href="mailto:support@senkmer.no">support@senkmer.no</a> med beskrivelse av feilen, skjermbilder og nettleserinfo. Vi vil undersøke og svare så snart som mulig.</p>
+      </details>
+      <details>
+        <summary>Fungerer Senkmer på mobil?</summary>
+        <p>Ja! Senkmer er responsiv og fungerer på alle enheter (PC, nettbrett, mobil). Vi jobber også med en dedikert mobilapp (lansering 2026).</p>
+      </details>
+    </section>
+
+    <section style="margin:2rem 0">
+      <h2>Annet</h2>
+      <details>
+        <summary>Har dere en API for utviklere?</summary>
+        <p>Ja! Vi tilbyr en REST API for Pro-planer og oppover. Kontakt oss for dokumentasjon.</p>
+      </details>
+      <details>
+        <summary>Kan jeg bruke Senkmer i klasserommet?</summary>
+        <p>Ja! Vi tilbyr spesialpriser for skoler og lærere. Kontakt <a href="mailto:sales@senkmer.no">sales@senkmer.no</a> for mer informasjon.</p>
+      </details>
+      <details>
+        <summary>Hvordan kan jeg bli partner eller samarbeide med Senkmer?</summary>
+        <p>Vi er alltid åpne for samarbeid! Kontakt oss på <a href="mailto:partnerships@senkmer.no">partnerships@senkmer.no</a> med din idé.</p>
+      </details>
+    </section>
+
+    <section style="text-align:center; margin:3rem 0; padding:2rem; background:#fff; border-radius:16px">
+      <h2>Har du andre spørsmål?</h2>
+      <p>Kontakt oss eller chat med vår AI-assistent for rask hjelp.</p>
+      <div class="cta" style="justify-content:center; margin-top:1.5rem">
+        <a class="btn btn-primary" href="/pages/kontakt.html">Kontakt oss</a>
+        <a class="btn btn-ghost" href="/pages/kundeservice-chatbot.html">Åpne chatbot</a>
+      </div>
+    </section>
   </main>
-  <footer class="footer"><div class="container">© <span id="year"></span> Senkmer</div></footer>
+  <div id="footer-placeholder"></div>
   <script src="/js/main.js"></script>
+  <script>window.loadComponents && window.loadComponents();</script>
 </body>
 </html>

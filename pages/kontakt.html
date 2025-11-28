@@ -2,34 +2,64 @@
 <html lang="no">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Kontakt — Senkmer</title>
+  <title>Kontakt oss — Senkmer AS</title>
+  <meta name="description" content="Kontakt Senkmer for spørsmål, support eller samarbeid. E-post: contact@senkmer.no. Åpent Man-Fre 09:00-16:00.">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="stylesheet" href="/css/theme.css">
 </head>
 <body>
-  <header class="header"><div class="container inner"><a class="brand" href="/pages/hjem.html"><img src="/assets/logo.svg" width="36"> <span class="title">Senkmer</span></a></div></header>
+  <div id="header-placeholder"></div>
   <main class="container section">
     <h1>Kontakt oss</h1>
-    <p>Har du spørsmål eller tilbakemeldinger? Send oss en melding.</p>
+    <p class="lead">Har du spørsmål, tilbakemeldinger eller ønsker å samarbeide? Vi hører gjerne fra deg!</p>
 
-    <div class="card contact-card">
+    <div class="grid-2" style="gap:2rem; margin:2rem 0">
+      <div class="card" style="padding:2rem">
+        <h2>Kontaktinformasjon</h2>
+        <p><strong>Bedriftsnavn:</strong> Senkmer AS</p>
+        <p><strong>Org.nr:</strong> 000 000 000 (placeholder)</p>
+        <p><strong>Generell henvendelse:</strong><br><a href="mailto:contact@senkmer.no">contact@senkmer.no</a></p>
+        <p><strong>Kundeservice og support:</strong><br><a href="mailto:support@senkmer.no">support@senkmer.no</a></p>
+        <p><strong>Adresse:</strong><br>[Placeholder adresse, oppdater senere]</p>
+        <p><strong>Åpningstider kundeservice:</strong><br>Mandag – Fredag: 09:00 – 16:00<br>Lørdag og Søndag: Stengt</p>
+        <p><strong>Responstid:</strong><br>Vi svarer vanligvis innen 24 timer på hverdager.</p>
+      </div>
+
+      <div class="card" style="padding:2rem">
+        <h2>Ofte stilte spørsmål (FAQ)</h2>
+        <p><strong>Hvordan registrerer jeg meg?</strong><br>Gå til <a href="/pages/logg-inn.html">Logg inn</a> og klikk "Registrer deg".</p>
+        <p><strong>Hvilken pakke passer meg?</strong><br>Se vår <a href="/pages/priser.html">prisside</a> for detaljer om alle pakker.</p>
+        <p><strong>Hvordan fungerer XP-systemet?</strong><br>Du tjener XP ved å fullføre oppgaver, quiz og utfordringer. XP gir nivåer og badges.</p>
+        <p><strong>Er plattformen trygg?</strong><br>Ja! Vi bruker bcrypt-kryptering, JWT-autentisering og er GDPR-samsvarende. Les mer på <a href="/pages/personvern-sikkerhet.html">Personvern & sikkerhet</a>.</p>
+        <p><strong>Kan jeg kansellere når som helst?</strong><br>Ja, alle abonnementer kan kanselleres når som helst uten bindingstid.</p>
+      </div>
+    </div>
+
+    <div class="card contact-card" style="margin:2rem 0; padding:2rem">
+      <h2>Send oss en melding</h2>
       <form id="contact-form" class="contact-form" novalidate>
-        <div class="form-grid">
-          <label>Navn<input id="c-name" name="name" type="text" required><small id="err-name" class="error"></small></label>
-          <label>E-post<input id="c-email" name="email" type="email" required><small id="err-email" class="error"></small></label>
-          <label class="full">Melding<textarea id="c-message" name="message" rows="6" required></textarea><small id="err-message" class="error"></small></label>
+        <div class="form-grid" style="display:grid; gap:1rem; grid-template-columns:1fr 1fr">
+          <label>Navn<input id="c-name" name="name" type="text" required placeholder="Ditt fulle navn"><small id="err-name" class="error"></small></label>
+          <label>E-post<input id="c-email" name="email" type="email" required placeholder="din.epost@eksempel.no"><small id="err-email" class="error"></small></label>
+          <label style="grid-column:1/-1">Melding<textarea id="c-message" name="message" rows="6" required placeholder="Skriv din melding her..."></textarea><small id="err-message" class="error"></small></label>
         </div>
-        <div class="form-actions">
+        <div class="form-actions" style="margin-top:1rem">
           <button type="submit" class="btn btn-primary">Send melding</button>
           <div id="form-result" class="form-result" aria-live="polite"></div>
         </div>
       </form>
     </div>
+
+    <section style="margin:3rem 0; text-align:center; padding:2rem; background:#fff; border-radius:16px">
+      <h2>Trenger du rask hjelp?</h2>
+      <p>Prøv vår AI-chatbot for øyeblikkelig svar på vanlige spørsmål.</p>
+      <a href="/pages/kundeservice-chatbot.html" class="btn btn-primary">Åpne chatbot</a>
+    </section>
   </main>
-  <footer class="footer"><div class="container">© <span id="year"></span> Senkmer</div></footer>
+  <div id="footer-placeholder"></div>
   <script src="/js/main.js"></script>
-  <script src="/js/chatbot.js"></script>
   <script>
+    window.loadComponents && window.loadComponents();
     (function(){
       const api = window.SenkmerAPI;
       const form = document.getElementById('contact-form');
@@ -37,16 +67,30 @@
       form.addEventListener('submit', async (e)=>{
         e.preventDefault();
         result.textContent = 'Sender...';
+        result.style.color = 'var(--muted)';
         const payload = {
-          name: document.getElementById('c-name').value,
-          email: document.getElementById('c-email').value,
-          message: document.getElementById('c-message').value
+          name: document.getElementById('c-name').value.trim(),
+          email: document.getElementById('c-email').value.trim(),
+          message: document.getElementById('c-message').value.trim()
         };
+        if(!payload.name || !payload.email || !payload.message){
+          result.textContent = 'Vennligst fyll ut alle felt.';
+          result.style.color = 'var(--error)';
+          return;
+        }
         try{
           const res = await api.sendContact(payload);
-          result.textContent = res.ok ? 'Melding sendt!' : ('Feil: ' + (res.error?.message || 'Ukjent feil'));
+          if(res.ok){
+            result.textContent = 'Melding sendt! Vi svarer innen 24 timer.';
+            result.style.color = 'var(--success)';
+            form.reset();
+          }else{
+            result.textContent = 'Feil: ' + (res.error || 'Ukjent feil');
+            result.style.color = 'var(--error)';
+          }
         }catch(err){
-          result.textContent = 'Feil ved sending';
+          result.textContent = 'Nettverksfeil. Prøv igjen senere.';
+          result.style.color = 'var(--error)';
         }
       });
     })();

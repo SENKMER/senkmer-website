@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Priser – Senkmer AS</title>
+  <meta name="description" content="Senkmer tilbyr 10 prisplaner for privatpersoner, bedrifter, skoler og organisasjoner. Finn pakken som passer deg.">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/css/theme.css" />
+  <style>
+    .pricing-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin:2rem 0}
+    .pricing-card{background:#fff; border-radius:var(--radius-lg); padding:2rem; box-shadow:var(--shadow-md); border:2px solid transparent; transition:var(--transition)}
+    .pricing-card:hover{border-color:var(--primary); transform:translateY(-4px)}
+    .pricing-card.featured{border-color:var(--accent); background:linear-gradient(135deg, rgba(14,165,160,0.05), rgba(96,165,250,0.05))}
+    .pricing-card h3{margin:0 0 0.5rem; font-size:1.5rem; color:var(--primary)}
+    .pricing-card .price{font-size:2.5rem; font-weight:800; color:var(--text); margin:0.5rem 0}
+    .pricing-card .price span{font-size:1rem; font-weight:400; color:var(--muted)}
+    .pricing-card p{color:var(--muted); margin:0.5rem 0 1rem}
+    .pricing-card ul{list-style:none; padding:0; margin:1rem 0}
+    .pricing-card ul li{padding:0.5rem 0; border-bottom:1px solid rgba(0,0,0,0.05)}
+    .pricing-card ul li:before{content:'✓'; color:var(--success); font-weight:700; margin-right:0.5rem}
+    .pricing-card .btn{width:100%; margin-top:1rem}
+  </style>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+  <main class="container section">
+    <h1 style="text-align:center">Priser – Finn pakken som passer deg</h1>
+    <p class="lead" style="text-align:center; max-width:700px; margin:0 auto 2rem">Senkmer tilbyr flexible prisplaner for privatpersoner, bedrifter, skoler og organisasjoner. Alle planer inkluderer grunnleggende sikkerhet, GDPR-samsvar og norsk support.</p>
+
+    <div class="pricing-grid">
+      <!-- 1. Gratis -->
+      <div class="pricing-card">
+        <h3>Gratis</h3>
+        <div class="price">0 kr <span>/ måned</span></div>
+        <p>Prøv Senkmer uten risiko. Perfekt for å komme i gang.</p>
+        <ul>
+          <li>Grunnleggende læringsspill</li>
+          <li>Daglige oppgaver (begrenset)</li>
+          <li>XP og nivåer</li>
+          <li>Chatbot-støtte</li>
+          <li>1 badge per måned</li>
+        </ul>
+        <a href="/pages/logg-inn.html" class="btn btn-primary">Kom i gang gratis</a>
+      </div>
+
+      <!-- 2. Starter -->
+      <div class="pricing-card">
+        <h3>Starter</h3>
+        <div class="price">99 kr <span>/ måned</span></div>
+        <p>For privatpersoner som vil lære mer.</p>
+        <ul>
+          <li>Alle grunnleggende moduler</li>
+          <li>Ubegrensede daglige oppgaver</li>
+          <li>3 badges per måned</li>
+          <li>Prioritert chatbot</li>
+          <li>Statistikk og fremgang</li>
+        </ul>
+        <a href="/pages/logg-inn.html" class="btn btn-primary">Kjøp nå</a>
+      </div>
+
+      <!-- 3. Basic -->
+      <div class="pricing-card">
+        <h3>Basic</h3>
+        <div class="price">199 kr <span>/ måned</span></div>
+        <p>Full tilgang til læring og ukentlige utfordringer.</p>
+        <ul>
+          <li>Alle Starter-funksjoner</li>
+          <li>Ukentlige utfordringer</li>
+          <li>5 badges per måned</li>
+          <li>E-post support</li>
+          <li>Ekstra spill og moduler</li>
+        </ul>
+        <a href="/pages/logg-inn.html" class="btn btn-primary">Kjøp nå</a>
+      </div>
+
+      <!-- 4. Standard (featured) -->
+      <div class="pricing-card featured">
+        <h3>Standard ⭐</h3>
+        <div class="price">399 kr <span>/ måned</span></div>
+        <p>Mest populær! Avansert XP, nivåer og badges.</p>
+        <ul>
+          <li>Alle Basic-funksjoner</li>
+          <li>Avansert XP-system</li>
+          <li>10 badges per måned</li>
+          <li>Personlig dashboard</li>
+          <li>Prioritet support</li>
+          <li>Eksklusivt innhold</li>
+        </ul>
+        <a href="/pages/logg-inn.html" class="btn btn-primary">Kjøp nå</a>
+      </div>
+
+      <!-- 5. Pro -->
+      <div class="pricing-card">
+        <h3>Pro</h3>
+        <div class="price">699 kr <span>/ måned</span></div>
+        <p>For profesjonelle brukere og enkeltpersoner med høye ambisjoner.</p>
+        <ul>
+          <li>Alle Standard-funksjoner</li>
+          <li>Coach-tips og veiledning</li>
+          <li>Bonusoppgaver og prosjekter</li>
+          <li>15 badges per måned</li>
+          <li>Prioritet support (chat + e-post)</li>
+          <li>API-tilgang</li>
+        </ul>
+        <a href="/pages/logg-inn.html" class="btn btn-primary">Kjøp nå</a>
+      </div>
+
+      <!-- 6. Team -->
+      <div class="pricing-card">
+        <h3>Team</h3>
+        <div class="price">1 999 kr <span>/ måned</span></div>
+        <p>For små team (opptil 5 brukere).</p>
+        <ul>
+          <li>Alle Pro-funksjoner</li>
+          <li>5 brukere inkludert</li>
+          <li>Team-dashboard</li>
+          <li>Felles oppgaver og prosjekter</li>
+          <li>Admin-panel</li>
+          <li>Ukentlige rapporter</li>
+        </ul>
+        <a href="/pages/kontakt.html" class="btn btn-primary">Kontakt oss</a>
+      </div>
+
+      <!-- 7. Bedrift -->
+      <div class="pricing-card">
+        <h3>Bedrift</h3>
+        <div class="price">4 999 kr <span>/ måned</span></div>
+        <p>For bedrifter med opptil 10 ansatte.</p>
+        <ul>
+          <li>Alle Team-funksjoner</li>
+          <li>10 brukere inkludert</li>
+          <li>KPI-rapporter og analyse</li>
+          <li>Integrasjon med HR-system</li>
+          <li>Dedikert support (e-post + telefon)</li>
+          <li>SLA (Service Level Agreement)</li>
+        </ul>
+        <a href="/pages/kontakt.html" class="btn btn-primary">Kontakt oss</a>
+      </div>
+
+      <!-- 8. Bedrift Premium -->
+      <div class="pricing-card">
+        <h3>Bedrift Premium</h3>
+        <div class="price">9 999 kr <span>/ måned</span></div>
+        <p>For større bedrifter (opptil 25 ansatte).</p>
+        <ul>
+          <li>Alle Bedrift-funksjoner</li>
+          <li>25 brukere inkludert</li>
+          <li>Onboarding og opplæring</li>
+          <li>Dedikert rådgiver</li>
+          <li>Tilpassede moduler og innhold</li>
+          <li>Prioritet telefonsupport</li>
+        </ul>
+        <a href="/pages/kontakt.html" class="btn btn-primary">Kontakt oss</a>
+      </div>
+
+      <!-- 9. Skole / Organisasjon -->
+      <div class="pricing-card">
+        <h3>Skole / Organisasjon</h3>
+        <div class="price">14 999 kr <span>/ måned</span></div>
+        <p>For skoler og organisasjoner (opptil 50 brukere).</p>
+        <ul>
+          <li>Alle Premium-funksjoner</li>
+          <li>50 brukere inkludert</li>
+          <li>Tilpasset læringspath</li>
+          <li>Integrasjon med LMS-system</li>
+          <li>Ukentlige webinar og workshops</li>
+          <li>Dedikert prosjektleder</li>
+        </ul>
+        <a href="/pages/kontakt.html" class="btn btn-primary">Kontakt oss</a>
+      </div>
+
+      <!-- 10. Enterprise -->
+      <div class="pricing-card featured">
+        <h3>Enterprise 🚀</h3>
+        <div class="price">Tilpasset <span>pris</span></div>
+        <p>For store organisasjoner og enterprise-kunder. Ubegrenset brukere.</p>
+        <ul>
+          <li>Alle funksjoner inkludert</li>
+          <li>Ubegrenset antall brukere</li>
+          <li>White-label løsning</li>
+          <li>Custom API-integrasjoner</li>
+          <li>Dedikert team og teknisk support 24/7</li>
+          <li>On-premise hosting (valgfritt)</li>
+        </ul>
+        <a href="/pages/kontakt.html" class="btn btn-primary">Kontakt oss</a>
+      </div>
+    </div>
+
+    <section style="margin:3rem 0; padding:2rem; background:#fff; border-radius:16px; text-align:center">
+      <h2>Har du spørsmål om priser?</h2>
+      <p>Kontakt oss for skreddersydde tilbud, volum-rabatter eller spørsmål om hvilken pakke som passer best for deg.</p>
+      <div class="cta" style="justify-content:center; margin-top:1.5rem">
+        <a class="btn btn-primary" href="/pages/kontakt.html">Kontakt oss</a>
+        <a class="btn btn-ghost" href="/pages/faq.html">Les FAQ</a>
+      </div>
+    </section>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script src="/js/main.js"></script>
+  <script>window.loadComponents && window.loadComponents();</script>
+</body>
+</html>
