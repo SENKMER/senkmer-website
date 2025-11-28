@@ -1,0 +1,46 @@
+<section class="pricing">
+  <div class="page-width grid">
+    {% for block in section.blocks %}
+      <div class="card">
+        {% if block.settings.badge != blank %}<span class="badge">{{ block.settings.badge }}</span>{% endif %}
+        <h3>{{ block.settings.title }}</h3>
+        <p class="price">{{ block.settings.price }}</p>
+        {% if block.settings.features != blank %}
+          {% assign features_list = block.settings.features | split: '\n' %}
+          <ul>
+            {% for line in features_list %}
+              {% if line != blank %}<li>{{ line }}</li>{% endif %}
+            {% endfor %}
+          </ul>
+        {% endif %}
+        {% if block.settings.cta_label != blank %}
+          <a class="btn btn--primary" href="{{ block.settings.cta_link }}">{{ block.settings.cta_label }}</a>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Priser - Seksjon",
+  "blocks": [
+    {
+      "type": "plan",
+      "name": "Plan",
+      "settings": [
+        { "type": "text", "id": "badge", "label": "Badge", "default": "Populær" },
+        { "type": "text", "id": "title", "label": "Tittel", "default": "Pro" },
+        { "type": "text", "id": "price", "label": "Pris", "default": "1 990,- / mnd" },
+        { "type": "textarea", "id": "features", "label": "Funksjoner (én per linje)", "default": "Support\nAnalyse\nHosting" },
+        { "type": "text", "id": "cta_label", "label": "Knappe-tekst", "default": "Kom i gang" },
+        { "type": "url", "id": "cta_link", "label": "Knappe-lenke", "default": "/pages/kontakt" }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    { "name": "Priser - Standard", "blocks": [ { "type": "plan" }, { "type": "plan" }, { "type": "plan" } ] }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,28 @@
+<section class="hero">
+  <div class="page-width">
+    <h1 class="hero__title">{{ section.settings.heading }}</h1>
+    <p class="hero__subtitle">{{ section.settings.subheading }}</p>
+    <div class="hero__actions">
+      {% if section.settings.primary_label != blank and section.settings.primary_link != blank %}
+        <a class="btn btn--primary" href="{{ section.settings.primary_link }}">{{ section.settings.primary_label }}</a>
+      {% endif %}
+      {% if section.settings.secondary_label != blank and section.settings.secondary_link != blank %}
+        <a class="btn btn--secondary" href="{{ section.settings.secondary_link }}">{{ section.settings.secondary_label }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hjemmeside - Hero",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Tittel", "default": "Bygg raskere. Start smartere." },
+    { "type": "textarea", "id": "subheading", "label": "Undertekst", "default": "Moderne, raske og sikre løsninger – skreddersydd for deg." },
+    { "type": "text", "id": "primary_label", "label": "Primær knappetekst", "default": "Kontakt oss" },
+    { "type": "url", "id": "primary_link", "label": "Primær lenke", "default": "/pages/kontakt" },
+    { "type": "text", "id": "secondary_label", "label": "Sekundær knappetekst", "default": "Våre tjenester" },
+    { "type": "url", "id": "secondary_link", "label": "Sekundær lenke", "default": "/pages/tjenester" }
+  ]
+}
+{% endschema %}
