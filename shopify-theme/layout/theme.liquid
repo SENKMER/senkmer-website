@@ -3,20 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page_title }}{{ shop.name | prepend: ' - ' }}</title>
+  <title>{{ page_title }}{% if current_tags %}{{ 'general.meta.tags' | t: tags: current_tags | prepend: ' - ' }}{% endif %}{% if current_page != 1 %}{{ 'general.meta.page' | t: page: current_page | prepend: ' - ' }}{% endif %}{% unless page_title contains shop.name %}{{ shop.name | prepend: ' - ' }}{% endunless %}</title>
   
-  <meta name="description" content="{{ page_description | escape }}">
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}">
+  {% endif %}
   
-  {{ 'main.css' | asset_url | stylesheet_tag }}
-  {{ 'components.css' | asset_url | stylesheet_tag }}
+  <link rel="canonical" href="{{ canonical_url }}">
+  
+  {%- if settings.favicon != blank -%}
+    <link rel="icon" type="image/png" href="{{ settings.favicon | img_url: '32x32' }}">
+  {%- endif -%}
+  
+  {{ 'theme.css' | asset_url | stylesheet_tag }}
   
   {{ content_for_header }}
 </head>
-<body class="{{ template | handle }}">
+<body class="template-{{ template | replace: '.', '-' | handle }}">
   
   {% section 'header' %}
   
-  <main role="main">
+  <main role="main" id="MainContent">
     {{ content_for_layout }}
   </main>
   
@@ -26,10 +33,7 @@
   {% render 'chatbot' %}
   
   <!-- Scripts -->
-  {{ 'components.js' | asset_url | script_tag }}
-  {{ 'main.js' | asset_url | script_tag }}
-  {{ 'animations.js' | asset_url | script_tag }}
-  {{ 'analytics.js' | asset_url | script_tag }}
+  {{ 'theme.js' | asset_url | script_tag }}
   
 </body>
 </html>
