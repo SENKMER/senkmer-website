@@ -19,8 +19,7 @@
   </main>
   
   {% section 'footer' %}
-  {% section 'chatbot' %}
   
-  {{ 'layout-1.js' | asset_url | script_tag }}
+  <script src="{{ 'layout-1.js' | asset_url }}" defer></script>
 </body>
 </html>
