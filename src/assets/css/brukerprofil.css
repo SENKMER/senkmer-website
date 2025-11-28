@@ -1,0 +1,5 @@
+.profile{display:grid;grid-template-columns:280px 1fr;gap:24px}
+.profile .sidebar{border:1px solid #eee;border-radius:14px;padding:16px}
+.profile .content{display:grid;gap:16px}
+.metric{display:flex;gap:12px;align-items:center}
+.metric .badge{background:#ecfeff;color:#155e75}

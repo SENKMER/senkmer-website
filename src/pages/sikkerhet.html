@@ -5,13 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sikkerhet</title>
   <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/css/sikkerhet.css" />
 </head>
 <body>
   <div data-include="../components/header.html"></div>
   <div data-include="../components/navbar.html"></div>
   <main>
-    <h1>Sikkerhet</h1>
-    <p>Retningslinjer for sikkerhet.</p>
+    <section class="page-hero"><div class="container"><h1>Sikkerhet</h1><p class="muted">Bygd med beste praksis</p></div></section>
+    <section class="section">
+      <div class="container badges">
+        <span class="badge badge-sec">2FA</span>
+        <span class="badge badge-sec">CSP</span>
+        <span class="badge badge-sec">TLS 1.3</span>
+        <span class="badge badge-sec">OWASP</span>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container grid-security">
+        <div class="card"><h3>Autentisering</h3><p>Sikre innlogginger og roller.</p></div>
+        <div class="card"><h3>Kryptering</h3><p>Data i transitt og i ro.</p></div>
+        <div class="card"><h3>Overvåkning</h3><p>Varsler og logger for anomalier.</p></div>
+      </div>
+    </section>
   </main>
   <div data-include="../components/footer.html"></div>
   <script src="../assets/js/main.js"></script>

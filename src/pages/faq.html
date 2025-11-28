@@ -5,13 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FAQ</title>
   <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/css/faq.css" />
 </head>
 <body>
   <div data-include="../components/header.html"></div>
   <div data-include="../components/navbar.html"></div>
   <main>
-    <h1>Ofte stilte spørsmål</h1>
-    <details><summary>Hvordan kontakter jeg dere?</summary><p>Bruk kontaktskjemaet.</p></details>
+    <section class="page-hero"><div class="container"><h1>Ofte stilte spørsmål</h1><p class="muted">Svar på det du lurer på</p></div></section>
+    <section class="section faq">
+      <details open>
+        <summary>Hvordan kontakter jeg dere?</summary>
+        <p>Bruk <a href="../pages/kontakt.html">kontaktskjemaet</a> – vi svarer innen 24 timer.</p>
+      </details>
+      <details>
+        <summary>Tilbyr dere fast avtale?</summary>
+        <p>Ja, vi tilbyr fleksible månedsavtaler som kan skaleres.</p>
+      </details>
+      <details>
+        <summary>Hvilke teknologier bruker dere?</summary>
+        <p>Vi velger moderne, stabile rammeverk tilpasset ditt behov.</p>
+      </details>
+    </section>
   </main>
   <div data-include="../components/footer.html"></div>
   <script src="../assets/js/main.js"></script>

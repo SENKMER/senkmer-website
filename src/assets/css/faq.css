@@ -1,0 +1,4 @@
+.faq{max-width:860px;margin:0 auto}
+details{border:1px solid #eee;border-radius:12px;padding:12px 16px;background:#fff}
+details+details{margin-top:10px}
+summary{cursor:pointer;font-weight:600}

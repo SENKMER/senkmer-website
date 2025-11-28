@@ -1,0 +1,4 @@
+.doc{display:grid;grid-template-columns:260px 1fr;gap:24px}
+.doc .toc{border:1px solid #eee;border-radius:12px;padding:12px;background:#fff}
+.doc .content{display:grid;gap:16px}
+.doc h2{margin:8px 0}
