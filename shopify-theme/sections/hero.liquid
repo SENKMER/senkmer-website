@@ -3,7 +3,7 @@
     <div class="hero-gradient"></div>
     {% if section.settings.hero_image %}
       <div class="hero-image">
-        <img src="{{ section.settings.hero_image | img_url: '800x' }}" alt="{{ section.settings.hero_title }}">
+        <img src="{{ section.settings.hero_image | image_url: width: 800 }}" alt="{{ section.settings.hero_title }}" width="800" height="600" loading="lazy">
       </div>
     {% endif %}
   </div>

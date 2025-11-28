@@ -2,7 +2,7 @@
   <div class="footer-container">
     <div class="footer-grid">
       <div class="footer-column">
-        <img src="{{ 'logo.svg' | asset_url }}" alt="{{ shop.name }}" class="footer-logo">
+        <img src="{{ 'logo.svg' | asset_url }}" alt="{{ shop.name }}" class="footer-logo" width="120" height="40">
         <p class="footer-description">
           {{ section.settings.footer_description }}
         </p>
@@ -28,7 +28,7 @@
       <div class="footer-column">
         <h3>Snarveier</h3>
         <ul>
-          <li><a href="/">Hjem</a></li>
+          <li><a href="{{ routes.root_url }}">Hjem</a></li>
           <li><a href="/pages/om-oss">Om oss</a></li>
           <li><a href="/pages/tjenester">Tjenester</a></li>
           <li><a href="/pages/butikk">Butikk</a></li>

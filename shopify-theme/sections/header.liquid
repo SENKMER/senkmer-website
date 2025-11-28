@@ -1,16 +1,16 @@
 <header class="site-header" id="header">
   <div class="header-container">
-    <a href="/" class="logo">
+    <a href="{{ routes.root_url }}" class="logo">
       {% if section.settings.logo %}
-        <img src="{{ section.settings.logo | img_url: '150x' }}" alt="{{ shop.name }}">
+        <img src="{{ section.settings.logo | image_url: width: 150 }}" alt="{{ shop.name }}" width="150" height="50">
       {% else %}
-        <img src="{{ 'logo.svg' | asset_url }}" alt="{{ shop.name }}">
+        <img src="{{ 'logo.svg' | asset_url }}" alt="{{ shop.name }}" width="150" height="50">
       {% endif %}
     </a>
     
     <nav class="main-nav" id="main-nav">
       <ul>
-        <li><a href="/">Hjem</a></li>
+        <li><a href="{{ routes.root_url }}">Hjem</a></li>
         <li><a href="/pages/om-oss">Om oss</a></li>
         <li><a href="/pages/tjenester">Tjenester</a></li>
         <li><a href="/pages/priser">Priser</a></li>

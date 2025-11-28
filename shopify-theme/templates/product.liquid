@@ -2,7 +2,7 @@
   <div class="product-single">
     <div class="product-images">
       {% if product.featured_image %}
-        <img src="{{ product.featured_image | img_url: '800x' }}" alt="{{ product.title }}">
+        <img src="{{ product.featured_image | image_url: width: 800 }}" alt="{{ product.title }}" width="800" height="800" loading="lazy">
       {% endif %}
     </div>
     
@@ -19,7 +19,7 @@
         </div>
       {% endif %}
       
-      <form action="/cart/add" method="post">
+      <form action="{{ routes.cart_add_url }}" method="post">
         <input type="hidden" name="id" value="{{ product.variants.first.id }}">
         
         <div class="product-quantity">
