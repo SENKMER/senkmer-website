@@ -9,13 +9,18 @@
     </a>
     
     <nav>
+      {% assign main_menu = linklists[section.settings.menu] %}
       <ul class="nav-menu" id="nav-menu">
-        <li><a class="nav-link" href="{{ routes.root_url }}">Hjem</a></li>
-        <li><a class="nav-link" href="/pages/om-oss">Om oss</a></li>
-        <li><a class="nav-link" href="/pages/tjenester">Tjenester</a></li>
-        <li><a class="nav-link" href="/pages/priser">Priser</a></li>
-        <li><a class="nav-link nav-link-shop" href="/pages/butikk">Butikk</a></li>
-        <li><a class="nav-link" href="/pages/kontakt">Kontakt</a></li>
+        {% if main_menu and main_menu.links.size > 0 %}
+          {% for link in main_menu.links %}
+            {% assign is_shop = link.title | downcase | strip %}
+            <li>
+              <a class="nav-link{% if is_shop == 'butikk' %} nav-link-shop{% endif %}" href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        {% else %}
+          <li><a class="nav-link" href="{{ routes.root_url }}">Hjem</a></li>
+        {% endif %}
       </ul>
     </nav>
     
@@ -35,6 +40,12 @@
       "type": "image_picker",
       "id": "logo",
       "label": "Logo"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Navigasjonsmeny",
+      "default": "main-menu"
     }
   ]
 }
