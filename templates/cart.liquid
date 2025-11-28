@@ -1,0 +1,47 @@
+<div class="page-width">
+  <h1>{{ 'cart.general.title' | t }}</h1>
+  
+  {% if cart.item_count > 0 %}
+    <form action="{{ routes.cart_url }}" method="post">
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Produkt</th>
+            <th>Pris</th>
+            <th>Antall</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in cart.items %}
+            <tr>
+              <td>
+                <a href="{{ item.url }}">{{ item.product.title }}</a>
+              </td>
+              <td>{{ item.price | money }}</td>
+              <td>
+                <input type="number" name="updates[]" value="{{ item.quantity }}" min="0">
+              </td>
+              <td>{{ item.line_price | money }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      
+      <div class="cart-footer">
+        <p class="cart-subtotal">
+          <strong>{{ 'cart.general.subtotal' | t }}:</strong>
+          {{ cart.total_price | money }}
+        </p>
+        
+        <button type="submit" name="update" class="btn">Oppdater</button>
+        <button type="submit" name="checkout" class="btn btn-primary">
+          {{ 'cart.general.checkout' | t }}
+        </button>
+      </div>
+    </form>
+  {% else %}
+    <p>{{ 'cart.general.empty' | t }}</p>
+    <a href="{{ routes.all_products_collection_url }}" class="btn">{{ 'cart.general.continue_shopping' | t }}</a>
+  {% endif %}
+</div>

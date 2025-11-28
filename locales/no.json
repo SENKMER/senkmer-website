@@ -1,0 +1,54 @@
+{
+  "general": {
+    "404": {
+      "title": "404 - Siden ble ikke funnet",
+      "subtext": "Siden du leter etter finnes ikke.",
+      "link": "Tilbake til hjemmesiden"
+    },
+    "meta": {
+      "tags": "Merket \"{{ tags }}\"",
+      "page": "Side {{ page }}"
+    },
+    "search": {
+      "title": "Søk",
+      "placeholder": "Søk på nettstedet vårt"
+    }
+  },
+  "blogs": {
+    "article": {
+      "read_more": "Les mer",
+      "by_author": "av {{ author }}"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Handlekurv",
+      "remove": "Fjern",
+      "subtotal": "Subtotal",
+      "empty": "Handlekurven din er tom",
+      "continue_shopping": "Fortsett å handle",
+      "checkout": "Gå til kassen"
+    }
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Legg til i handlekurv",
+      "sold_out": "Utsolgt",
+      "unavailable": "Ikke tilgjengelig",
+      "quantity": "Antall",
+      "price": "Pris"
+    }
+  },
+  "customer": {
+    "account": {
+      "title": "Min konto",
+      "details": "Kontoopplysninger"
+    },
+    "login": {
+      "title": "Logg inn",
+      "email": "E-post",
+      "password": "Passord",
+      "sign_in": "Logg inn"
+    }
+  }
+}

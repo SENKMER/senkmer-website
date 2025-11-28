@@ -1,0 +1,36 @@
+<div class="page-width">
+  <div class="product-single">
+    <div class="product-images">
+      {% if product.featured_image %}
+        <img src="{{ product.featured_image | image_url: width: 800 }}" alt="{{ product.title }}" width="800" height="800" loading="lazy">
+      {% endif %}
+    </div>
+    
+    <div class="product-info">
+      <h1>{{ product.title }}</h1>
+      
+      <div class="product-price">
+        {{ product.price | money }}
+      </div>
+      
+      {% if product.description != blank %}
+        <div class="product-description rte">
+          {{ product.description }}
+        </div>
+      {% endif %}
+      
+      <form action="{{ routes.cart_add_url }}" method="post">
+        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+        
+        <div class="product-quantity">
+          <label for="quantity">{{ 'products.product.quantity' | t }}</label>
+          <input type="number" id="quantity" name="quantity" value="1" min="1">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">
+          {{ 'products.product.add_to_cart' | t }}
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

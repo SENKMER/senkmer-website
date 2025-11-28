@@ -1,0 +1,10 @@
+# Shopify Theme Configuration
+# This file is required for theme development
+
+development:
+  store: senkmer.myshopify.com
+  theme_id: live
+  ignore_files:
+    - config/settings_data.json
+    - "*.md"
+    - ".git*"
