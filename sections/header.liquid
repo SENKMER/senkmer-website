@@ -1,5 +1,5 @@
 <header class="site-header" id="header">
-  <div class="header-container">
+  <div class="nav-container">
     <a href="{{ routes.root_url }}" class="logo">
       {% if section.settings.logo %}
         <img src="{{ section.settings.logo | image_url: width: 150 }}" alt="{{ shop.name }}" width="150" height="50">
@@ -8,14 +8,14 @@
       {% endif %}
     </a>
     
-    <nav class="main-nav" id="main-nav">
-      <ul>
-        <li><a href="{{ routes.root_url }}">Hjem</a></li>
-        <li><a href="/pages/om-oss">Om oss</a></li>
-        <li><a href="/pages/tjenester">Tjenester</a></li>
-        <li><a href="/pages/priser">Priser</a></li>
-        <li><a href="/pages/butikk">Butikk</a></li>
-        <li><a href="/pages/kontakt">Kontakt</a></li>
+    <nav>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a class="nav-link" href="{{ routes.root_url }}">Hjem</a></li>
+        <li><a class="nav-link" href="/pages/om-oss">Om oss</a></li>
+        <li><a class="nav-link" href="/pages/tjenester">Tjenester</a></li>
+        <li><a class="nav-link" href="/pages/priser">Priser</a></li>
+        <li><a class="nav-link nav-link-shop" href="/pages/butikk">Butikk</a></li>
+        <li><a class="nav-link" href="/pages/kontakt">Kontakt</a></li>
       </ul>
     </nav>
     

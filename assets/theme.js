@@ -3,6 +3,14 @@
 // Import hovedprosjekt JavaScript
 document.addEventListener('DOMContentLoaded', function() {
   // Shopify-spesifikk funksjonalitet
+  // Mobilmeny toggle
+  const mobileToggle = document.getElementById('mobile-menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  if (mobileToggle && navMenu) {
+    mobileToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  }
   
   // Handlekurv oppdatering
   const cartForm = document.querySelector('form[action="/cart"]');
