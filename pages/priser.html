@@ -50,178 +50,277 @@
       </button>
     </div>
   </header>
-  <main class="container section">
-    <h1 style="text-align:center">Priser – Finn pakken som passer deg</h1>
-    <p class="lead" style="text-align:center; max-width:700px; margin:0 auto 2rem">Senkmer tilbyr flexible prisplaner for privatpersoner, bedrifter, skoler og organisasjoner. Alle planer inkluderer grunnleggende sikkerhet, GDPR-samsvar og norsk support.</p>
 
-    <div class="pricing-grid">
-      <!-- 1. Gratis -->
-      <div class="pricing-card">
-        <h3>Gratis</h3>
-        <div class="price">0 kr <span>/ måned</span></div>
-        <p>Prøv Senkmer uten risiko. Perfekt for å komme i gang.</p>
-        <ul>
-          <li>Grunnleggende læringsspill</li>
-          <li>Daglige oppgaver (begrenset)</li>
-          <li>XP og nivåer</li>
-          <li>Chatbot-støtte</li>
-          <li>1 badge per måned</li>
-        </ul>
-        <a href="/pages/logg-inn.html" class="btn btn-primary">Kom i gang gratis</a>
-      </div>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <h1 class="hero-title">Velg pakken som passer deg</h1>
+      <p class="hero-subtitle">
+        Fleksible prisplaner for alle – fra privatpersoner til store organisasjoner. 
+        Alle planer inkluderer GDPR-sikkerhet og norsk support.
+      </p>
+    </div>
+  </section>
 
-      <!-- 2. Starter -->
-      <div class="pricing-card">
-        <h3>Starter</h3>
-        <div class="price">99 kr <span>/ måned</span></div>
-        <p>For privatpersoner som vil lære mer.</p>
-        <ul>
-          <li>Alle grunnleggende moduler</li>
-          <li>Ubegrensede daglige oppgaver</li>
-          <li>3 badges per måned</li>
-          <li>Prioritert chatbot</li>
-          <li>Statistikk og fremgang</li>
-        </ul>
-        <a href="/pages/logg-inn.html" class="btn btn-primary">Kjøp nå</a>
-      </div>
+  <!-- Pricing Cards -->
+  <section style="padding: 4rem 0; background: white;">
+    <div class="container">
+      <div class="pricing-grid">
+        
+        <!-- 1. Gratis -->
+        <div class="pricing-card">
+          <div class="pricing-tier">GRATIS</div>
+          <div class="pricing-price">0 <span class="currency">kr/mnd</span></div>
+          <p class="pricing-description">
+            Perfekt for å teste plattformen og komme i gang med læring.
+          </p>
+          <ul class="pricing-features">
+            <li>Grunnleggende læringsspill</li>
+            <li>5 daglige oppgaver</li>
+            <li>XP og nivåsystem</li>
+            <li>Chatbot-støtte</li>
+            <li>1 merkeutmerkelse per måned</li>
+          </ul>
+          <a href="/pages/logg-inn.html" class="pricing-cta">Kom i gang gratis</a>
+        </div>
 
-      <!-- 3. Basic -->
-      <div class="pricing-card">
-        <h3>Basic</h3>
-        <div class="price">199 kr <span>/ måned</span></div>
-        <p>Full tilgang til læring og ukentlige utfordringer.</p>
-        <ul>
-          <li>Alle Starter-funksjoner</li>
-          <li>Ukentlige utfordringer</li>
-          <li>5 badges per måned</li>
-          <li>E-post support</li>
-          <li>Ekstra spill og moduler</li>
-        </ul>
-        <a href="/pages/logg-inn.html" class="btn btn-primary">Kjøp nå</a>
-      </div>
+        <!-- 2. Starter -->
+        <div class="pricing-card">
+          <div class="pricing-tier">STARTER</div>
+          <div class="pricing-price">99 <span class="currency">kr/mnd</span></div>
+          <p class="pricing-description">
+            For privatpersoner som vil ta læringen til neste nivå.
+          </p>
+          <ul class="pricing-features">
+            <li>Alt i Gratis-planen</li>
+            <li>Ubegrensede daglige oppgaver</li>
+            <li>Alle læringsspill</li>
+            <li>5 merker per måned</li>
+            <li>Detaljert statistikk</li>
+          </ul>
+          <a href="/pages/logg-inn.html" class="pricing-cta">Velg Starter</a>
+        </div>
 
-      <!-- 4. Standard (featured) -->
-      <div class="pricing-card featured">
-        <h3>Standard ⭐</h3>
-        <div class="price">399 kr <span>/ måned</span></div>
-        <p>Mest populær! Avansert XP, nivåer og badges.</p>
-        <ul>
-          <li>Alle Basic-funksjoner</li>
-          <li>Avansert XP-system</li>
-          <li>10 badges per måned</li>
-          <li>Personlig dashboard</li>
-          <li>Prioritet support</li>
-          <li>Eksklusivt innhold</li>
-        </ul>
-        <a href="/pages/logg-inn.html" class="btn btn-primary">Kjøp nå</a>
-      </div>
+        <!-- 3. Basic -->
+        <div class="pricing-card">
+          <div class="pricing-tier">BASIC</div>
+          <div class="pricing-price">199 <span class="currency">kr/mnd</span></div>
+          <p class="pricing-description">
+            Mer avanserte funksjoner for seriøse lærende.
+          </p>
+          <ul class="pricing-features">
+            <li>Alt i Starter-planen</li>
+            <li>Personlig læringsplan</li>
+            <li>Ukentlige rapporter</li>
+            <li>Ubegrensede merker</li>
+            <li>Prioritert chatbot-støtte</li>
+            <li>Eksporter data (CSV)</li>
+          </ul>
+          <a href="/pages/logg-inn.html" class="pricing-cta">Velg Basic</a>
+        </div>
 
-      <!-- 5. Pro -->
-      <div class="pricing-card">
-        <h3>Pro</h3>
-        <div class="price">699 kr <span>/ måned</span></div>
-        <p>For profesjonelle brukere og enkeltpersoner med høye ambisjoner.</p>
-        <ul>
-          <li>Alle Standard-funksjoner</li>
-          <li>Coach-tips og veiledning</li>
-          <li>Bonusoppgaver og prosjekter</li>
-          <li>15 badges per måned</li>
-          <li>Prioritet support (chat + e-post)</li>
-          <li>API-tilgang</li>
-        </ul>
-        <a href="/pages/logg-inn.html" class="btn btn-primary">Kjøp nå</a>
-      </div>
+        <!-- 4. Standard (Featured) -->
+        <div class="pricing-card featured">
+          <div class="pricing-badge">MEST POPULÆR</div>
+          <div class="pricing-tier">STANDARD</div>
+          <div class="pricing-price">399 <span class="currency">kr/mnd</span></div>
+          <p class="pricing-description">
+            Den ultimate pakken for enkeltbrukere. Best valuta for pengene.
+          </p>
+          <ul class="pricing-features">
+            <li>Alt i Basic-planen</li>
+            <li>AI-personaliserte anbefalinger</li>
+            <li>Månedlige 1-til-1 veiledninger</li>
+            <li>Spesialtilpassede oppgaver</li>
+            <li>Premium merker og belønninger</li>
+            <li>API-tilgang (grunnleggende)</li>
+          </ul>
+          <a href="/pages/logg-inn.html" class="pricing-cta">Velg Standard</a>
+        </div>
 
-      <!-- 6. Team -->
-      <div class="pricing-card">
-        <h3>Team</h3>
-        <div class="price">1 999 kr <span>/ måned</span></div>
-        <p>For små team (opptil 5 brukere).</p>
-        <ul>
-          <li>Alle Pro-funksjoner</li>
-          <li>5 brukere inkludert</li>
-          <li>Team-dashboard</li>
-          <li>Felles oppgaver og prosjekter</li>
-          <li>Admin-panel</li>
-          <li>Ukentlige rapporter</li>
-        </ul>
-        <a href="/pages/kontakt.html" class="btn btn-primary">Kontakt oss</a>
-      </div>
+        <!-- 5. Pro -->
+        <div class="pricing-card">
+          <div class="pricing-tier">PRO</div>
+          <div class="pricing-price">699 <span class="currency">kr/mnd</span></div>
+          <p class="pricing-description">
+            For profesjonelle brukere og små team (opptil 3 brukere).
+          </p>
+          <ul class="pricing-features">
+            <li>Alt i Standard-planen</li>
+            <li>Opptil 3 brukere inkludert</li>
+            <li>Team-statistikk og oversikt</li>
+            <li>Dedikert kundestøtte</li>
+            <li>Full API-tilgang</li>
+            <li>Egendefinerte integrasjoner</li>
+          </ul>
+          <a href="/pages/logg-inn.html" class="pricing-cta">Velg Pro</a>
+        </div>
 
-      <!-- 7. Bedrift -->
-      <div class="pricing-card">
-        <h3>Bedrift</h3>
-        <div class="price">4 999 kr <span>/ måned</span></div>
-        <p>For bedrifter med opptil 10 ansatte.</p>
-        <ul>
-          <li>Alle Team-funksjoner</li>
-          <li>10 brukere inkludert</li>
-          <li>KPI-rapporter og analyse</li>
-          <li>Integrasjon med HR-system</li>
-          <li>Dedikert support (e-post + telefon)</li>
-          <li>SLA (Service Level Agreement)</li>
-        </ul>
-        <a href="/pages/kontakt.html" class="btn btn-primary">Kontakt oss</a>
-      </div>
+        <!-- 6. Team -->
+        <div class="pricing-card">
+          <div class="pricing-tier">TEAM</div>
+          <div class="pricing-price">1 999 <span class="currency">kr/mnd</span></div>
+          <p class="pricing-description">
+            For små bedrifter og team (5-15 brukere).
+          </p>
+          <ul class="pricing-features">
+            <li>Alt i Pro-planen</li>
+            <li>Opptil 15 brukere</li>
+            <li>Admin-panel for teamledere</li>
+            <li>Avanserte rapporter</li>
+            <li>Onboarding-støtte</li>
+            <li>Månedlige webinarer</li>
+          </ul>
+          <a href="/pages/kontakt.html" class="pricing-cta">Kontakt oss</a>
+        </div>
 
-      <!-- 8. Bedrift Premium -->
-      <div class="pricing-card">
-        <h3>Bedrift Premium</h3>
-        <div class="price">9 999 kr <span>/ måned</span></div>
-        <p>For større bedrifter (opptil 25 ansatte).</p>
-        <ul>
-          <li>Alle Bedrift-funksjoner</li>
-          <li>25 brukere inkludert</li>
-          <li>Onboarding og opplæring</li>
-          <li>Dedikert rådgiver</li>
-          <li>Tilpassede moduler og innhold</li>
-          <li>Prioritet telefonsupport</li>
-        </ul>
-        <a href="/pages/kontakt.html" class="btn btn-primary">Kontakt oss</a>
-      </div>
+        <!-- 7. Bedrift -->
+        <div class="pricing-card">
+          <div class="pricing-tier">BEDRIFT</div>
+          <div class="pricing-price">4 999 <span class="currency">kr/mnd</span></div>
+          <p class="pricing-description">
+            For mellomstore bedrifter (15-50 brukere).
+          </p>
+          <ul class="pricing-features">
+            <li>Alt i Team-planen</li>
+            <li>Opptil 50 brukere</li>
+            <li>Dedikert kontoansvarlig</li>
+            <li>Tilpassede læringsprogrammer</li>
+            <li>SSO (Single Sign-On)</li>
+            <li>SLA-garanti (99,9% oppetid)</li>
+          </ul>
+          <a href="/pages/kontakt.html" class="pricing-cta">Kontakt oss</a>
+        </div>
 
-      <!-- 9. Skole / Organisasjon -->
-      <div class="pricing-card">
-        <h3>Skole / Organisasjon</h3>
-        <div class="price">14 999 kr <span>/ måned</span></div>
-        <p>For skoler og organisasjoner (opptil 50 brukere).</p>
-        <ul>
-          <li>Alle Premium-funksjoner</li>
-          <li>50 brukere inkludert</li>
-          <li>Tilpasset læringspath</li>
-          <li>Integrasjon med LMS-system</li>
-          <li>Ukentlige webinar og workshops</li>
-          <li>Dedikert prosjektleder</li>
-        </ul>
-        <a href="/pages/kontakt.html" class="btn btn-primary">Kontakt oss</a>
-      </div>
+        <!-- 8. Bedrift Premium -->
+        <div class="pricing-card">
+          <div class="pricing-tier">BEDRIFT PREMIUM</div>
+          <div class="pricing-price">9 999 <span class="currency">kr/mnd</span></div>
+          <p class="pricing-description">
+            For større bedrifter (50-150 brukere).
+          </p>
+          <ul class="pricing-features">
+            <li>Alt i Bedrift-planen</li>
+            <li>Opptil 150 brukere</li>
+            <li>White-label muligheter</li>
+            <li>Avansert API-integrasjon</li>
+            <li>Prioritert utviklingsstøtte</li>
+            <li>Kvartalsvis forretningsgjennomgang</li>
+          </ul>
+          <a href="/pages/kontakt.html" class="pricing-cta">Kontakt oss</a>
+        </div>
 
-      <!-- 10. Enterprise -->
-      <div class="pricing-card featured">
-        <h3>Enterprise 🚀</h3>
-        <div class="price">Tilpasset <span>pris</span></div>
-        <p>For store organisasjoner og enterprise-kunder. Ubegrenset brukere.</p>
-        <ul>
-          <li>Alle funksjoner inkludert</li>
-          <li>Ubegrenset antall brukere</li>
-          <li>White-label løsning</li>
-          <li>Custom API-integrasjoner</li>
-          <li>Dedikert team og teknisk support 24/7</li>
-          <li>On-premise hosting (valgfritt)</li>
-        </ul>
-        <a href="/pages/kontakt.html" class="btn btn-primary">Kontakt oss</a>
+        <!-- 9. Skole/Organisasjon -->
+        <div class="pricing-card">
+          <div class="pricing-tier">SKOLE / ORGANISASJON</div>
+          <div class="pricing-price">14 999 <span class="currency">kr/mnd</span></div>
+          <p class="pricing-description">
+            Spesialtilpasset for skoler og organisasjoner (150-500 brukere).
+          </p>
+          <ul class="pricing-features">
+            <li>Alt i Bedrift Premium-planen</li>
+            <li>Opptil 500 brukere</li>
+            <li>Klasserom-/avdelingsadministrasjon</li>
+            <li>Pedagogiske verktøy for lærere</li>
+            <li>GDPR-utvidet støtte for barn</li>
+            <li>Opplæring for ansatte</li>
+          </ul>
+          <a href="/pages/kontakt.html" class="pricing-cta">Kontakt oss</a>
+        </div>
+
+        <!-- 10. Enterprise -->
+        <div class="pricing-card">
+          <div class="pricing-tier">ENTERPRISE</div>
+          <div class="pricing-price" style="font-size: 2rem;">Tilpasset pris</div>
+          <p class="pricing-description">
+            For store organisasjoner med 500+ brukere. Alt tilpasset dine behov.
+          </p>
+          <ul class="pricing-features">
+            <li>Alt i Skole/Organisasjon-planen</li>
+            <li>Ubegrenset antall brukere</li>
+            <li>Fullt tilpasset løsning</li>
+            <li>Dedikert teknisk team</li>
+            <li>On-premise hosting-mulighet</li>
+            <li>24/7 premium support</li>
+            <li>Juridisk og compliance-støtte</li>
+          </ul>
+          <a href="/pages/kontakt.html" class="pricing-cta">Kontakt oss</a>
+        </div>
+
       </div>
     </div>
+  </section>
 
-    <section style="margin:3rem 0; padding:2rem; background:#fff; border-radius:16px; text-align:center">
-      <h2>Har du spørsmål om priser?</h2>
-      <p>Kontakt oss for skreddersydde tilbud, volum-rabatter eller spørsmål om hvilken pakke som passer best for deg.</p>
-      <div class="cta" style="justify-content:center; margin-top:1.5rem">
-        <a class="btn btn-primary" href="/pages/kontakt.html">Kontakt oss</a>
-        <a class="btn btn-ghost" href="/pages/faq.html">Les FAQ</a>
+  <!-- FAQ Section -->
+  <section style="padding: 4rem 0; background: linear-gradient(180deg, #fef3c7 0%, #ffffff 100%);">
+    <div class="container">
+      <div style="max-width: 800px; margin: 0 auto;">
+        <h2 style="font-size: 2.5rem; font-weight: 800; margin: 0 0 3rem; color: #0f172a; text-align: center;">
+          Ofte stilte spørsmål
+        </h2>
+
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <div style="background: white; padding: 2rem; border-radius: 16px; border: 2px solid #fde68a;">
+            <h3 style="font-size: 1.3rem; font-weight: 700; margin: 0 0 1rem; color: #0f172a;">
+              Kan jeg bytte plan senere?
+            </h3>
+            <p style="color: #64748b; line-height: 1.7; margin: 0;">
+              Ja! Du kan oppgradere eller nedgradere planen din når som helst. Endringer trer i kraft ved neste faktureringsdato.
+            </p>
+          </div>
+
+          <div style="background: white; padding: 2rem; border-radius: 16px; border: 2px solid #fde68a;">
+            <h3 style="font-size: 1.3rem; font-weight: 700; margin: 0 0 1rem; color: #0f172a;">
+              Hva skjer hvis jeg kansellerer?
+            </h3>
+            <p style="color: #64748b; line-height: 1.7; margin: 0;">
+              Du kan kansellere når som helst. Abonnementet ditt fortsetter til slutten av perioden du har betalt for. Ingen bindingstid.
+            </p>
+          </div>
+
+          <div style="background: white; padding: 2rem; border-radius: 16px; border: 2px solid #fde68a;">
+            <h3 style="font-size: 1.3rem; font-weight: 700; margin: 0 0 1rem; color: #0f172a;">
+              Hvilke betalingsmåter godtar dere?
+            </h3>
+            <p style="color: #64748b; line-height: 1.7; margin: 0;">
+              Vi godtar alle større kredittkort, Vipps og fakturavalg for bedrifter. Alle betalinger er sikre og krypterte.
+            </p>
+          </div>
+
+          <div style="background: white; padding: 2rem; border-radius: 16px; border: 2px solid #fde68a;">
+            <h3 style="font-size: 1.3rem; font-weight: 700; margin: 0 0 1rem; color: #0f172a;">
+              Er det mulig med prøveperiode?
+            </h3>
+            <p style="color: #64748b; line-height: 1.7; margin: 0;">
+              Ja! Gratis-planen er tilgjengelig uten tidsbegrensning. Betalte planer kan prøves gratis i 14 dager (kontakt oss).
+            </p>
+          </div>
+        </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section style="padding: 5rem 0; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+    <div class="container">
+      <div style="max-width: 700px; margin: 0 auto; text-align: center; color: white;">
+        <h2 style="font-size: 2.5rem; font-weight: 800; margin: 0 0 1.5rem;">
+          Usikker på hvilken plan som passer?
+        </h2>
+        <p style="font-size: 1.2rem; line-height: 1.7; margin: 0 0 2.5rem; opacity: 0.95;">
+          Vi hjelper deg gjerne! Kontakt oss for en uforpliktende samtale om dine behov.
+        </p>
+        <a href="/pages/kontakt.html" 
+           style="display: inline-block; background: white; color: #d97706; 
+                  padding: 1rem 2.5rem; border-radius: 12px; font-weight: 700; 
+                  text-decoration: none; font-size: 1.1rem; 
+                  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);">
+          Kontakt oss →
+        </a>
+      </div>
+    </div>
+  </section>
+
   <footer class="site-footer">
     <div class="container footer-inner">
       <nav class="footer-nav" aria-label="Bunntekst navigasjon">
