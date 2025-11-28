@@ -98,7 +98,7 @@
             <li>5 merker per måned</li>
             <li>Detaljert statistikk</li>
           </ul>
-          <a href="/pages/logg-inn.html" class="pricing-cta">Velg Starter</a>
+          <a href="#" data-shopify-tier="starter" class="pricing-cta">Kjøp Starter</a>
         </div>
 
         <!-- 3. Basic -->
@@ -116,7 +116,7 @@
             <li>Prioritert chatbot-støtte</li>
             <li>Eksporter data (CSV)</li>
           </ul>
-          <a href="/pages/logg-inn.html" class="pricing-cta">Velg Basic</a>
+          <a href="#" data-shopify-tier="basic" class="pricing-cta">Kjøp Basic</a>
         </div>
 
         <!-- 4. Standard (Featured) -->
@@ -135,7 +135,7 @@
             <li>Premium merker og belønninger</li>
             <li>API-tilgang (grunnleggende)</li>
           </ul>
-          <a href="/pages/logg-inn.html" class="pricing-cta">Velg Standard</a>
+          <a href="#" data-shopify-tier="standard" class="pricing-cta">Kjøp Standard</a>
         </div>
 
         <!-- 5. Pro -->
@@ -153,7 +153,7 @@
             <li>Full API-tilgang</li>
             <li>Egendefinerte integrasjoner</li>
           </ul>
-          <a href="/pages/logg-inn.html" class="pricing-cta">Velg Pro</a>
+          <a href="#" data-shopify-tier="pro" class="pricing-cta">Kjøp Pro</a>
         </div>
 
         <!-- 6. Team -->
@@ -344,6 +344,16 @@
       </div>
     </div>
   </footer>
+  
+  <!-- Shopify Buy Button SDK -->
+  <script src="https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js"></script>
+  
+  <!-- Shopify Configuration (create this file with your credentials) -->
+  <script src="/config/shopify-config.js"></script>
+  
+  <!-- Shopify Integration Module -->
+  <script src="/js/shopify-integration.js"></script>
+  
   <script src="/js/main.js"></script>
 </body>
 </html>
