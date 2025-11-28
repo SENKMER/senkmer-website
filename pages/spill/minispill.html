@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minispill - Senkmer</title>
+    <link rel="stylesheet" href="/css/theme.css">
+    <link rel="stylesheet" href="/css/pages.css">
+</head>
+<body class="spill-page">
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/pages/hovedside/hjem.html" class="logo">
+                    <img src="/assets/logo.svg" alt="Senkmer Logo" width="40" height="40">
+                    <span>Senkmer</span>
+                </a>
+                <nav class="main-nav">
+                    <a href="/pages/hovedside/hjem.html">Hjem</a>
+                    <a href="/pages/informasjon/om-oss.html">Om Oss</a>
+                    <a href="/pages/informasjon/tjenester.html">Tjenester</a>
+                    <a href="/pages/priser/priser.html">Priser</a>
+                    <a href="/pages/kundeservice/kontakt.html">Kontakt</a>
+                    <a href="/pages/kundeservice/chatbot.html">Chatbot</a>
+                    <a href="/pages/spill/minispill.html" class="active">Spill</a>
+                    <a href="/pages/faq/faq.html">FAQ</a>
+                    <a href="/pages/konto/profil.html">Profil</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>🎮 Interaktive Minispill</h1>
+                    <p class="hero-subtitle">Ta en pause og test ferdighetene dine med våre morsomme minispill!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Games Grid -->
+        <section class="games-section">
+            <div class="container">
+                <h2>Velg Et Spill</h2>
+                <div class="games-grid">
+                    <!-- Memory Game -->
+                    <div class="game-card featured">
+                        <div class="game-banner" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <span class="game-icon">🧠</span>
+                        </div>
+                        <div class="game-content">
+                            <h3>Minnespill</h3>
+                            <p>Test hukommelsen din! Finn alle matchende kortpar i så få trekk som mulig.</p>
+                            <div class="game-stats">
+                                <span>⭐ 4.8/5</span>
+                                <span>👥 2,543 spillere</span>
+                                <span>⏱️ 2-5 min</span>
+                            </div>
+                            <div class="game-features">
+                                <span class="tag">Enkel</span>
+                                <span class="tag">Hjerne</span>
+                                <span class="tag">Konsentrasjon</span>
+                            </div>
+                            <button class="play-button" onclick="launchGame('memory')">Spill Nå</button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Game -->
+                    <div class="game-card">
+                        <div class="game-banner" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            <span class="game-icon">❓</span>
+                        </div>
+                        <div class="game-content">
+                            <h3>Teknologi-Quiz</h3>
+                            <p>Hvor mye vet du om webutvikling, AI og moderne teknologi? Test kunnskapen din!</p>
+                            <div class="game-stats">
+                                <span>⭐ 4.6/5</span>
+                                <span>👥 1,892 spillere</span>
+                                <span>⏱️ 3-7 min</span>
+                            </div>
+                            <div class="game-features">
+                                <span class="tag">Middels</span>
+                                <span class="tag">Kunnskap</span>
+                                <span class="tag">Læring</span>
+                            </div>
+                            <button class="play-button" onclick="launchGame('quiz')">Spill Nå</button>
+                        </div>
+                    </div>
+
+                    <!-- Snake Game -->
+                    <div class="game-card">
+                        <div class="game-banner" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                            <span class="game-icon">🐍</span>
+                        </div>
+                        <div class="game-content">
+                            <h3>Snake</h3>
+                            <p>Det klassiske slangenspillet! Spis epler, voks og unngå å krasje.</p>
+                            <div class="game-stats">
+                                <span>⭐ 4.9/5</span>
+                                <span>👥 3,721 spillere</span>
+                                <span>⏱️ 1-10 min</span>
+                            </div>
+                            <div class="game-features">
+                                <span class="tag">Klassiker</span>
+                                <span class="tag">Reaksjons</span>
+                                <span class="tag">Arkade</span>
+                            </div>
+                            <button class="play-button" onclick="launchGame('snake')">Spill Nå</button>
+                        </div>
+                    </div>
+
+                    <!-- Typing Game -->
+                    <div class="game-card">
+                        <div class="game-banner" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                            <span class="game-icon">⌨️</span>
+                        </div>
+                        <div class="game-content">
+                            <h3>Skrivetest</h3>
+                            <p>Mål skrivehastigheten din! Skriv så mange ord som mulig på 60 sekunder.</p>
+                            <div class="game-stats">
+                                <span>⭐ 4.7/5</span>
+                                <span>👥 2,134 spillere</span>
+                                <span>⏱️ 1 min</span>
+                            </div>
+                            <div class="game-features">
+                                <span class="tag">Ferdighet</span>
+                                <span class="tag">Hastighet</span>
+                                <span class="tag">Presisjon</span>
+                            </div>
+                            <button class="play-button" onclick="launchGame('typing')">Spill Nå</button>
+                        </div>
+                    </div>
+
+                    <!-- Color Match -->
+                    <div class="game-card">
+                        <div class="game-banner" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                            <span class="game-icon">🎨</span>
+                        </div>
+                        <div class="game-content">
+                            <h3>Fargematching</h3>
+                            <p>Match farger så raskt som mulig! Perfekt for å trene reaksjonstiden din.</p>
+                            <div class="game-stats">
+                                <span>⭐ 4.5/5</span>
+                                <span>👥 1,567 spillere</span>
+                                <span>⏱️ 2-4 min</span>
+                            </div>
+                            <div class="game-features">
+                                <span class="tag">Enkel</span>
+                                <span class="tag">Reaksjon</span>
+                                <span class="tag">Farger</span>
+                            </div>
+                            <button class="play-button" onclick="launchGame('color')">Spill Nå</button>
+                        </div>
+                    </div>
+
+                    <!-- Puzzle Game -->
+                    <div class="game-card">
+                        <div class="game-banner" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+                            <span class="game-icon">🧩</span>
+                        </div>
+                        <div class="game-content">
+                            <h3>Puslespill</h3>
+                            <p>Flytt brikkene og løs puslespillet. Utfordrende og underholdende!</p>
+                            <div class="game-stats">
+                                <span>⭐ 4.4/5</span>
+                                <span>👥 1,234 spillere</span>
+                                <span>⏱️ 3-8 min</span>
+                            </div>
+                            <div class="game-features">
+                                <span class="tag">Vanskelig</span>
+                                <span class="tag">Logikk</span>
+                                <span class="tag">Strategi</span>
+                            </div>
+                            <button class="play-button" onclick="launchGame('puzzle')">Spill Nå</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leaderboard Section -->
+        <section class="leaderboard-section">
+            <div class="container">
+                <h2>🏆 Toppscorere Denne Uken</h2>
+                <div class="leaderboard-tabs">
+                    <button class="tab-btn active" onclick="showLeaderboard('memory')">Minnespill</button>
+                    <button class="tab-btn" onclick="showLeaderboard('quiz')">Quiz</button>
+                    <button class="tab-btn" onclick="showLeaderboard('snake')">Snake</button>
+                </div>
+                <div class="leaderboard-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Plassering</th>
+                                <th>Spiller</th>
+                                <th>Poeng</th>
+                                <th>Tid</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="rank-1">
+                                <td>🥇 1</td>
+                                <td>OlaNordmann99</td>
+                                <td>2,450</td>
+                                <td>1:32</td>
+                            </tr>
+                            <tr class="rank-2">
+                                <td>🥈 2</td>
+                                <td>KariGamer</td>
+                                <td>2,380</td>
+                                <td>1:45</td>
+                            </tr>
+                            <tr class="rank-3">
+                                <td>🥉 3</td>
+                                <td>ProGamer123</td>
+                                <td>2,310</td>
+                                <td>1:58</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>SpeedRunner</td>
+                                <td>2,190</td>
+                                <td>2:12</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>ChillPlayer</td>
+                                <td>2,045</td>
+                                <td>2:34</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- TODO: Implementer ekte leaderboard med database -->
+                <!-- TODO: Legg til brukerprofil-integrasjon for å lagre scores -->
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="how-it-works">
+            <div class="container">
+                <h2>Hvordan Det Fungerer</h2>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-icon">1️⃣</div>
+                        <h3>Velg Et Spill</h3>
+                        <p>Bla gjennom vårt utvalg av minispill og velg det som passer deg best.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-icon">2️⃣</div>
+                        <h3>Spill & Ha Det Gøy</h3>
+                        <p>Nyt spillet og utfordre deg selv til å forbedre scoren din.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-icon">3️⃣</div>
+                        <h3>Konkurrér På Leaderboard</h3>
+                        <p>Logg inn for å lagre scoren din og konkurrere med andre spillere.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section">
+            <div class="container">
+                <h2>Hvorfor Spille Våre Minispill?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🧠</span>
+                        <h4>Tren Hjernen</h4>
+                        <p>Forbedre hukommelse, konsentrasjon og problemløsning</p>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">⏱️</span>
+                        <h4>Raske Pauser</h4>
+                        <p>Perfekt for korte pauser mellom arbeid eller studier</p>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">📱</span>
+                        <h4>Fungerer Overalt</h4>
+                        <p>Spill på mobil, nettbrett eller PC - alltid responsivt</p>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🆓</span>
+                        <h4>100% Gratis</h4>
+                        <p>Alle spillene er helt gratis uten skjulte kostnader</p>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🏆</span>
+                        <h4>Konkurranser</h4>
+                        <p>Ukentlige konkurranser med premier til toppscorere</p>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="benefit-icon">🔄</span>
+                        <h4>Nye Spill</h4>
+                        <p>Vi legger til nye spill regelmessig</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Modal Container -->
+        <div id="gameModal" class="game-modal" style="display: none;">
+            <div class="modal-content">
+                <button class="close-modal" onclick="closeGame()">✕</button>
+                <div id="gameContainer">
+                    <!-- Game will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <section class="cta-section" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+            <div class="container">
+                <h2>Bli Med På Moroa!</h2>
+                <p>Opprett en gratis konto for å lagre scores, delta i konkurranser og få tilgang til eksklusive spill.</p>
+                <div class="cta-buttons">
+                    <a href="/pages/konto/profil.html" class="cta-button primary">Opprett Konto</a>
+                    <a href="/pages/faq/faq.html" class="cta-button secondary">Les FAQ</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="/assets/logo.svg" alt="Senkmer" width="24" height="24">
+                        <span>Senkmer</span>
+                    </div>
+                    <p>Din digitale partner for moderne nettløsninger</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Lenker</h4>
+                    <a href="/pages/informasjon/om-oss.html">Om Oss</a>
+                    <a href="/pages/priser/priser.html">Priser</a>
+                    <a href="/pages/kundeservice/kontakt.html">Kontakt</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Ressurser</h4>
+                    <a href="/pages/faq/faq.html">FAQ</a>
+                    <a href="/pages/personvern/personvern.html">Personvern</a>
+                    <a href="/pages/sikkerhet/sikkerhet.html">Sikkerhet</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Senkmer. Alle rettigheter reservert.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/animations.js"></script>
+    <script src="/js/game.js"></script>
+    <script src="/js/memory-game.js"></script>
+    <script>
+        function launchGame(gameType) {
+            const modal = document.getElementById('gameModal');
+            const container = document.getElementById('gameContainer');
+            
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            
+            // Load specific game based on type
+            switch(gameType) {
+                case 'memory':
+                    container.innerHTML = '<div id="memory-game"><h3>Minnespill lastes...</h3><p>TODO: Implementer minnespillet her</p></div>';
+                    // TODO: Initialize memory game
+                    break;
+                case 'quiz':
+                    container.innerHTML = '<div id="quiz-game"><h3>Quiz lastes...</h3><p>TODO: Implementer quiz her</p></div>';
+                    // TODO: Initialize quiz game
+                    break;
+                case 'snake':
+                    container.innerHTML = '<div id="snake-game"><h3>Snake lastes...</h3><p>TODO: Implementer Snake her</p></div>';
+                    // TODO: Initialize snake game
+                    break;
+                case 'typing':
+                    container.innerHTML = '<div id="typing-game"><h3>Skrivetest lastes...</h3><p>TODO: Implementer skrivetest her</p></div>';
+                    // TODO: Initialize typing game
+                    break;
+                case 'color':
+                    container.innerHTML = '<div id="color-game"><h3>Fargematching lastes...</h3><p>TODO: Implementer fargespill her</p></div>';
+                    // TODO: Initialize color game
+                    break;
+                case 'puzzle':
+                    container.innerHTML = '<div id="puzzle-game"><h3>Puslespill lastes...</h3><p>TODO: Implementer puslespill her</p></div>';
+                    // TODO: Initialize puzzle game
+                    break;
+            }
+        }
+        
+        function closeGame() {
+            const modal = document.getElementById('gameModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        function showLeaderboard(game) {
+            // Update active tab
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // TODO: Load leaderboard data from backend
+            console.log('Loading leaderboard for:', game);
+        }
+    </script>
+</body>
+</html>

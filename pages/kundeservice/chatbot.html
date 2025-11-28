@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot - Senkmer</title>
+    <link rel="stylesheet" href="/css/theme.css">
+    <link rel="stylesheet" href="/css/pages.css">
+</head>
+<body class="chatbot-page">
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/pages/hovedside/hjem.html" class="logo">
+                    <img src="/assets/logo.svg" alt="Senkmer Logo" width="40" height="40">
+                    <span>Senkmer</span>
+                </a>
+                <nav class="main-nav">
+                    <a href="/pages/hovedside/hjem.html">Hjem</a>
+                    <a href="/pages/informasjon/om-oss.html">Om Oss</a>
+                    <a href="/pages/informasjon/tjenester.html">Tjenester</a>
+                    <a href="/pages/priser/priser.html">Priser</a>
+                    <a href="/pages/kundeservice/kontakt.html">Kontakt</a>
+                    <a href="/pages/kundeservice/chatbot.html" class="active">Chatbot</a>
+                    <a href="/pages/spill/minispill.html">Spill</a>
+                    <a href="/pages/faq/faq.html">FAQ</a>
+                    <a href="/pages/konto/profil.html">Profil</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>🤖 AI-drevet Kundeservice</h1>
+                    <p class="hero-subtitle">Snakk med vår intelligente chatbot og få svar på dine spørsmål øyeblikkelig - 24/7</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chatbot Demo Section -->
+        <section class="chatbot-demo">
+            <div class="container">
+                <div class="demo-layout">
+                    <div class="demo-info">
+                        <h2>Prøv Vår AI-Chatbot</h2>
+                        <p>Vår avanserte AI-chatbot bruker naturlig språkforståelse for å gi deg presise og hjelpsomme svar. Den lærer kontinuerlig av interaksjoner og blir stadig bedre.</p>
+                        
+                        <h3>Hva Kan Chatboten Hjelpe Med?</h3>
+                        <ul class="chatbot-features">
+                            <li>✅ Generelle spørsmål om våre tjenester</li>
+                            <li>✅ Prisinformasjon og pakkedetaljer</li>
+                            <li>✅ Teknisk support og feilsøking</li>
+                            <li>✅ Bestillingsstatus og leveringstid</li>
+                            <li>✅ Kontoinformasjon og fakturering</li>
+                            <li>✅ Produktanbefalinger basert på behov</li>
+                        </ul>
+
+                        <div class="quick-actions">
+                            <h4>Hurtighandlinger:</h4>
+                            <button class="quick-btn" onclick="sendQuickMessage('Hva koster det å lage en nettside?')">💰 Priser</button>
+                            <button class="quick-btn" onclick="sendQuickMessage('Hvordan fungerer AI-chatboten?')">🤖 Om Chatbot</button>
+                            <button class="quick-btn" onclick="sendQuickMessage('Hvor lang tid tar det å utvikle en nettside?')">⏱️ Tidsramme</button>
+                            <button class="quick-btn" onclick="sendQuickMessage('Hvilke betalingsmetoder aksepterer dere?')">💳 Betaling</button>
+                        </div>
+                    </div>
+
+                    <div class="chatbot-container">
+                        <div class="chatbot-header">
+                            <div class="bot-avatar">🤖</div>
+                            <div class="bot-info">
+                                <h3>Senkmer Assistant</h3>
+                                <span class="status-online">● Online</span>
+                            </div>
+                        </div>
+
+                        <div class="chatbot-messages" id="chatMessages">
+                            <div class="message bot-message">
+                                <div class="message-avatar">🤖</div>
+                                <div class="message-content">
+                                    <p>Hei! Jeg er Senkmer AI-assistent. Jeg kan hjelpe deg med spørsmål om våre tjenester, priser, teknisk support og mye mer. Hva lurer du på?</p>
+                                    <span class="message-time">nå</span>
+                                </div>
+                            </div>
+
+                            <div class="suggestions">
+                                <p class="suggestions-label">Foreslåtte spørsmål:</p>
+                                <button class="suggestion-chip" onclick="sendQuickMessage('Hva tilbyr Senkmer?')">Hva tilbyr Senkmer?</button>
+                                <button class="suggestion-chip" onclick="sendQuickMessage('Hvordan bestiller jeg en nettside?')">Hvordan bestiller jeg?</button>
+                                <button class="suggestion-chip" onclick="sendQuickMessage('Er dataene mine trygge?')">Er dataene mine trygge?</button>
+                            </div>
+
+                            <!-- TODO: Integrer ekte AI-chatbot med backend API -->
+                            <!-- TODO: Legg til chat-historikk for innloggede brukere -->
+                            <!-- TODO: Implementer fileopplasting for supporthenvendelser -->
+                        </div>
+
+                        <div class="chatbot-input">
+                            <input type="text" id="chatInput" placeholder="Skriv din melding her..." onkeypress="handleKeyPress(event)">
+                            <button class="send-btn" onclick="sendMessage()">
+                                <span>➤</span>
+                            </button>
+                        </div>
+
+                        <div class="chatbot-footer">
+                            <small>🔒 Sikker og kryptert kommunikasjon</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="chatbot-features-section">
+            <div class="container">
+                <h2>Hvorfor Velge Vår AI-Chatbot?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Lynraske Svar</h3>
+                        <p>Få svar på dine spørsmål i løpet av sekunder, uansett tid på døgnet.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3>Intelligent Forståelse</h3>
+                        <p>Avansert naturlig språkbehandling som forstår kontekst og intensjon.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3>Kontinuerlig Læring</h3>
+                        <p>Chatboten blir smartere for hver interaksjon og gir stadig bedre svar.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌍</div>
+                        <h3>Flerspråklig</h3>
+                        <p>Støtte for norsk, engelsk og flere språk kommer snart.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔄</div>
+                        <h3>Sømløs Overføring</h3>
+                        <p>Komplekse saker overføres automatisk til menneskelig support.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Analyse & Innsikt</h3>
+                        <p>Detaljert statistikk om brukerhenvendelser og kundetilfredshet.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Example Conversations -->
+        <section class="example-conversations">
+            <div class="container">
+                <h2>Eksempler På Samtaler</h2>
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <h3>📋 Generell Forespørsel</h3>
+                        <div class="conversation-example">
+                            <div class="example-message user">Hva slags tjenester tilbyr dere?</div>
+                            <div class="example-message bot">Vi tilbyr nettsideutvikling, AI-chatbot, e-handelsløsninger, SEO-optimalisering, og vedlikehold. Vil du vite mer om noen av disse?</div>
+                            <div class="example-message user">Ja, fortell meg mer om AI-chatbot</div>
+                            <div class="example-message bot">Vår AI-chatbot gir 24/7 kundeservice, håndterer vanlige spørsmål automatisk, og kan integreres i din eksisterende nettside. Prisen starter på 599 kr/måned. Vil du se en demo?</div>
+                        </div>
+                    </div>
+
+                    <div class="example-card">
+                        <h3>💰 Prisspørsmål</h3>
+                        <div class="conversation-example">
+                            <div class="example-message user">Hva koster det å lage en nettbutikk?</div>
+                            <div class="example-message bot">En nettbutikk starter på 12 999 kr for vår Business-pakke. Dette inkluderer produktkatalog, handlekurv, betalingsintegrasjon og administrasjonspanel. Vi tilbyr også større løsninger for 24 999 kr og 49 999 kr avhengig av funksjoner.</div>
+                            <div class="example-message user">Er det månedlige kostnader?</div>
+                            <div class="example-message bot">Ja, hosting og vedlikehold koster 499-999 kr/mnd avhengig av pakke. Dette inkluderer sikkerhetsopp dateringer, backup og teknisk support.</div>
+                        </div>
+                    </div>
+
+                    <div class="example-card">
+                        <h3>🔧 Teknisk Support</h3>
+                        <div class="conversation-example">
+                            <div class="example-message user">Nettsiden min laster veldig sakte</div>
+                            <div class="example-message bot">Jeg forstår at det er frustrerende. La meg hjelpe deg med å løse dette. Kan du oppgi nettadressen din?</div>
+                            <div class="example-message user">eksempel.no</div>
+                            <div class="example-message bot">Takk! Jeg ser at bildene dine ikke er optimalisert. Dette kan gi tregere lasting. Jeg har opprettet en supportsak og en av våre teknikere vil kontakte deg innen 2 timer for å fikse dette. Referansenummer: #12345</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Integration Section -->
+        <section class="integration-info">
+            <div class="container">
+                <h2>Integrer Chatbot På Din Nettside</h2>
+                <p class="section-subtitle">Legg til vår AI-chatbot på din eksisterende nettside med bare noen få linjer kode</p>
+                
+                <div class="integration-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Registrer Deg</h3>
+                        <p>Opprett en konto og få din unike API-nøkkel</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Tilpass Design</h3>
+                        <p>Velg farger, logo og meldinger som passer ditt brand</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Legg Til Kode</h3>
+                        <p>Kopier vår enkle JavaScript-snippet til din nettside</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Gå Live</h3>
+                        <p>Chatboten er klar til å hjelpe dine kunder!</p>
+                    </div>
+                </div>
+
+                <div class="code-example">
+                    <pre><code>&lt;!-- Legg til denne koden før &lt;/body&gt; --&gt;
+&lt;script src="https://cdn.senkmer.no/chatbot.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  Senkmer.init({
+    apiKey: 'din-api-nøkkel',
+    theme: 'light',
+    position: 'bottom-right'
+  });
+&lt;/script&gt;</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+            <div class="container">
+                <h2>Klar Til Å Automatisere Kundeservicen?</h2>
+                <p>Start med en gratis 14-dagers prøveperiode i dag. Ingen kredittkort kreves.</p>
+                <div class="cta-buttons">
+                    <a href="/pages/konto/profil.html" class="cta-button primary">Start Gratis Prøveperiode</a>
+                    <a href="/pages/priser/priser.html" class="cta-button secondary">Se Priser</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="/assets/logo.svg" alt="Senkmer" width="24" height="24">
+                        <span>Senkmer</span>
+                    </div>
+                    <p>Din digitale partner for moderne nettløsninger</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Lenker</h4>
+                    <a href="/pages/informasjon/om-oss.html">Om Oss</a>
+                    <a href="/pages/priser/priser.html">Priser</a>
+                    <a href="/pages/kundeservice/kontakt.html">Kontakt</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Ressurser</h4>
+                    <a href="/pages/faq/faq.html">FAQ</a>
+                    <a href="/pages/personvern/personvern.html">Personvern</a>
+                    <a href="/pages/sikkerhet/sikkerhet.html">Sikkerhet</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Senkmer. Alle rettigheter reservert.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script src="/js/animations.js"></script>
+    <script src="/js/chatbot.js"></script>
+    <script>
+        // Chatbot demo functionality
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            if (message) {
+                addUserMessage(message);
+                input.value = '';
+                setTimeout(() => generateBotResponse(message), 800);
+            }
+        }
+
+        function sendQuickMessage(message) {
+            document.getElementById('chatInput').value = message;
+            sendMessage();
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        function addUserMessage(text) {
+            const messagesDiv = document.getElementById('chatMessages');
+            const userMsg = document.createElement('div');
+            userMsg.className = 'message user-message';
+            userMsg.innerHTML = `
+                <div class="message-content">
+                    <p>${text}</p>
+                    <span class="message-time">nå</span>
+                </div>
+                <div class="message-avatar">👤</div>
+            `;
+            messagesDiv.appendChild(userMsg);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function addBotMessage(text) {
+            const messagesDiv = document.getElementById('chatMessages');
+            const botMsg = document.createElement('div');
+            botMsg.className = 'message bot-message';
+            botMsg.innerHTML = `
+                <div class="message-avatar">🤖</div>
+                <div class="message-content">
+                    <p>${text}</p>
+                    <span class="message-time">nå</span>
+                </div>
+            `;
+            messagesDiv.appendChild(botMsg);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function generateBotResponse(userMessage) {
+            const lowerMsg = userMessage.toLowerCase();
+            let response = '';
+
+            if (lowerMsg.includes('pris') || lowerMsg.includes('kost')) {
+                response = 'Våre priser varierer fra 2 999 kr for en enkel landingsside til 49 999 kr for komplekse løsninger. Besøk vår prisside for detaljert oversikt, eller kontakt oss for et skreddersydd tilbud!';
+            } else if (lowerMsg.includes('chatbot') || lowerMsg.includes('ai')) {
+                response = 'Vår AI-chatbot bruker avansert naturlig språkbehandling for å forstå og svare på kundespørsmål. Den kan håndtere support 24/7, redusere belastningen på kundeservice med opptil 80%, og lærer kontinuerlig av interaksjoner.';
+            } else if (lowerMsg.includes('tid') || lowerMsg.includes('lang')) {
+                response = 'Utviklingstiden avhenger av prosjektets størrelse. En enkel landingsside tar 1-2 uker, mens en fullverdig e-handelsløsning kan ta 4-8 uker. Vi gir deg en nøyaktig tidsramme etter første konsultasjon.';
+            } else if (lowerMsg.includes('betaling') || lowerMsg.includes('betale')) {
+                response = 'Vi aksepterer bankkort (Visa/Mastercard), Vipps, fakturabetalingog bankoverføring. For større prosjekter tilbyr vi også delbetaling.';
+            } else if (lowerMsg.includes('sikker') || lowerMsg.includes('trygg')) {
+                response = 'Sikkerhet er vår høyeste prioritet! Vi bruker SSL/TLS-kryptering, sikker autentisering, GDPR-kompatibel datahåndtering, og regelmessige sikkerhetsopp dateringer. Les mer på vår sikkerhetsside.';
+            } else if (lowerMsg.includes('kontakt') || lowerMsg.includes('telefon') || lowerMsg.includes('epost')) {
+                response = 'Du kan kontakte oss på support@senkmer.no eller salg@senkmer.no. Vi svarer vanligvis innen 2 timer på hverdager. Eller fyll ut kontaktskjemaet vårt!';
+            } else {
+                response = 'Takk for spørsmålet! For mer detaljert informasjon, kan du besøke vår FAQ-side eller kontakte oss direkte. Jeg kan også hjelpe deg med spørsmål om priser, tjenester, sikkerhet og bestilling.';
+            }
+
+            addBotMessage(response);
+        }
+    </script>
+</body>
+</html>
