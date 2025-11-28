@@ -1,0 +1,7 @@
+/* src main.css */
+:root{--primary:#4F46E5;--bg:#fff;--text:#1F2937}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid #eee}
+.nav-menu{display:flex;gap:16px;list-style:none;padding:0;margin:0}
+.site-footer{padding:24px;text-align:center;border-top:1px solid #eee;margin-top:40px}
+.page-hero{padding:48px 16px;background:#f8f9fb}
