@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Priser - SENKMER</title>
+  <meta name="description" content="Velg riktig plan for din bedrift. Fra gratis til enterprise - vi har en løsning som passer deg.">
+  
+  <meta name="keywords" content="priser, abonnement, gratis prøve, enterprise">
+  <meta name="author" content="Senkmer AS">
+  <link rel="canonical" content="https://senkmer.no/pages/priser/">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/senkmer-logo.svg">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/assets/css/layout-2.css">
+  
+  <style>
+    .pricing-header {
+      background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+      padding: var(--space-3xl) 0;
+      text-align: center;
+    }
+    
+    .pricing-toggle {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-md);
+      margin-top: var(--space-xl);
+    }
+    
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-xl);
+      margin-top: var(--space-2xl);
+    }
+    
+    .pricing-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      border: 4px solid var(--text);
+      box-shadow: 8px 8px 0 rgba(0,0,0,0.1);
+      position: relative;
+      transition: var(--transition);
+    }
+    
+    .pricing-card:hover {
+      transform: translate(-4px, -4px);
+      box-shadow: 12px 12px 0 rgba(0,0,0,0.15);
+    }
+    
+    .pricing-card.featured {
+      border-color: var(--primary);
+      background: var(--bg-secondary);
+      transform: scale(1.05);
+    }
+    
+    .pricing-card.featured .badge {
+      position: absolute;
+      top: -12px;
+      right: var(--space-lg);
+    }
+    
+    .plan-name {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: var(--space-sm);
+    }
+    
+    .price-amount {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin: var(--space-md) 0;
+    }
+    
+    .price-period {
+      font-size: 1rem;
+      color: var(--text-light);
+    }
+    
+    .features-list {
+      list-style: none;
+      padding: 0;
+      margin: var(--space-lg) 0;
+    }
+    
+    .features-list li {
+      padding: var(--space-sm) 0;
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      font-weight: 600;
+    }
+    
+    .features-list li::before {
+      content: "✓";
+      color: var(--success);
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+    
+    @media (max-width: 768px) {
+      .pricing-card.featured {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body class="layout-2">
+  
+  <div id="header-placeholder"></div>
+  
+  <main>
+    <!-- Pricing Header -->
+    <section class="pricing-header">
+      <div class="container">
+        <h1>Priser som passer alle</h1>
+        <p style="font-size: 1.5rem;">
+          Fra gratis prøve til enterprise - velg planen som passer din bedrift best
+        </p>
+        <p style="margin-top: var(--space-md); font-size: 1.125rem;">
+          🎉 <strong>Alle planer inkluderer 14 dagers gratis prøveperiode</strong>
+        </p>
+      </div>
+    </section>
+    
+    <!-- Pricing Tiers -->
+    <section>
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: var(--space-2xl);">Velg din plan</h2>
+        
+        <div class="pricing-grid">
+          <!-- 1. Gratis -->
+          <div class="pricing-card">
+            <div class="plan-name">Gratis</div>
+            <div class="price-amount">0 kr</div>
+            <div class="price-period">For alltid gratis</div>
+            <ul class="features-list">
+              <li>50 samtaler/måned</li>
+              <li>1 bruker</li>
+              <li>E-post support</li>
+              <li>Grunnleggende chatbot</li>
+              <li>SENKMER-branding</li>
+            </ul>
+            <a href="/pages/kontakt/index.html" class="btn btn-primary" style="width: 100%;">Kom i gang</a>
+          </div>
+          
+          <!-- 2. Basic -->
+          <div class="pricing-card">
+            <div class="plan-name">Basic</div>
+            <div class="price-amount">990 kr</div>
+            <div class="price-period">/måned</div>
+            <ul class="features-list">
+              <li>500 samtaler/måned</li>
+              <li>3 brukere</li>
+              <li>E-post & chat support</li>
+              <li>Tilpassbar chatbot</li>
+              <li>Grunnleggende analyser</li>
+              <li>E-postmarkedsføring</li>
+            </ul>
+            <a href="/pages/kontakt/index.html" class="btn btn-primary" style="width: 100%;">Velg Basic</a>
+          </div>
+          
+          <!-- 3. Standard -->
+          <div class="pricing-card">
+            <div class="plan-name">Standard</div>
+            <div class="price-amount">1 990 kr</div>
+            <div class="price-period">/måned</div>
+            <ul class="features-list">
+              <li>2 000 samtaler/måned</li>
+              <li>10 brukere</li>
+              <li>Prioritert support</li>
+              <li>Avansert chatbot</li>
+              <li>CRM-integrasjon</li>
+              <li>API-tilgang</li>
+              <li>Avanserte analyser</li>
+            </ul>
+            <a href="/pages/kontakt/index.html" class="btn btn-primary" style="width: 100%;">Velg Standard</a>
+          </div>
+          
+          <!-- 4. Pro (FEATURED) -->
+          <div class="pricing-card featured">
+            <span class="badge badge-primary">MEST POPULÆR</span>
+            <div class="plan-name">Pro</div>
+            <div class="price-amount">3 990 kr</div>
+            <div class="price-period">/måned</div>
+            <ul class="features-list">
+              <li>10 000 samtaler/måned</li>
+              <li>Ubegrenset brukere</li>
+              <li>24/7 support</li>
+              <li>AI-personalisering</li>
+              <li>Alle integrasjoner</li>
+              <li>White-label chatbot</li>
+              <li>A/B testing</li>
+              <li>Webhooks & API</li>
+            </ul>
+            <a href="/pages/kontakt/index.html" class="btn btn-primary" style="width: 100%;">Velg Pro</a>
+          </div>
+          
+          <!-- 5. Premium -->
+          <div class="pricing-card">
+            <div class="plan-name">Premium</div>
+            <div class="price-amount">6 990 kr</div>
+            <div class="price-period">/måned</div>
+            <ul class="features-list">
+              <li>25 000 samtaler/måned</li>
+              <li>Ubegrenset brukere</li>
+              <li>Dedikert kunderådgiver</li>
+              <li>Business Intelligence</li>
+              <li>Multikanal (SMS, WhatsApp)</li>
+              <li>Custom intents</li>
+              <li>Avansert A/B testing</li>
+              <li>Prediktiv analyse</li>
+            </ul>
+            <a href="/pages/kontakt/index.html" class="btn btn-primary" style="width: 100%;">Velg Premium</a>
+          </div>
+          
+          <!-- 6. Team -->
+          <div class="pricing-card">
+            <div class="plan-name">Team</div>
+            <div class="price-amount">9 990 kr</div>
+            <div class="price-period">/måned</div>
+            <ul class="features-list">
+              <li>50 000 samtaler/måned</li>
+              <li>Ubegrenset brukere</li>
+              <li>Prioritert 24/7 support</li>
+              <li>Team-samarbeid</li>
+              <li>SSO & 2FA</li>
+              <li>Rollehåndtering</li>
+              <li>SLA 99.9% uptime</li>
+              <li>Onboarding-workshop</li>
+            </ul>
+            <a href="/pages/kontakt/index.html" class="btn btn-primary" style="width: 100%;">Velg Team</a>
+          </div>
+          
+          <!-- 7. Bedrift -->
+          <div class="pricing-card">
+            <div class="plan-name">Bedrift</div>
+            <div class="price-amount">14 990 kr</div>
+            <div class="price-period">/måned</div>
+            <ul class="features-list">
+              <li>100 000 samtaler/måned</li>
+              <li>Ubegrenset alt</li>
+              <li>Dedikert support-team</li>
+              <li>Dedikert kapasitet</li>
+              <li>Custom AI-trening</li>
+              <li>Compliance & sikkerhet</li>
+              <li>Data residency</li>
+              <li>Kvartalsvis business review</li>
+            </ul>
+            <a href="/pages/kontakt/index.html" class="btn btn-primary" style="width: 100%;">Velg Bedrift</a>
+          </div>
+          
+          <!-- 8. Agentur -->
+          <div class="pricing-card">
+            <div class="plan-name">Agentur</div>
+            <div class="price-amount">19 990 kr</div>
+            <div class="price-period">/måned</div>
+            <ul class="features-list">
+              <li>250 000 samtaler/måned</li>
+              <li>Multi-tenant arkitektur</li>
+              <li>White-label alt</li>
+              <li>Agentur-panel</li>
+              <li>Reseller rabatter</li>
+              <li>Klient-håndtering</li>
+              <li>Co-branding mulig</li>
+              <li>Partner-portal</li>
+            </ul>
+            <a href="/pages/kontakt/index.html" class="btn btn-primary" style="width: 100%;">Velg Agentur</a>
+          </div>
+          
+          <!-- 9. Enterprise -->
+          <div class="pricing-card">
+            <div class="plan-name">Enterprise</div>
+            <div class="price-amount">29 990 kr</div>
+            <div class="price-period">/måned</div>
+            <ul class="features-list">
+              <li>500 000 samtaler/måned</li>
+              <li>Dedikert infrastruktur</li>
+              <li>24/7 premium support</li>
+              <li>Custom utvikl ing</li>
+              <li>On-premise mulig</li>
+              <li>Juridisk review</li>
+              <li>SLA 99.99%</li>
+              <li>Årlig strategiworkshop</li>
+            </ul>
+            <a href="/pages/kontakt/index.html" class="btn btn-primary" style="width: 100%;">Velg Enterprise</a>
+          </div>
+          
+          <!-- 10. Ubegrenset Ultra (FEATURED) -->
+          <div class="pricing-card featured">
+            <span class="badge badge-accent">VIP</span>
+            <div class="plan-name">Ubegrenset Ultra</div>
+            <div class="price-amount">49 990 kr</div>
+            <div class="price-period">/måned</div>
+            <ul class="features-list">
+              <li>Ubegrenset samtaler</li>
+              <li>Ubegrenset alt</li>
+              <li>Dedikert CTO-time/uke</li>
+              <li>Private AI-modeller</li>
+              <li>Geo-redundant backup</li>
+              <li>Blockchain audit log</li>
+              <li>White glove service</li>
+              <li>Lifetime pris-garanti</li>
+            </ul>
+            <a href="/pages/kontakt/index.html" class="btn btn-accent" style="width: 100%;">Kontakt for Ultra</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- FAQ -->
+    <section class="section-colored">
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: var(--space-2xl);">Ofte stilte spørsmål</h2>
+        
+        <div class="grid grid-2">
+          <div class="card">
+            <h4>Kan jeg endre plan senere?</h4>
+            <p>Ja! Du kan oppgradere eller nedgradere når som helst. Endringer trer i kraft umiddelbart.</p>
+          </div>
+          
+          <div class="card">
+            <h4>Hva skjer hvis jeg går over grensen?</h4>
+            <p>Vi varsler deg ved 80% forbruk. Du kan oppgradere eller kjøpe ekstra samtaler à 0,10 kr/stk.</p>
+          </div>
+          
+          <div class="card">
+            <h4>Får jeg refusjon hvis jeg avbestiller?</h4>
+            <p>Ja, vi tilbyr 30 dagers pengene-tilbake-garanti uten spørsmål stilt.</p>
+          </div>
+          
+          <div class="card">
+            <h4>Er alle funksjoner inkludert?</h4>
+            <p>Ja! Ingen skjulte kostnader. Det du ser er det du får. Integrasjoner og API er inkludert.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Enterprise Contact -->
+    <section>
+      <div class="container">
+        <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+          <h2>Trenger du en skreddersydd løsning?</h2>
+          <p style="font-size: 1.25rem;">
+            Kontakt oss for enterprise-løsninger, volum rabatter eller spesialtilpasninger.
+          </p>
+          <div style="margin-top: var(--space-xl);">
+            <a href="mailto:contact@senkmer.no" class="btn btn-primary btn-large">Kontakt salg</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <div id="footer-placeholder"></div>
+  
+  <script src="/assets/js/layout-2.js"></script>
+  
+  <script>
+    fetch('/components/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+        const toggle = document.getElementById('mobileMenuToggle');
+        const nav = document.getElementById('mainNav');
+        if (toggle && nav) {
+          toggle.addEventListener('click', () => nav.classList.toggle('active'));
+        }
+      });
+    
+    fetch('/components/footer.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('footer-placeholder').innerHTML = html);
+  </script>
+</body>
+</html>

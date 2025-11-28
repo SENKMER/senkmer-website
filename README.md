@@ -1,293 +1,187 @@
 # SENKMER Website
 
-> Moderne, responsiv nettside bygget med ren HTML, CSS og JavaScript
+Komplett norsk nettside for SENKMER AI kundeservice plattform.
 
-![SENKMER Logo](assets/img/logo.svg)
+## 🚀 Prosjektoversikt
 
-## 📋 Innholdsfortegnelse
+- **10 unike sider** med profesjonelt norsk innhold
+- **3 design layouts** (Apple, Duolingo, Shopify-inspirert)
+- **10 prisnivåer** (0 kr - 49,990 kr/mnd) for 100k+ kr/mnd inntektspotensial
+- **Funksjonell chatbot** med kunnskapsbase
+- **Backend API** eksempler med Flask
+- **Shopify theme** konvertering
+- **Full SEO** optimalisering
 
-- [Om prosjektet](#om-prosjektet)
-- [Funksjoner](#funksjoner)
-- [Mappestruktur](#mappestruktur)
-- [Kom i gang](#kom-i-gang)
-- [Utvikling](#utvikling)
-- [Sikkerhet](#sikkerhet)
-- [Shopify integrasjon](#shopify-integrasjon)
-- [Vedlikehold](#vedlikehold)
-
-## 🎯 Om prosjektet
-
-SENKMER er en moderne nettside designet med inspirasjon fra Apple og Duolingo. Nettsiden er bygget med:
-
-- **Ren HTML5** - Semantisk og tilgjengelig markup
-- **Modern CSS3** - CSS Variables, Flexbox, Grid, animasjoner
-- **Vanilla JavaScript** - Ingen avhengigheter, modulær kode
-- **Responsivt design** - Fungerer perfekt på alle enheter
-- **SEO-optimalisert** - Semantisk HTML og meta tags
-
-## ✨ Funksjoner
-
-### Nettsiden inkluderer:
-
-- ✅ **Responsiv navigasjon** med mobil-meny
-- ✅ **Hero-seksjon** med gradient og animasjoner
-- ✅ **Feature cards** med hover-effekter
-- ✅ **Statistikk-tellere** med animerte tall
-- ✅ **Kontaktskjema** med validering og rate limiting
-- ✅ **Chatbot-komponent** (grunnleggende)
-- ✅ **Smooth scroll** navigasjon
-- ✅ **Lazy loading** for bilder
-- ✅ **Scroll-animasjoner** for innhold
-- ✅ **Footer** med sosiale medier
-- ✅ **Profesjonell SVG-logo**
-
-### Sikkerhetsfunksjoner:
-
-- 🔒 Rate limiting på skjemaer
-- 🔒 Input validering (client-side)
-- 🔒 Security headers konfigurert
-- 🔒 CORS-innstillinger
-- 🔒 CSP-retningslinjer
-
-## 📁 Mappestruktur
+## 📁 Struktur
 
 ```
 senkmer-website/
-├── index.html                 # Hovedside
-├── pages/                     # Undersider
-│   ├── om-oss.html
-│   ├── tjenester.html
-│   └── kontakt.html
-├── components/                # Gjenbrukbare komponenter
+├── pages/                    # 10 HTML sider
+│   ├── hjem/                 # Landing page (Layout 1)
+│   ├── om-oss/               # Om oss (Layout 2)
+│   ├── tjenester/            # Tjenester (Layout 3)
+│   ├── priser/               # Priser (Layout 2)
+│   ├── kontakt/              # Kontakt (Layout 1)
+│   ├── faq/                  # FAQ (Layout 2)
+│   ├── butikken/             # Marketplace (Layout 3)
+│   ├── personvern/           # Privacy policy (Layout 1)
+│   ├── sikkerhet/            # Sikkerhet (Layout 2)
+│   └── support-chatbot/      # Live chatbot (Layout 3)
+├── components/               # Gjenbrukbare komponenter
 │   ├── header.html
 │   ├── footer.html
-│   └── chatbot.html
-├── assets/                    # Statiske filer
+│   ├── layout-1.html         # Apple-stil template
+│   ├── layout-2.html         # Duolingo-stil template
+│   └── layout-3.html         # Shopify-stil template
+├── assets/
 │   ├── css/
-│   │   ├── main.css          # Hovedstiler
-│   │   └── components.css    # Komponentstiler
+│   │   ├── layout-1.css      # Minimalistisk Apple design
+│   │   ├── layout-2.css      # Playful Duolingo design
+│   │   └── layout-3.css      # Profesjonell Shopify design
 │   ├── js/
-│   │   ├── components.js     # Komponentlaster
-│   │   ├── main.js           # Hovedfunksjonalitet
-│   │   ├── animations.js     # Animasjoner
-│   │   └── contact.js        # Kontaktskjema
+│   │   ├── layout-1.js       # Smooth scroll, fade-in animations
+│   │   ├── layout-2.js       # Bounce animations
+│   │   └── layout-3.js       # Reveal animations
 │   └── img/
-│       └── logo.svg          # SENKMER logo
-├── config/                    # Konfigurasjon
-│   └── security.json         # Sikkerhetsinnstillinger
-├── templates/                 # Maler (for fremtidig bruk)
-├── package.json              # Prosjekt metadata
-├── SHOPIFY_GUIDE.md         # Guide for Shopify-konvertering
-└── README.md                # Denne filen
+│       └── senkmer-logo.svg  # Gradient logo
+├── api/                      # Backend API eksempler
+│   ├── app.py                # Flask server med alle endpoints
+│   ├── requirements.txt      # Python dependencies
+│   └── README.md             # API dokumentasjon
+├── shopify-theme/            # Shopify theme konvertering
+│   ├── layout/
+│   │   └── theme.liquid
+│   ├── sections/
+│   │   ├── header.liquid
+│   │   ├── footer.liquid
+│   │   ├── hero.liquid
+│   │   └── pricing.liquid
+│   ├── locales/
+│   │   └── no.json           # Norske oversettelser
+│   └── config/
+│       └── settings_schema.json
+├── sitemap.xml               # SEO sitemap
+├── robots.txt                # Crawler instruksjoner
+└── README.md                 # Denne filen
 ```
 
-## 🚀 Kom i gang
+## 🎨 Design Systems
 
-### Forutsetninger
+### Layout 1 - Apple Style
+- **Farger**: Primary #0071e3 (blå)
+- **Font**: SF Pro Display/Text
+- **Stil**: Minimalistisk, blur header, fade-in animations
+- **Brukt på**: hjem, kontakt, personvern
 
-- Python 3 (for lokal server)
-- Moderne nettleser (Chrome, Firefox, Safari, Edge)
-- Teksteditor (VS Code anbefales)
+### Layout 2 - Duolingo Style
+- **Farger**: Primary #58cc02 (grønn), Secondary #1cb0f6 (blå)
+- **Font**: Nunito 800 weight
+- **Stil**: Playful, 3D shadows, bounce animations
+- **Brukt på**: om-oss, priser, faq, sikkerhet
 
-### Installasjon
+### Layout 3 - Shopify Style
+- **Farger**: Primary #008060 (turkis)
+- **Font**: Inter
+- **Stil**: Profesjonell, clean cards, subtle shadows
+- **Brukt på**: tjenester, butikken, support-chatbot
 
-1. **Klon/Last ned prosjektet**
-   ```bash
-   cd /workspaces/senkmer-website
-   ```
+## 💰 Prismodell
 
-2. **Start lokal server**
-   ```bash
-   npm start
-   # eller
-   python3 -m http.server 8000
-   ```
+10 prisnivåer fra 0 kr (Gratis) til 49,990 kr/mnd (Ubegrenset Ultra):
 
-3. **Åpne i nettleser**
-   ```
-   http://localhost:8000
-   ```
+1. **Gratis** - 0 kr (50 samtaler)
+2. **Basic** - 990 kr (500 samtaler)
+3. **Standard** - 1,990 kr (2k samtaler)
+4. **Pro** - 3,990 kr ⭐ **FEATURED** (10k samtaler)
+5. **Premium** - 6,990 kr (25k samtaler)
+6. **Team** - 9,990 kr (50k samtaler)
+7. **Bedrift** - 14,990 kr (100k samtaler)
+8. **Agentur** - 19,990 kr (250k samtaler)
+9. **Enterprise** - 29,990 kr (500k samtaler)
+10. **Ubegrenset Ultra** - 49,990 kr 🌟 **VIP** (unlimited)
 
-## 💻 Utvikling
+**Inntektspotensial**: Med bare 5 Pro-kunder (19,950 kr), 3 Premium (20,970 kr), 2 Team (19,980 kr) og noen få Basic/Standard kunder når vi enkelt 100k+ kr/mnd.
 
-### Redigere innhold
+## 🤖 Chatbot Funksjoner
 
-#### Endre tekst på forsiden:
-Åpne `index.html` og rediger HTML-innholdet direkte.
+Kunnskapsbase med 6 kategorier:
+- **Priser** - Info om alle prisnivåer
+- **Registrering** - Hvordan opprette konto
+- **Integrasjoner** - Shopify, HubSpot, WhatsApp osv.
+- **Passord** - Reset og sikkerhet
+- **Support** - Kontaktinformasjon
+- **Sikkerhet** - GDPR og data protection
 
-#### Endre farger og styling:
-Alle farger og variabler er definert i `assets/css/main.css`:
+## 🔧 Backend API
 
-```css
-:root {
-  --color-primary: #4F46E5;
-  --color-secondary: #7C3AED;
-  /* ... flere variabler */
-}
+Flask server med:
+- **POST /api/contact** - Kontaktskjema (rate limit: 5/min)
+- **POST /api/auth/register** - Brukerregistrering (rate limit: 3/hour)
+- **POST /api/auth/login** - Login med JWT
+- **GET /api/user/profile** - Hent profil (krever JWT)
+- **PUT /api/user/profile** - Oppdater profil (krever JWT)
+- **GET /api/chatbot/analytics** - Chatbot statistikk (krever JWT)
+
+**Sikkerhet**:
+- Rate limiting (Flask-Limiter)
+- JWT authentication
+- CORS (kun senkmer.no)
+- Input validering
+- CSRF protection
+
+## 🛍️ Shopify Theme
+
+Konvertert til Shopify Liquid:
+- `theme.liquid` - Main layout
+- Sections: header, footer, hero, pricing
+- Norwegian locales (`no.json`)
+- Konfigurerbare farger og fonts
+- 3 layout styles (velgbar i admin)
+
+## 📊 SEO
+
+- ✅ Meta tags (title, description, keywords)
+- ✅ Open Graph tags (Facebook/LinkedIn)
+- ✅ Twitter Cards
+- ✅ Canonical URLs
+- ✅ Sitemap.xml med alle 10 sider
+- ✅ Robots.txt
+- ✅ Semantic HTML5
+- ✅ Mobile responsive (768px, 1024px breakpoints)
+
+## 🚦 Kjør Lokalt
+
+### Frontend
+```bash
+# Serve med Python
+python -m http.server 8000
+
+# Eller med Node.js
+npx serve .
 ```
 
-#### Legge til nye sider:
+Åpne `http://localhost:8000/pages/hjem/`
 
-1. Kopier en eksisterende side fra `pages/`
-2. Rediger innholdet
-3. Legg til lenke i `components/header.html`
-
-#### Tilpasse komponenter:
-
-Rediger filene i `components/`:
-- `header.html` - Navigasjon og logo
-- `footer.html` - Bunntekst og lenker
-- `chatbot.html` - Chat-widget
-
-### JavaScript-moduler
-
-#### `assets/js/components.js`
-- Laster inn komponenter dynamisk
-- Håndterer navigasjon
-- Initialiserer chatbot
-
-#### `assets/js/main.js`
-- Scroll-animasjoner
-- Counter-animasjoner
-- Utility-funksjoner
-- Notifikasjoner
-
-#### `assets/js/animations.js`
-- Parallax-effekter
-- Stagger-animasjoner
-- Reveal-on-scroll
-- Hover-effekter
-
-#### `assets/js/contact.js`
-- Skjema-validering
-- Rate limiting
-- Form submission
-- Feilhåndtering
-
-## 🔒 Sikkerhet
-
-### Client-side sikkerhet
-
-Prosjektet inkluderer flere sikkerhetslag:
-
-1. **Rate Limiting**
-   - Kontaktskjema: 1 innsending per minutt
-   - Lagret i localStorage
-
-2. **Input Validering**
-   - E-post validering
-   - Telefon validering
-   - Lengdebegrensninger
-   - Sanitisering av input
-
-3. **Security Headers**
-   Konfigurert i `config/security.json`:
-   - X-Content-Type-Options
-   - X-Frame-Options
-   - X-XSS-Protection
-   - Strict-Transport-Security
-   - Content-Security-Policy
-
-### Backend anbefaling
-
-For produksjon, implementer:
-- Server-side validering
-- CSRF-beskyttelse
-- Rate limiting på server
-- Database sanitisering
-- API-autentisering
-
-## 🛍️ Shopify Integrasjon
-
-Nettsiden er forberedt for konvertering til Shopify Theme.
-
-Se `SHOPIFY_GUIDE.md` for detaljert guide.
-
-### Rask oversikt:
-
-1. Installer Shopify CLI
-2. Konverter HTML til Liquid templates
-3. Flytt assets til Shopify struktur
-4. Lag sections og snippets
-5. Konfigurer theme settings
-6. Test og deploy
-
-## 🔧 Vedlikehold
-
-### Legge til nye tjenester
-
-1. Åpne `pages/tjenester.html`
-2. Kopier en eksisterende `.service-card`
-3. Rediger innhold og ikon
-4. Lagre
-
-### Oppdatere farger/tema
-
-Alle farger er definert som CSS-variabler i `:root` i `assets/css/main.css`.
-
-Endre disse for å endre hele fargepaletten:
-```css
---color-primary: #4F46E5;  /* Hovedfarge */
---color-secondary: #7C3AED; /* Sekundærfarge */
+### Backend API
+```bash
+cd api
+pip install -r requirements.txt
+python app.py
 ```
 
-### Ytelsesoptimalisering
+API kjører på `http://localhost:5000`
 
-- **Bilder**: Komprimer alle bilder før opplasting
-- **CSS**: Minifiser for produksjon
-- **JavaScript**: Minifiser og bundle for produksjon
-- **Lazy loading**: Allerede implementert for bilder
-- **Caching**: Sett opp server-side caching
+## 📞 Kontaktinformasjon
 
-## 📱 Browser Support
-
-Nettsiden støttes i:
-- Chrome (siste 2 versjoner)
-- Firefox (siste 2 versjoner)
-- Safari (siste 2 versjoner)
-- Edge (siste 2 versjoner)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## 🎨 Design System
-
-### Fargepalett
-
-- **Primary**: #4F46E5 (Indigo)
-- **Secondary**: #7C3AED (Purple)
-- **Accent**: #10B981 (Green)
-- **Danger**: #EF4444 (Red)
-
-### Typography
-
-- **Font**: System fonts (SF Pro, Segoe UI, Roboto)
-- **Sizes**: Responsive med clamp()
-- **Weights**: 400 (regular), 500 (medium), 600 (semibold), 700 (bold)
-
-### Spacing
-
-Bruker 8px grid system:
-- xs: 4px
-- sm: 8px
-- md: 16px
-- lg: 24px
-- xl: 32px
-- 2xl: 48px
-- 3xl: 64px
-- 4xl: 96px
+- **E-post**: contact@senkmer.no
+- **Telefon**: (+47) 400 00 000
+- **Adresse**: Senkmer AS, Oslo, Norge
+- **Org.nr**: 123 456 789 MVA
 
 ## 📝 Lisens
 
-Dette prosjektet er privat og tilhører SENKMER.
-
-## 👥 Kontakt
-
-For spørsmål eller support:
-- **E-post**: post@senkmer.no
-- **Telefon**: +47 123 45 678
-- **Nettsted**: [senkmer.no](https://senkmer.no)
+© 2025 Senkmer AS. Alle rettigheter reservert.
 
 ---
 
-**Bygget med ❤️ i Norge**
-
-© 2025 SENKMER. Alle rettigheter reservert.
+**Laget med ❤️ i Norge**

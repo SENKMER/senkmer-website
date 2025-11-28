@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - SENKMER</title>
+  <meta name="description" content="Ofte stilte spørsmål om SENKMER. Finn svar på de vanligste spørsmålene om vår plattform.">
+  <link rel="canonical" content="https://senkmer.no/pages/faq/">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/senkmer-logo.svg">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/layout-2.css">
+  
+  <style>
+    .faq-item {
+      background: white;
+      border: 4px solid var(--text);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
+      margin-bottom: var(--space-lg);
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 6px 6px 0 rgba(0,0,0,0.1);
+    }
+    
+    .faq-item:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 9px 9px 0 rgba(0,0,0,0.15);
+    }
+    
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 800;
+      font-size: 1.25rem;
+      margin-bottom: 0;
+    }
+    
+    .faq-answer {
+      margin-top: var(--space-md);
+      display: none;
+      line-height: 1.7;
+    }
+    
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+    
+    .faq-icon {
+      font-size: 1.5rem;
+      transition: var(--transition);
+    }
+    
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+  </style>
+</head>
+<body class="layout-2">
+  
+  <div id="header-placeholder"></div>
+  
+  <main>
+    <section class="section-hero">
+      <div class="container">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+          <h1>Ofte stilte spørsmål</h1>
+          <p style="font-size: 1.5rem;">Finn svar på de vanligste spørsmålene</p>
+        </div>
+      </div>
+    </section>
+    
+    <section>
+      <div class="container" style="max-width: 900px;">
+        <h2 style="text-align: center; margin-bottom: var(--space-2xl);">📌 Generelt</h2>
+        
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+          <div class="faq-question">
+            Hva er SENKMER?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            SENKMER er en AI-drevet plattform for kundeservice og markedsføring. Vi hjelper bedrifter med å automatisere kundedialog, øke salg og bygge sterke kundeforhold gjennom intelligente chatbots, markedsføringsautomatisering og avanserte analyser.
+          </div>
+        </div>
+        
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+          <div class="faq-question">
+            Hvordan fungerer det?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Du registrerer deg, laster opp dokumenter om produktene/tjenestene dine, og vår AI trener en chatbot tilpasset din bedrift. Chatboten kan deretter svare på kundespørsmål 24/7, mens du får innsikt i sanntid gjennom vårt dashboard.
+          </div>
+        </div>
+        
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+          <div class="faq-question">
+            Kreves det teknisk kompetanse?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Nei! SENKMER er designet for å være brukervennlig. Ingen kodekunnskap er nødvendig. Vi tilbyr også gratis onboarding og support for å hjelpe deg i gang.
+          </div>
+        </div>
+        
+        <h2 style="text-align: center; margin: var(--space-3xl) 0 var(--space-2xl);">💳 Priser & Abonnement</h2>
+        
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+          <div class="faq-question">
+            Hvilken plan passer meg?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Start med Gratis-planen for å teste. Basic og Standard passer små bedrifter (1-20 ansatte). Pro og Premium er perfekt for mellomstore bedrifter. Team, Bedrift og Enterprise er for større organisasjoner med spesialkrav.
+          </div>
+        </div>
+        
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+          <div class="faq-question">
+            Kan jeg endre plan senere?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Ja, når som helst! Oppgradering skjer umiddelbart. Ved nedgradering får du fortsatt tilgang til din nåværende plan til slutten av faktureringsperioden.
+          </div>
+        </div>
+        
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+          <div class="faq-question">
+            Tilbyr dere refusjon?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Ja! Vi har 30 dagers pengene-tilbake-garanti. Hvis du ikke er fornøyd, får du full refusjon uten spørsmål.
+          </div>
+        </div>
+        
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+          <div class="faq-question">
+            Hva skjer hvis jeg overskrider grensen min?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Vi varsler deg ved 80% forbruk. Du kan oppgradere planen eller kjøpe ekstra samtaler à 0,10 kr/stk. Vi stopper aldri tjenesten brått.
+          </div>
+        </div>
+        
+        <h2 style="text-align: center; margin: var(--space-3xl) 0 var(--space-2xl);">🔒 Sikkerhet & Personvern</h2>
+        
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+          <div class="faq-question">
+            Er SENKMER GDPR-kompatibel?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Ja, 100%! Vi er GDPR-kompatible og alle data lagres i Norge/EU. Du eier alltid dine egne data og kan eksportere eller slette dem når som helst.
+          </div>
+        </div>
+        
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+          <div class="faq-question">
+            Hvordan beskyttes mine data?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Vi bruker end-to-end kryptering, ISO 27001 sertifisert infrastruktur, og følger beste praksis for sikkerhet. All kommunikasjon er kryptert med TLS 1.3.
+          </div>
+        </div>
+        
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+          <div class="faq-question">
+            Hvem har tilgang til mine data?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Kun du og brukerne du gir tilgang til. Våre ansatte har kun tilgang ved support-henvendelser, og da kun med ditt samtykke.
+          </div>
+        </div>
+        
+        <h2 style="text-align: center; margin: var(--space-3xl) 0 var(--space-2xl);">🛠️ Teknisk</h2>
+        
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+          <div class="faq-question">
+            Hvilke integrasjoner støttes?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Vi støtter 100+ integrasjoner inkludert Shopify, WooCommerce, HubSpot, Salesforce, Slack, WhatsApp, Facebook Messenger og mer. Se full liste på tjenester-siden.
+          </div>
+        </div>
+        
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+          <div class="faq-question">
+            Har dere API?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Ja! Vi har et komplett REST API med webhooks. Dokumentasjon er tilgjengelig for alle betalende kunder.
+          </div>
+        </div>
+        
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+          <div class="faq-question">
+            Kan jeg tilpasse designet?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Ja! Du kan tilpasse farger, fonter, logoer og meldinger. Pro+ planer får også tilgang til CSS-editor for full kontroll.
+          </div>
+        </div>
+        
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+          <div class="faq-question">
+            Hva er oppetiden deres?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Vi garanterer 99.9% oppetid på alle betalte planer (99.99% på Enterprise). Vi har redundante servere i flere datasentre.
+          </div>
+        </div>
+        
+        <h2 style="text-align: center; margin: var(--space-3xl) 0 var(--space-2xl);">💬 Support</h2>
+        
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+          <div class="faq-question">
+            Hvordan får jeg hjelp?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Vi tilbyr e-post support (alle planer), live chat (Basic+), telefonsupport (Pro+) og dedikert supportteam (Enterprise). Svartid varierer fra 24t til øyeblikkelig avhengig av plan.
+          </div>
+        </div>
+        
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+          <div class="faq-question">
+            Tilbyr dere opplæring?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Ja! Alle kunder får tilgang til vår kunnskapsbase og videoguider. Team+ planer inkluderer onboarding-workshop. Enterprise får dedikert opplæring.
+          </div>
+        </div>
+        
+        <div class="faq-item" onclick="this.classList.toggle('active')">
+          <div class="faq-question">
+            Snakker dere norsk?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            Ja! Hele plattformen, dokumentasjonen og support-teamet er på norsk. Vi har også engelskspråklig support tilgjengelig.
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section-colored">
+      <div class="container">
+        <div style="text-align: center;">
+          <h2>Fikk du ikke svar?</h2>
+          <p style="font-size: 1.25rem;">Ta kontakt med oss direkte!</p>
+          <div style="margin-top: var(--space-xl);">
+            <a href="/pages/kontakt/index.html" class="btn btn-primary btn-large">Kontakt support</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <div id="footer-placeholder"></div>
+  
+  <script src="/assets/js/layout-2.js"></script>
+  
+  <script>
+    fetch('/components/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+        const toggle = document.getElementById('mobileMenuToggle');
+        const nav = document.getElementById('mainNav');
+        if (toggle && nav) {
+          toggle.addEventListener('click', () => nav.classList.toggle('active'));
+        }
+      });
+    
+    fetch('/components/footer.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('footer-placeholder').innerHTML = html);
+  </script>
+</body>
+</html>

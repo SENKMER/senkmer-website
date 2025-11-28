@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{PAGE_TITLE}} - SENKMER</title>
+  <meta name="description" content="{{PAGE_DESCRIPTION}}">
+  
+  <!-- SEO -->
+  <meta name="keywords" content="{{PAGE_KEYWORDS}}">
+  <meta name="author" content="Senkmer AS">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://senkmer.no{{PAGE_URL}}">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://senkmer.no{{PAGE_URL}}">
+  <meta property="og:title" content="{{PAGE_TITLE}} - SENKMER">
+  <meta property="og:description" content="{{PAGE_DESCRIPTION}}">
+  <meta property="og:image" content="https://senkmer.no/assets/img/og-image.jpg">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{PAGE_TITLE}} - SENKMER">
+  <meta name="twitter:description" content="{{PAGE_DESCRIPTION}}">
+  <meta name="twitter:image" content="https://senkmer.no/assets/img/og-image.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/assets/img/senkmer-logo.svg">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/layout-3.css">
+  {{PAGE_CSS}}
+</head>
+<body class="layout-3">
+  
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+  
+  <!-- Main Content -->
+  {{CONTENT}}
+  
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+  
+  <!-- Scripts -->
+  <script src="/assets/js/layout-3.js"></script>
+  {{PAGE_JS}}
+  
+  <!-- Component Loader -->
+  <script>
+    // Load header
+    fetch('/components/header.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+        // Initialize mobile menu
+        const toggle = document.getElementById('mobileMenuToggle');
+        const nav = document.getElementById('mainNav');
+        if (toggle && nav) {
+          toggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+          });
+        }
+      });
+    
+    // Load footer
+    fetch('/components/footer.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('footer-placeholder').innerHTML = html;
+      });
+  </script>
+</body>
+</html>

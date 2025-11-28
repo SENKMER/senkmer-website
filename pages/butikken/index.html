@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Butikken - SENKMER</title>
+  <meta name="description" content="Utforsk tillegg, integrasjoner og ressurser i SENKMER Marketplace.">
+  <link rel="canonical" content="https://senkmer.no/pages/butikken/">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/senkmer-logo.svg">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/layout-3.css">
+  
+  <style>
+    .marketplace-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: var(--space-lg);
+    }
+    
+    .product-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    
+    .product-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+    
+    .product-image {
+      height: 200px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+    }
+    
+    .product-content {
+      padding: var(--space-lg);
+    }
+    
+    .product-price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: var(--space-sm) 0;
+    }
+    
+    .product-category {
+      display: inline-block;
+      padding: 4px 12px;
+      background: var(--bg);
+      border-radius: var(--radius-sm);
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: var(--space-sm);
+    }
+  </style>
+</head>
+<body class="layout-3">
+  
+  <div id="header-placeholder"></div>
+  
+  <main>
+    <section class="section-hero">
+      <div class="container">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;" class="reveal-on-scroll">
+          <h1>Marketplace</h1>
+          <p style="font-size: 1.25rem;">Utvid SENKMER med integrasjoner, templates og tillegg</p>
+        </div>
+      </div>
+    </section>
+    
+    <section>
+      <div class="container">
+        <h2 style="margin-bottom: var(--space-2xl);">🔌 Integrasjoner</h2>
+        
+        <div class="marketplace-grid">
+          <div class="product-card reveal-on-scroll">
+            <div class="product-image">🛍️</div>
+            <div class="product-content">
+              <span class="product-category badge badge-primary">E-handel</span>
+              <h3>Shopify Connector</h3>
+              <p>Synkroniser produkter, ordrer og kunder automatisk med Shopify-butikken din.</p>
+              <div class="product-price">Gratis</div>
+              <a href="#" class="btn btn-primary" style="width: 100%;">Installer</a>
+            </div>
+          </div>
+          
+          <div class="product-card reveal-on-scroll">
+            <div class="product-image">📊</div>
+            <div class="product-content">
+              <span class="product-category badge badge-secondary">CRM</span>
+              <h3>HubSpot Integration</h3>
+              <p>Automatisk synkronisering av leads, kontakter og avtaler med HubSpot CRM.</p>
+              <div class="product-price">990 kr/mnd</div>
+              <a href="#" class="btn btn-primary" style="width: 100%;">Kjøp nå</a>
+            </div>
+          </div>
+          
+          <div class="product-card reveal-on-scroll">
+            <div class="product-image">💬</div>
+            <div class="product-content">
+              <span class="product-category badge badge-success">Kommunikasjon</span>
+              <h3>WhatsApp Business</h3>
+              <p>Koble chatboten til WhatsApp Business API for direktemeldinger.</p>
+              <div class="product-price">1 490 kr/mnd</div>
+              <a href="#" class="btn btn-primary" style="width: 100%;">Kjøp nå</a>
+            </div>
+          </div>
+          
+          <div class="product-card reveal-on-scroll">
+            <div class="product-image">📧</div>
+            <div class="product-content">
+              <span class="product-category badge badge-primary">Markedsføring</span>
+              <h3>Mailchimp Sync</h3>
+              <p>Synkroniser e-postlister og kampanjer med Mailchimp automatisk.</p>
+              <div class="product-price">Gratis</div>
+              <a href="#" class="btn btn-primary" style="width: 100%;">Installer</a>
+            </div>
+          </div>
+          
+          <div class="product-card reveal-on-scroll">
+            <div class="product-image">💳</div>
+            <div class="product-content">
+              <span class="product-category badge badge-secondary">Betaling</span>
+              <h3>Vipps MobilePay</h3>
+              <p>Aksepter betalinger direkte i chatten med Vipps MobilePay.</p>
+              <div class="product-price">490 kr/mnd</div>
+              <a href="#" class="btn btn-primary" style="width: 100%;">Kjøp nå</a>
+            </div>
+          </div>
+          
+          <div class="product-card reveal-on-scroll">
+            <div class="product-image">📅</div>
+            <div class="product-content">
+              <span class="product-category badge badge-success">Produktivitet</span>
+              <h3>Google Calendar</h3>
+              <p>Book møter og send kalenderinvitasjoner automatisk via chatboten.</p>
+              <div class="product-price">Gratis</div>
+              <a href="#" class="btn btn-primary" style="width: 100%;">Installer</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section-surface">
+      <div class="container">
+        <h2 style="margin-bottom: var(--space-2xl);">🎨 Templates & Design</h2>
+        
+        <div class="marketplace-grid">
+          <div class="product-card reveal-on-scroll">
+            <div class="product-image">🏪</div>
+            <div class="product-content">
+              <span class="product-category badge badge-primary">E-handel</span>
+              <h3>E-commerce Chat Template</h3>
+              <p>Ferdigdesignet chatbot for nettbutikker med produktanbefalinger.</p>
+              <div class="product-price">1 990 kr</div>
+              <a href="#" class="btn btn-outline" style="width: 100%;">Se demo</a>
+            </div>
+          </div>
+          
+          <div class="product-card reveal-on-scroll">
+            <div class="product-image">🏦</div>
+            <div class="product-content">
+              <span class="product-category badge badge-secondary">Finans</span>
+              <h3>Banking Assistant</h3>
+              <p>Sikker chatbot-mal for finansielle tjenester og rådgivning.</p>
+              <div class="product-price">3 990 kr</div>
+              <a href="#" class="btn btn-outline" style="width: 100%;">Se demo</a>
+            </div>
+          </div>
+          
+          <div class="product-card reveal-on-scroll">
+            <div class="product-image">🏥</div>
+            <div class="product-content">
+              <span class="product-category badge badge-success">Helse</span>
+              <h3>Healthcare Bot</h3>
+              <p>GDPR-kompatibel chatbot for helsesektoren med tidsbestilling.</p>
+              <div class="product-price">2 990 kr</div>
+              <a href="#" class="btn btn-outline" style="width: 100%;">Se demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section>
+      <div class="container">
+        <h2 style="margin-bottom: var(--space-2xl);">📚 Ressurser & Verktøy</h2>
+        
+        <div class="grid grid-3">
+          <div class="card reveal-on-scroll">
+            <h4>📖 Utvikler-dokumentasjon</h4>
+            <p>Fullstendig API-dokumentasjon med eksempler og beste praksis.</p>
+            <a href="#" class="btn btn-outline" style="width: 100%; margin-top: var(--space-md);">Les mer</a>
+          </div>
+          
+          <div class="card reveal-on-scroll">
+            <h4>🎓 SENKMER Academy</h4>
+            <p>Gratis videokurs i hvordan du maksimerer nytten av plattformen.</p>
+            <a href="#" class="btn btn-outline" style="width: 100%; margin-top: var(--space-md);">Start læring</a>
+          </div>
+          
+          <div class="card reveal-on-scroll">
+            <h4>👥 Community Forum</h4>
+            <p>Del tips, still spørsmål og lær av andre SENKMER-brukere.</p>
+            <a href="#" class="btn btn-outline" style="width: 100%; margin-top: var(--space-md);">Besøk forum</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section-surface">
+      <div class="container">
+        <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+          <h2>Mangler du noe?</h2>
+          <p style="font-size: 1.125rem;">Vi lager custom integrasjoner for Enterprise-kunder</p>
+          <div style="margin-top: var(--space-xl);">
+            <a href="/pages/kontakt/index.html" class="btn btn-primary btn-large">Kontakt oss</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <div id="footer-placeholder"></div>
+  
+  <script src="/assets/js/layout-3.js"></script>
+  
+  <script>
+    fetch('/components/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+        const toggle = document.getElementById('mobileMenuToggle');
+        const nav = document.getElementById('mainNav');
+        if (toggle && nav) {
+          toggle.addEventListener('click', () => nav.classList.toggle('active'));
+        }
+      });
+    
+    fetch('/components/footer.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('footer-placeholder').innerHTML = html);
+  </script>
+</body>
+</html>

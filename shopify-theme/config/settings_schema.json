@@ -1,112 +1,71 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "SENKMER",
+    "theme_name": "SENKMER Theme",
     "theme_version": "1.0.0",
-    "theme_author": "SENKMER",
+    "theme_author": "SENKMER AS",
     "theme_documentation_url": "https://senkmer.no/docs",
     "theme_support_url": "https://senkmer.no/support"
   },
   {
-    "name": "Farger",
+    "name": "Colors",
     "settings": [
-      {
-        "type": "header",
-        "content": "Fargepalett"
-      },
       {
         "type": "color",
         "id": "color_primary",
-        "label": "Primær farge",
-        "default": "#4F46E5"
+        "label": "Primary Color",
+        "default": "#0071e3"
       },
       {
         "type": "color",
         "id": "color_secondary",
-        "label": "Sekundær farge",
-        "default": "#7C3AED"
+        "label": "Secondary Color",
+        "default": "#58cc02"
       },
       {
         "type": "color",
         "id": "color_accent",
-        "label": "Aksent farge",
-        "default": "#10B981"
-      },
-      {
-        "type": "color",
-        "id": "color_text",
-        "label": "Tekstfarge",
-        "default": "#1f2937"
-      },
-      {
-        "type": "color",
-        "id": "color_background",
-        "label": "Bakgrunnsfarge",
-        "default": "#ffffff"
+        "label": "Accent Color",
+        "default": "#ff9600"
       }
     ]
   },
   {
-    "name": "Typografi",
+    "name": "Typography",
     "settings": [
-      {
-        "type": "header",
-        "content": "Fonter"
-      },
       {
         "type": "font_picker",
         "id": "font_heading",
-        "label": "Overskriftsfont",
-        "default": "assistant_n4"
+        "label": "Heading Font",
+        "default": "inter_n7"
       },
       {
         "type": "font_picker",
         "id": "font_body",
-        "label": "Brødtekstfont",
-        "default": "assistant_n4"
+        "label": "Body Font",
+        "default": "inter_n4"
       }
     ]
   },
   {
-    "name": "Header",
+    "name": "Layout",
     "settings": [
       {
-        "type": "image_picker",
-        "id": "logo",
-        "label": "Logo"
+        "type": "select",
+        "id": "layout_style",
+        "label": "Layout Style",
+        "options": [
+          { "value": "layout-1", "label": "Apple Style" },
+          { "value": "layout-2", "label": "Duolingo Style" },
+          { "value": "layout-3", "label": "Shopify Style" }
+        ],
+        "default": "layout-1"
       },
       {
-        "type": "range",
-        "id": "logo_width",
-        "label": "Logo bredde",
-        "min": 50,
-        "max": 300,
-        "step": 10,
-        "default": 150,
-        "unit": "px"
-      }
-    ]
-  },
-  {
-    "name": "Footer",
-    "settings": [
-      {
-        "type": "textarea",
-        "id": "footer_text",
-        "label": "Footer tekst",
-        "default": "Din partner for digitale løsninger og innovasjon."
-      },
-      {
-        "type": "text",
-        "id": "footer_email",
-        "label": "Kontakt e-post",
-        "default": "contact@senkmer.no"
-      },
-      {
-        "type": "text",
-        "id": "footer_phone",
-        "label": "Telefonnummer",
-        "default": "+47 123 45 678"
+        "type": "checkbox",
+        "id": "enable_chatbot",
+        "label": "Enable Chatbot",
+        "default": true
       }
     ]
   }

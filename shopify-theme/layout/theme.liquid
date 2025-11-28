@@ -1,39 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="no">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page_title }}{% if current_tags %}{{ 'general.meta.tags' | t: tags: current_tags | prepend: ' - ' }}{% endif %}{% if current_page != 1 %}{{ 'general.meta.page' | t: page: current_page | prepend: ' - ' }}{% endif %}{% unless page_title contains shop.name %}{{ shop.name | prepend: ' - ' }}{% endunless %}</title>
-  
-  {% if page_description %}
-    <meta name="description" content="{{ page_description | escape }}">
-  {% endif %}
-  
-  <link rel="canonical" href="{{ canonical_url }}">
-  
-  {%- if settings.favicon != blank -%}
-    <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
-  {%- endif -%}
-  
-  {{ 'theme.css' | asset_url | stylesheet_tag }}
+  <title>{{ page_title }}{{ shop.name | prepend: ' - ' }}</title>
   
   {{ content_for_header }}
-</head>
-<body class="template-{{ template | replace: '.', '-' | handle }}">
   
+  {{ 'layout-1.css' | asset_url | stylesheet_tag }}
+  {{ 'layout-2.css' | asset_url | stylesheet_tag }}
+  {{ 'layout-3.css' | asset_url | stylesheet_tag }}
+</head>
+<body>
   {% section 'header' %}
   
-  <main role="main" id="MainContent">
+  <main role="main">
     {{ content_for_layout }}
   </main>
   
   {% section 'footer' %}
+  {% section 'chatbot' %}
   
-  <!-- Chatbot -->
-  {% render 'chatbot' %}
-  
-  <!-- Scripts -->
-  <script src="{{ 'theme.js' | asset_url }}" defer></script>
-  
+  {{ 'layout-1.js' | asset_url | script_tag }}
 </body>
 </html>

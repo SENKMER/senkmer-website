@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Disallow admin areas
+Disallow: /api/
+Disallow: /admin/
+Disallow: /.git/
+
+# Sitemap location
+Sitemap: https://senkmer.no/sitemap.xml

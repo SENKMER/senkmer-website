@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt - SENKMER</title>
+  <meta name="description" content="Ta kontakt med SENKMER. Vi er her for å hjelpe deg. E-post, telefon eller kontaktskjema.">
+  
+  <meta name="keywords" content="kontakt, support, kundeservice, hjelp">
+  <meta name="author" content="Senkmer AS">
+  <link rel="canonical" content="https://senkmer.no/pages/kontakt/">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/senkmer-logo.svg">
+  
+  <link rel="stylesheet" href="/assets/css/layout-1.css">
+  
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-xl);
+      margin: var(--space-2xl) 0;
+    }
+    
+    .contact-method {
+      text-align: center;
+      padding: var(--space-xl);
+    }
+    
+    .contact-icon {
+      font-size: 4rem;
+      margin-bottom: var(--space-md);
+    }
+    
+    .contact-form {
+      max-width: 700px;
+      margin: var(--space-3xl) auto;
+      padding: var(--space-2xl);
+      background: white;
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .form-group {
+      margin-bottom: var(--space-lg);
+    }
+    
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: var(--space-xs);
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 14px;
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 16px;
+      transition: var(--transition);
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+    
+    .form-group textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+  </style>
+</head>
+<body class="layout-1">
+  
+  <div id="header-placeholder"></div>
+  
+  <main>
+    <!-- Hero -->
+    <section class="section-hero">
+      <div class="container">
+        <div style="text-align: center; max-width: 700px; margin: 0 auto;" class="fade-in">
+          <h1>Ta kontakt med oss</h1>
+          <p style="font-size: 1.375rem;">
+            Vi er her for å hjelpe deg. Velg den måten som passer deg best.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Contact Methods -->
+    <section>
+      <div class="container">
+        <div class="contact-grid">
+          <div class="card fade-in contact-method">
+            <div class="contact-icon">📧</div>
+            <h3>E-post</h3>
+            <p><a href="mailto:contact@senkmer.no" style="font-size: 1.25rem; font-weight: 600;">contact@senkmer.no</a></p>
+            <p>Vi svarer innen 24 timer på hverdager</p>
+          </div>
+          
+          <div class="card fade-in contact-method">
+            <div class="contact-icon">📞</div>
+            <h3>Telefon</h3>
+            <p><a href="tel:+4740000000" style="font-size: 1.25rem; font-weight: 600;">(+47) 400 00 000</a></p>
+            <p>Man-Fre: 09:00 - 17:00</p>
+          </div>
+          
+          <div class="card fade-in contact-method">
+            <div class="contact-icon">💬</div>
+            <h3>Live Chat</h3>
+            <p style="font-size: 1.25rem; font-weight: 600;">På nettsiden</p>
+            <p>Øyeblikkelig svar 24/7</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Contact Form -->
+    <section class="section-alt">
+      <div class="container">
+        <div class="contact-form fade-in">
+          <h2 style="margin-bottom: var(--space-md);">Send oss en melding</h2>
+          <p style="color: var(--text-light); margin-bottom: var(--space-xl);">
+            Fyll ut skjemaet under så tar vi kontakt så snart som mulig.
+          </p>
+          
+          <form>
+            <div class="form-group">
+              <label for="name">Fullt navn *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">E-postadresse *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Telefonnummer</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            
+            <div class="form-group">
+              <label for="company">Bedrift</label>
+              <input type="text" id="company" name="company">
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Emne *</label>
+              <select id="subject" name="subject" required>
+                <option value="">Velg emne</option>
+                <option value="demo">Jeg vil ha en demo</option>
+                <option value="pricing">Spørsmål om priser</option>
+                <option value="support">Teknisk support</option>
+                <option value="sales">Salgshenvendelse</option>
+                <option value="partnership">Partnerskap</option>
+                <option value="other">Annet</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Melding *</label>
+              <textarea id="message" name="message" required placeholder="Fortell oss hvordan vi kan hjelpe deg..."></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Send melding</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Office Info -->
+    <section>
+      <div class="container">
+        <h2 style="text-align: center; margin-bottom: var(--space-2xl);">Vårt kontor</h2>
+        
+        <div class="grid grid-3">
+          <div class="card fade-in">
+            <h4>📍 Adresse</h4>
+            <p>
+              Senkmer AS<br>
+              Storgata 1<br>
+              0123 Oslo<br>
+              Norge
+            </p>
+          </div>
+          
+          <div class="card fade-in">
+            <h4>🕐 Åpningstider</h4>
+            <p>
+              Mandag - Fredag: 09:00 - 17:00<br>
+              Lørdag - Søndag: Stengt<br>
+              <br>
+              <em>Chatbot tilgjengelig 24/7</em>
+            </p>
+          </div>
+          
+          <div class="card fade-in">
+            <h4>📄 Organisasjon</h4>
+            <p>
+              Org.nr: 123 456 789 MVA<br>
+              Bank: 1234.56.78901<br>
+              SWIFT: DNBANOKKXXX
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <div id="footer-placeholder"></div>
+  
+  <script src="/assets/js/layout-1.js"></script>
+  
+  <script>
+    fetch('/components/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+        const toggle = document.getElementById('mobileMenuToggle');
+        const nav = document.getElementById('mainNav');
+        if (toggle && nav) {
+          toggle.addEventListener('click', () => nav.classList.toggle('active'));
+        }
+      });
+    
+    fetch('/components/footer.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('footer-placeholder').innerHTML = html);
+    
+    // Form submission
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Takk for din henvendelse! Vi tar kontakt snart.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>

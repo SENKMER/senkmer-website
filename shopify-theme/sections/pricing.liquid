@@ -1,0 +1,91 @@
+<div class="pricing-section">
+  <div class="container">
+    <h2>{{ section.settings.heading }}</h2>
+    
+    <div class="pricing-grid">
+      {% for block in section.blocks %}
+        <div class="pricing-card {% if block.settings.featured %}pricing-card-featured{% endif %}">
+          {% if block.settings.featured %}
+            <div class="pricing-badge">{{ 'pricing.popular' | t }}</div>
+          {% endif %}
+          
+          <h3>{{ block.settings.name }}</h3>
+          <div class="pricing-price">
+            <span class="price-amount">{{ block.settings.price | money }}</span>
+            <span class="price-period">/{{ 'pricing.month' | t }}</span>
+          </div>
+          
+          <ul class="pricing-features">
+            {% assign features = block.settings.features | split: '|' %}
+            {% for feature in features %}
+              <li>{{ feature }}</li>
+            {% endfor %}
+          </ul>
+          
+          <a href="{{ routes.cart_add_url }}?id={{ block.settings.variant_id }}" class="btn btn-primary btn-block">
+            {{ block.settings.cta_text | default: 'Velg plan' }}
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Pricing",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Priser som passer din virksomhet"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "pricing_tier",
+      "name": "Pricing Tier",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Plan Name"
+        },
+        {
+          "type": "number",
+          "id": "price",
+          "label": "Price (øre)"
+        },
+        {
+          "type": "product",
+          "id": "variant_id",
+          "label": "Product Variant"
+        },
+        {
+          "type": "textarea",
+          "id": "features",
+          "label": "Features (separate with |)"
+        },
+        {
+          "type": "checkbox",
+          "id": "featured",
+          "label": "Featured",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "Button Text",
+          "default": "Velg plan"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pricing"
+    }
+  ]
+}
+{% endschema %}

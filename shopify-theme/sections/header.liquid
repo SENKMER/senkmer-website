@@ -1,25 +1,28 @@
-<header class="site-header" id="header">
-  <div class="header-container">
+<header class="site-header">
+  <div class="container">
     <a href="{{ routes.root_url }}" class="logo">
-      {% if section.settings.logo %}
-        <img src="{{ section.settings.logo | image_url: width: 150 }}" alt="{{ shop.name }}" width="150" height="50">
-      {% else %}
-        <img src="{{ 'logo.svg' | asset_url }}" alt="{{ shop.name }}" width="150" height="50">
-      {% endif %}
+      <img src="{{ 'senkmer-logo.svg' | asset_url }}" alt="SENKMER">
     </a>
     
-    <nav class="main-nav" id="main-nav">
-      <ul>
-        <li><a href="{{ routes.root_url }}">Hjem</a></li>
-        <li><a href="/pages/om-oss">Om oss</a></li>
-        <li><a href="/pages/tjenester">Tjenester</a></li>
-        <li><a href="/pages/priser">Priser</a></li>
-        <li><a href="/pages/butikk">Butikk</a></li>
-        <li><a href="/pages/kontakt">Kontakt</a></li>
-      </ul>
+    <nav>
+      {% for link in linklists.main-menu.links %}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      {% endfor %}
     </nav>
     
-    <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">
+    <div class="header-actions">
+      <a href="{{ routes.cart_url }}" class="btn btn-primary">
+        {{ 'header.cart' | t }} ({{ cart.item_count }})
+      </a>
+      
+      {% if customer %}
+        <a href="{{ routes.account_url }}">{{ 'header.account' | t }}</a>
+      {% else %}
+        <a href="{{ routes.account_login_url }}">{{ 'header.login' | t }}</a>
+      {% endif %}
+    </div>
+    
+    <button id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Menu">
       <span></span>
       <span></span>
       <span></span>
@@ -30,12 +33,6 @@
 {% schema %}
 {
   "name": "Header",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "Logo"
-    }
-  ]
+  "settings": []
 }
 {% endschema %}

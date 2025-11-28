@@ -1,8 +1,0 @@
-.chat-demo{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
-.chat-panel{border:1px solid #eee;border-radius:12px;min-height:360px;padding:12px}
-.aside{border:1px dashed #ddd;border-radius:12px;padding:16px}
-
-/* Chatbot suggestion chips */
-.chatbot-suggestions{display:flex;flex-wrap:wrap;gap:8px;padding:8px 12px}
-.chatbot-suggestions .chip{background:#f3f4f6;border:1px solid #e5e7eb;border-radius:999px;padding:6px 10px;font-size:.9rem;cursor:pointer}
-.chatbot-suggestions .chip:hover{background:#eef2ff;border-color:#c7d2fe}

@@ -1,55 +1,50 @@
 {
-  "no": {
-    "general": {
-      "404": {
-        "title": "404 - Siden ble ikke funnet",
-        "subtext": "Siden du leter etter finnes ikke."
-      },
-      "meta": {
-        "tags": "Merket \"{{ tags }}\"",
-        "page": "Side {{ page }}"
-      },
-      "search": {
-        "title": "Søk",
-        "placeholder": "Søk på nettstedet vårt"
-      }
-    },
-    "blogs": {
-      "article": {
-        "read_more": "Les mer",
-        "by_author": "av {{ author }}"
-      }
-    },
-    "cart": {
-      "general": {
-        "title": "Handlekurv",
-        "remove": "Fjern",
-        "subtotal": "Subtotal",
-        "empty": "Handlekurven din er tom",
-        "continue_shopping": "Fortsett å handle",
-        "checkout": "Gå til kassen"
-      }
-    },
-    "products": {
-      "product": {
-        "add_to_cart": "Legg til i handlekurv",
-        "sold_out": "Utsolgt",
-        "unavailable": "Ikke tilgjengelig",
-        "quantity": "Antall",
-        "price": "Pris"
-      }
-    },
-    "customer": {
-      "account": {
-        "title": "Min konto",
-        "details": "Kontoopplysninger"
-      },
-      "login": {
-        "title": "Logg inn",
-        "email": "E-post",
-        "password": "Passord",
-        "sign_in": "Logg inn"
-      }
-    }
+  "general": {
+    "language": "Norsk"
+  },
+  "header": {
+    "cart": "Handlekurv",
+    "account": "Min konto",
+    "login": "Logg inn"
+  },
+  "footer": {
+    "products": "Produkter",
+    "company": "Selskap",
+    "contact": "Kontakt oss",
+    "email": "E-post",
+    "phone": "Telefon",
+    "rights": "Alle rettigheter reservert."
+  },
+  "pricing": {
+    "popular": "Mest populær",
+    "month": "mnd",
+    "year": "år"
+  },
+  "contact": {
+    "heading": "Ta kontakt",
+    "name": "Navn",
+    "email": "E-post",
+    "phone": "Telefon",
+    "company": "Selskap",
+    "message": "Melding",
+    "submit": "Send henvendelse",
+    "success": "Takk for din henvendelse. Vi tar kontakt snart!"
+  },
+  "chatbot": {
+    "placeholder": "Skriv din melding...",
+    "send": "Send",
+    "typing": "Skriver..."
+  },
+  "product": {
+    "add_to_cart": "Legg i handlekurv",
+    "sold_out": "Utsolgt",
+    "price": "Pris"
+  },
+  "cart": {
+    "title": "Handlekurv",
+    "empty": "Din handlekurv er tom",
+    "subtotal": "Delsum",
+    "checkout": "Gå til betaling",
+    "continue_shopping": "Fortsett å handle"
   }
 }

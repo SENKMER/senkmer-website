@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support Chatbot - SENKMER</title>
+  <meta name="description" content="Få øyeblikkelig hjelp fra vår AI-drevne support chatbot.">
+  <link rel="canonical" content="https://senkmer.no/pages/support-chatbot/">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/senkmer-logo.svg">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/layout-3.css">
+  
+  <style>
+    .chatbot-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 700px;
+    }
+    
+    .chat-header {
+      background: var(--primary);
+      color: white;
+      padding: var(--space-lg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: var(--space-lg);
+      background: var(--bg);
+    }
+    
+    .message {
+      margin-bottom: var(--space-md);
+      display: flex;
+      gap: var(--space-sm);
+      align-items: flex-start;
+    }
+    
+    .message.user {
+      flex-direction: row-reverse;
+    }
+    
+    .message-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    
+    .message.user .message-avatar {
+      background: var(--secondary);
+    }
+    
+    .message-bubble {
+      background: white;
+      padding: var(--space-md);
+      border-radius: var(--radius);
+      max-width: 70%;
+      box-shadow: var(--shadow);
+    }
+    
+    .message.user .message-bubble {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .message-time {
+      font-size: 12px;
+      color: var(--text-subdued);
+      margin-top: var(--space-xs);
+    }
+    
+    .message.user .message-time {
+      color: rgba(255,255,255,0.7);
+    }
+    
+    .chat-input-container {
+      padding: var(--space-lg);
+      border-top: 1px solid var(--border);
+      background: white;
+    }
+    
+    .chat-input-wrapper {
+      display: flex;
+      gap: var(--space-sm);
+    }
+    
+    .chat-input {
+      flex: 1;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-family: var(--font-primary);
+      font-size: 15px;
+    }
+    
+    .chat-input:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+    
+    .send-button {
+      padding: 12px 24px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    
+    .send-button:hover {
+      background: var(--primary-hover);
+    }
+    
+    .quick-replies {
+      display: flex;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+      margin-top: var(--space-md);
+    }
+    
+    .quick-reply {
+      padding: 8px 16px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 14px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    
+    .quick-reply:hover {
+      background: var(--bg);
+      border-color: var(--primary);
+    }
+    
+    .typing-indicator {
+      display: none;
+      padding: var(--space-sm);
+    }
+    
+    .typing-indicator.active {
+      display: block;
+    }
+    
+    .typing-dots {
+      display: inline-flex;
+      gap: 4px;
+    }
+    
+    .typing-dots span {
+      width: 8px;
+      height: 8px;
+      background: var(--text-subdued);
+      border-radius: 50%;
+      animation: typing 1.4s infinite;
+    }
+    
+    .typing-dots span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    
+    .typing-dots span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+    
+    @keyframes typing {
+      0%, 60%, 100% {
+        transform: translateY(0);
+      }
+      30% {
+        transform: translateY(-10px);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .chatbot-container {
+        height: 600px;
+      }
+      
+      .message-bubble {
+        max-width: 85%;
+      }
+    }
+  </style>
+</head>
+<body class="layout-3">
+  
+  <div id="header-placeholder"></div>
+  
+  <main>
+    <section class="section-hero" style="min-height: 40vh;">
+      <div class="container">
+        <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+          <h1>💬 Support Chatbot</h1>
+          <p style="font-size: 1.125rem; color: var(--text-subdued);">
+            Få øyeblikkelig svar på dine spørsmål 24/7
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <section>
+      <div class="container">
+        <div class="chatbot-container">
+          <div class="chat-header">
+            <div>
+              <h3 style="margin: 0; color: white;">SENKMER Support</h3>
+              <p style="margin: 0; font-size: 14px; color: rgba(255,255,255,0.8);">Online - Svarer vanligvis innen sekunder</p>
+            </div>
+            <span style="font-size: 2rem;">💬</span>
+          </div>
+          
+          <div class="chat-messages" id="chatMessages">
+            <div class="message bot">
+              <div class="message-avatar">S</div>
+              <div>
+                <div class="message-bubble">
+                  <p style="margin: 0;">Hei! 👋 Jeg er SENKMER Support Bot. Hvordan kan jeg hjelpe deg i dag?</p>
+                </div>
+                <div class="message-time">Akkurat nå</div>
+              </div>
+            </div>
+            
+            <div class="quick-replies" id="quickReplies">
+              <button class="quick-reply" onclick="sendQuickReply('Hva er prisene?')">💰 Priser</button>
+              <button class="quick-reply" onclick="sendQuickReply('Hvordan registrerer jeg meg?')">👤 Registrering</button>
+              <button class="quick-reply" onclick="sendQuickReply('Hvilke integrasjoner har dere?')">🔗 Integrasjoner</button>
+              <button class="quick-reply" onclick="sendQuickReply('Hvordan resetter jeg passordet?')">🔐 Passord</button>
+            </div>
+            
+            <div class="message bot typing-indicator" id="typingIndicator">
+              <div class="message-avatar">S</div>
+              <div>
+                <div class="message-bubble">
+                  <div class="typing-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="chat-input-container">
+            <div class="chat-input-wrapper">
+              <input 
+                type="text" 
+                class="chat-input" 
+                id="chatInput" 
+                placeholder="Skriv din melding..."
+                onkeypress="if(event.key==='Enter') sendMessage()"
+              >
+              <button class="send-button" onclick="sendMessage()">Send</button>
+            </div>
+          </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: var(--space-xl);">
+          <p style="color: var(--text-subdued);">
+            Trenger du å snakke med en menneske? <a href="/pages/kontakt/index.html">Kontakt oss her</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <div id="footer-placeholder"></div>
+  
+  <script src="/assets/js/layout-3.js"></script>
+  
+  <script>
+    // Chatbot knowledge base
+    const knowledgeBase = {
+      'pris': {
+        keywords: ['pris', 'kost', 'betale', 'abonnement', 'gratis'],
+        response: 'Vi har 10 ulike prisnivåer fra Gratis (0 kr) til Ubegrenset Ultra (49,990 kr/mnd). De mest populære er Basic (990 kr), Standard (1,990 kr) og Pro (3,990 kr). Alle planer inkluderer 14 dagers gratis prøveperiode. Se alle priser på <a href="/pages/priser/index.html">priser-siden</a>.'
+      },
+      'registrer': {
+        keywords: ['registrer', 'sign up', 'opprett', 'konto', 'bruker'],
+        response: 'For å registrere deg: 1) Gå til priser-siden, 2) Velg en plan, 3) Fyll ut skjemaet med navn og e-post, 4) Bekreft e-postadressen din. Det tar under 2 minutter! Ingen kredittkort kreves for gratis prøveperioden.'
+      },
+      'integrasjon': {
+        keywords: ['integrasjon', 'koble', 'api', 'shopify', 'hubspot', 'crm'],
+        response: 'Vi har 100+ integrasjoner inkludert Shopify, WooCommerce, HubSpot, Salesforce, WhatsApp, Facebook Messenger, Mailchimp, Stripe, Vipps og mer. Se fullstendig liste på <a href="/pages/tjenester/index.html">tjenester-siden</a>. Du kan også bruke vårt REST API for custom integrasjoner.'
+      },
+      'passord': {
+        keywords: ['passord', 'glemt', 'reset', 'bytte', 'endre'],
+        response: 'For å tilbakestille passordet: 1) Gå til innloggingssiden, 2) Klikk "Glemt passord", 3) Skriv inn e-postadressen din, 4) Sjekk innboksen for tilbakestillingslenke. Lenken er gyldig i 1 time. Kontakt oss på contact@senkmer.no hvis du har problemer.'
+      },
+      'support': {
+        keywords: ['support', 'hjelp', 'kontakt', 'kunde', 'problem'],
+        response: 'Vi tilbyr support via e-post (contact@senkmer.no), telefon (+47 400 00 000), live chat og denne chatboten. Svartid varierer: E-post innen 24t, Live chat øyeblikkelig (man-fre 09-17), Telefon man-fre 09-17. Se <a href="/pages/kontakt/index.html">kontakt-siden</a> for mer info.'
+      },
+      'sikkerhet': {
+        keywords: ['sikkerhet', 'gdpr', 'data', 'personvern', 'kryptering'],
+        response: 'Sikkerhet er vår høyeste prioritet! Vi er ISO 27001 og SOC 2 sertifisert, GDPR-kompatibel, bruker TLS 1.3 kryptering, lagrer data i Norge/EU, og har 99.9% uptime SLA. Les mer på <a href="/pages/sikkerhet/index.html">sikkerhet-siden</a>.'
+      },
+      'default': {
+        keywords: [],
+        response: 'Beklager, jeg er ikke sikker på hvordan jeg skal svare på det. Du kan prøve å omformulere spørsmålet, eller ta kontakt med vårt support-team på <a href="mailto:contact@senkmer.no">contact@senkmer.no</a> eller telefon (+47) 400 00 000.'
+      }
+    };
+    
+    function sendMessage() {
+      const input = document.getElementById('chatInput');
+      const message = input.value.trim();
+      
+      if (!message) return;
+      
+      // Add user message
+      addMessage(message, 'user');
+      input.value = '';
+      
+      // Show typing indicator
+      showTyping();
+      
+      // Get bot response
+      setTimeout(() => {
+        hideTyping();
+        const response = getBotResponse(message);
+        addMessage(response, 'bot');
+      }, 1500);
+    }
+    
+    function sendQuickReply(message) {
+      sendMessage();
+      document.getElementById('chatInput').value = message;
+      sendMessage();
+    }
+    
+    function addMessage(text, sender) {
+      const messagesDiv = document.getElementById('chatMessages');
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `message ${sender}`;
+      
+      const time = new Date().toLocaleTimeString('no-NO', { hour: '2-digit', minute: '2-digit' });
+      
+      messageDiv.innerHTML = `
+        <div class="message-avatar">${sender === 'user' ? 'D' : 'S'}</div>
+        <div>
+          <div class="message-bubble">
+            <p style="margin: 0;">${text}</p>
+          </div>
+          <div class="message-time">${time}</div>
+        </div>
+      `;
+      
+      // Insert before typing indicator
+      const typingIndicator = document.getElementById('typingIndicator');
+      messagesDiv.insertBefore(messageDiv, typingIndicator);
+      
+      // Scroll to bottom
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+    
+    function showTyping() {
+      document.getElementById('typingIndicator').classList.add('active');
+      const messagesDiv = document.getElementById('chatMessages');
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+    
+    function hideTyping() {
+      document.getElementById('typingIndicator').classList.remove('active');
+    }
+    
+    function getBotResponse(message) {
+      const lowerMessage = message.toLowerCase();
+      
+      // Check each knowledge base entry
+      for (const [key, data] of Object.entries(knowledgeBase)) {
+        if (key === 'default') continue;
+        
+        for (const keyword of data.keywords) {
+          if (lowerMessage.includes(keyword)) {
+            return data.response;
+          }
+        }
+      }
+      
+      // Default response
+      return knowledgeBase.default.response;
+    }
+    
+    // Load components
+    fetch('/components/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('header-placeholder').innerHTML = html;
+        const toggle = document.getElementById('mobileMenuToggle');
+        const nav = document.getElementById('mainNav');
+        if (toggle && nav) {
+          toggle.addEventListener('click', () => nav.classList.toggle('active'));
+        }
+      });
+    
+    fetch('/components/footer.html')
+      .then(res => res.text())
+      .then(html => document.getElementById('footer-placeholder').innerHTML = html);
+  </script>
+</body>
+</html>

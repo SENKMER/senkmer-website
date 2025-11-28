@@ -1,38 +1,20 @@
-<section class="hero">
-  <div class="hero-background">
-    <div class="hero-gradient"></div>
-    {% if section.settings.hero_image %}
-      <div class="hero-image">
-        <img src="{{ section.settings.hero_image | image_url: width: 800 }}" alt="{{ section.settings.hero_title }}" width="800" height="600" loading="lazy">
-      </div>
+<div class="hero" style="background: linear-gradient(135deg, {{ section.settings.color_1 }}, {{ section.settings.color_2 }});">
+  <div class="container">
+    <h1 style="background: linear-gradient(to right, #0071e3, #58cc02); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+      {{ section.settings.heading }}
+    </h1>
+    
+    {% if section.settings.subheading != blank %}
+      <p class="hero-subtitle">{{ section.settings.subheading }}</p>
+    {% endif %}
+    
+    {% if section.settings.cta_text != blank %}
+      <a href="{{ section.settings.cta_url }}" class="btn btn-primary btn-large">
+        {{ section.settings.cta_text }}
+      </a>
     {% endif %}
   </div>
-  <div class="container">
-    <div class="hero-content">
-      <h1 class="hero-title fade-in">
-        {{ section.settings.hero_title }}
-      </h1>
-      <p class="hero-subtitle fade-in-delay-1">
-        {{ section.settings.hero_subtitle }}
-      </p>
-      <div class="hero-cta fade-in-delay-2">
-        {% if section.settings.primary_button_text != blank %}
-          <a href="{{ section.settings.primary_button_url }}" class="btn btn-primary">
-            {{ section.settings.primary_button_text }}
-          </a>
-        {% endif %}
-        {% if section.settings.secondary_button_text != blank %}
-          <a href="{{ section.settings.secondary_button_url }}" class="btn btn-secondary">
-            {{ section.settings.secondary_button_text }}
-          </a>
-        {% endif %}
-      </div>
-    </div>
-  </div>
-  <div class="scroll-indicator">
-    <span></span>
-  </div>
-</section>
+</div>
 
 {% schema %}
 {
@@ -40,47 +22,42 @@
   "settings": [
     {
       "type": "text",
-      "id": "hero_title",
-      "label": "Hero Tittel",
-      "default": "Velkommen til fremtiden"
+      "id": "heading",
+      "label": "Heading",
+      "default": "Revolusjonér kundeservice med AI"
     },
     {
       "type": "textarea",
-      "id": "hero_subtitle",
-      "label": "Hero Undertittel",
-      "default": "Vi skaper digitale opplevelser som inspirerer og engasjerer"
-    },
-    {
-      "type": "image_picker",
-      "id": "hero_image",
-      "label": "Hero Bilde"
+      "id": "subheading",
+      "label": "Subheading"
     },
     {
       "type": "text",
-      "id": "primary_button_text",
-      "label": "Primær Knapp Tekst",
-      "default": "Utforsk våre tjenester"
+      "id": "cta_text",
+      "label": "CTA Text",
+      "default": "Kom i gang"
     },
     {
       "type": "url",
-      "id": "primary_button_url",
-      "label": "Primær Knapp URL"
+      "id": "cta_url",
+      "label": "CTA URL"
     },
     {
-      "type": "text",
-      "id": "secondary_button_text",
-      "label": "Sekundær Knapp Tekst",
-      "default": "Ta kontakt"
+      "type": "color",
+      "id": "color_1",
+      "label": "Gradient Color 1",
+      "default": "#0071e3"
     },
     {
-      "type": "url",
-      "id": "secondary_button_url",
-      "label": "Sekundær Knapp URL"
+      "type": "color",
+      "id": "color_2",
+      "label": "Gradient Color 2",
+      "default": "#58cc02"
     }
   ],
   "presets": [
     {
-      "name": "Hero Section"
+      "name": "Hero"
     }
   ]
 }
