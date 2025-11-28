@@ -8,6 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const PORT = process.env.PORT ? Number(process.env.PORT) : 5173;
+const HOST = process.env.HOST || '127.0.0.1';
 const ROOT = path.resolve(__dirname, '..', 'src');
 
 const MIME = {
@@ -71,8 +72,8 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`Dev server running at http://localhost:${PORT}`);
+server.listen(PORT, HOST, () => {
+  console.log(`Dev server running at http://${HOST}:${PORT}`);
   console.log(`Serving directory: ${ROOT}`);
   console.log('Open /pages/hjem to view the home page');
 });

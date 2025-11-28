@@ -1,14 +1,16 @@
 <div class="chatbot-container">
-  <button class="chatbot-toggle" id="chatbot-toggle" aria-label="Åpne chat">Chat</button>
+  <button class="chatbot-toggle" id="chatbot-toggle" aria-label="Åpne chat">💬</button>
   <div class="chatbot-window" id="chatbot-window" hidden>
     <div class="chatbot-header">
       <h3>Kundeservice</h3>
       <button class="chatbot-close" id="chatbot-close" aria-label="Lukk">×</button>
     </div>
-    <div class="chatbot-messages" id="chatbot-messages"></div>
-    <div class="chatbot-input">
-      <input type="text" id="chatbot-input" placeholder="Skriv din melding..." />
-      <button id="chatbot-send">Send</button>
+    <div class="chatbot-messages" id="chatbot-messages">
+      <div class="chatbot-message bot"><div class="message-content">Hei! Jeg kan hjelpe deg med spørsmål. Prøv: "Hvordan oppretter jeg konto?"</div></div>
+    </div>
+    <div class="chatbot-input-container">
+      <input type="text" id="chatbot-input" class="chatbot-input" placeholder="Skriv din melding..." />
+      <button id="chatbot-send" class="chatbot-send" aria-label="Send">➤</button>
     </div>
   </div>
 </div>
