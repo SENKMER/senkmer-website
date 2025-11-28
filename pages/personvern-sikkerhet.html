@@ -10,7 +10,32 @@
   <script defer src="/js/animations.js"></script>
 </head>
 <body>
-  <div id="header-placeholder"></div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/pages/hjem.html" aria-label="Gå til hjem">
+        <img src="/assets/logo.svg" alt="Senkmer logo" width="40" height="40">
+        <span class="brand-title">Senkmer</span>
+      </a>
+      <nav class="nav" role="navigation">
+        <a href="/pages/hjem.html">Hjem</a>
+        <a href="/pages/om-oss.html">Om oss</a>
+        <a href="/pages/priser.html">Priser</a>
+        <a href="/pages/spill.html">Spill</a>
+        <a href="/pages/oppgaver.html">Oppgaver</a>
+        <a href="/pages/dashboard.html">Dashboard</a>
+        <a href="/pages/kundeservice-chatbot.html">Kundeservice</a>
+        <a href="/pages/faq.html">FAQ</a>
+        <a href="/pages/blogg.html">Blogg</a>
+        <a href="/pages/kontakt.html">Kontakt</a>
+        <a href="/pages/logg-inn.html">Logg inn</a>
+      </nav>
+      <button class="hamburger" aria-label="Åpne meny" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
   <main class="container section">
     <h1>Personvern & sikkerhet</h1>
     <p class="lead">Senkmer AS tar ditt personvern og din sikkerhet på alvor. Denne siden forklarer hvordan vi samler inn, behandler og beskytter dine personopplysninger i samsvar med GDPR (General Data Protection Regulation) og norsk lov.</p>
@@ -139,8 +164,29 @@
       <a href="/pages/logg-inn.html" class="btn btn-primary">Registrer deg gratis</a>
     </section>
   </main>
-  <div id="footer-placeholder"></div>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <nav class="footer-nav" aria-label="Bunntekst navigasjon">
+        <a href="/pages/hjem.html">Hjem</a>
+        <a href="/pages/om-oss.html">Om oss</a>
+        <a href="/pages/priser.html">Priser</a>
+        <a href="/pages/faq.html">FAQ</a>
+        <a href="/pages/blogg.html">Blogg</a>
+        <a href="/pages/kontakt.html">Kontakt</a>
+        <a href="/pages/kundeservice-chatbot.html">Kundeservice</a>
+        <a href="/pages/personvern-sikkerhet.html">Personvern & sikkerhet</a>
+        <a href="/pages/tjenestevilkar.html">Tjenestevilkår</a>
+      </nav>
+      <div class="footer-legal">
+        <small>
+          <img src="/assets/logo.svg" alt="Senkmer" width="24" height="24" style="vertical-align:middle"> 
+          © <span id="year">2025</span> Senkmer • 
+          <a href="/pages/personvern-sikkerhet.html">Personvern</a> • 
+          <a href="/pages/faq.html#vilkar">Vilkår</a>
+        </small>
+      </div>
+    </div>
+  </footer>
   <script src="/js/main.js"></script>
-  <script>window.loadComponents && window.loadComponents();</script>
 </body>
 </html>
