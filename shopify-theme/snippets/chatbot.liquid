@@ -6,7 +6,7 @@
     </svg>
   </button>
   
-  <div class="chatbot-window" id="chatbot-window">
+  <div class="chatbot-window" id="chatbot-window" hidden>
     <div class="chatbot-header">
       <h3>{{ section.settings.chatbot_title }}</h3>
       <button class="chatbot-close" id="chatbot-close" aria-label="Lukk chat">×</button>
@@ -16,6 +16,13 @@
       <div class="chatbot-message bot-message">
         <p>{{ section.settings.welcome_message }}</p>
       </div>
+    </div>
+    <div class="chatbot-suggestions" id="chatbot-suggestions" aria-label="Hurtigforslag" role="list">
+      <button type="button" class="chip" data-question="Hvordan oppretter jeg konto?">Opprett konto</button>
+      <button type="button" class="chip" data-question="Hva koster det?">Priser</button>
+      <button type="button" class="chip" data-question="Er løsningen trygg?">Sikkerhet</button>
+      <button type="button" class="chip" data-question="Jeg har glemt passordet mitt">Glemt passord</button>
+      <button type="button" class="chip" data-question="Hvordan sletter jeg kontoen min?">Slett konto</button>
     </div>
     
     <div class="chatbot-input">

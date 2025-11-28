@@ -6,6 +6,7 @@
   const msgs = document.getElementById('chatbot-messages');
   const input = document.getElementById('chatbot-input');
   const send = document.getElementById('chatbot-send');
+  const suggestions = document.getElementById('chatbot-suggestions');
 
   const faq = [
     { q: /opprette.*konto|registrere/i, a: 'Klikk på "Kom i gang" øverst, fyll ut skjemaet med e-post og passord. Du får en bekreftelseslenke på e-post.' },
@@ -50,4 +51,14 @@
   if (closeBtn && win) closeBtn.onclick = () => win.hidden = true;
   if (send) send.onclick = handleSend;
   if (input) input.onkeydown = (e) => { if (e.key === 'Enter') handleSend(); };
+
+  if (suggestions) {
+    suggestions.addEventListener('click', (e) => {
+      const target = e.target;
+      if (target && target.matches('button.chip') && input) {
+        input.value = target.getAttribute('data-question') || '';
+        handleSend();
+      }
+    });
+  }
 })();

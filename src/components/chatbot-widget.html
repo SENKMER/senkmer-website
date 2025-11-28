@@ -8,6 +8,13 @@
     <div class="chatbot-messages" id="chatbot-messages">
       <div class="chatbot-message bot"><div class="message-content">Hei! Jeg kan hjelpe deg med spørsmål. Prøv: "Hvordan oppretter jeg konto?"</div></div>
     </div>
+    <div class="chatbot-suggestions" id="chatbot-suggestions" aria-label="Hurtigforslag" role="list">
+      <button type="button" class="chip" data-question="Hvordan oppretter jeg konto?">Opprett konto</button>
+      <button type="button" class="chip" data-question="Hva koster det?">Priser</button>
+      <button type="button" class="chip" data-question="Er løsningen trygg?">Sikkerhet</button>
+      <button type="button" class="chip" data-question="Jeg har glemt passordet mitt">Glemt passord</button>
+      <button type="button" class="chip" data-question="Hvordan sletter jeg kontoen min?">Slett konto</button>
+    </div>
     <div class="chatbot-input-container">
       <input type="text" id="chatbot-input" class="chatbot-input" placeholder="Skriv din melding..." />
       <button id="chatbot-send" class="chatbot-send" aria-label="Send">➤</button>

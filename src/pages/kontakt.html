@@ -3,23 +3,160 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kontakt</title>
+  <title>Kontakt oss - SENKMER</title>
+  <meta name="description" content="Ta kontakt med SENKMER. Vi svarer raskt på alle henvendelser om digital markedsføring og kundeservice." />
   <link rel="stylesheet" href="../assets/css/main.css" />
   <link rel="stylesheet" href="../assets/css/kontakt.css" />
 </head>
 <body>
   <div data-include="../components/header.html"></div>
   <div data-include="../components/navbar.html"></div>
+  
   <main>
-    <section class="page-hero"><div class="container"><h1>Kontakt oss</h1><p class="muted">Vi svarer vanligvis innen 24 timer</p></div></section>
-    <form class="form">
-      <label>Navn<input type="text" required></label>
-      <label>E‑post<input type="email" required></label>
-      <label>Melding<textarea required></textarea></label>
-      <button type="submit">Send</button>
-    </form>
+    <section class="page-hero hero-gradient">
+      <div class="container">
+        <h1 class="animate-fade-up">Kontakt oss</h1>
+        <p class="muted animate-fade-up" style="animation-delay: 0.1s;">Vi svarer vanligvis innen 24 timer</p>
+      </div>
+    </section>
+    
+    <section class="section">
+      <div class="container contact-layout">
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <h2>Ta kontakt</h2>
+          <p>Har du spørsmål om våre tjenester? Vi hjelper deg gjerne!</p>
+          
+          <div class="info-cards">
+            <div class="info-card">
+              <div class="info-icon">📧</div>
+              <div class="info-content">
+                <h4>E-post</h4>
+                <a href="mailto:kontakt@senkmer.no">kontakt@senkmer.no</a>
+                <p class="info-note">Vi svarer innen 24 timer</p>
+              </div>
+            </div>
+            
+            <div class="info-card">
+              <div class="info-icon">📞</div>
+              <div class="info-content">
+                <h4>Telefon</h4>
+                <a href="tel:+4712345678">+47 123 45 678</a>
+                <p class="info-note">Man-Fre 09:00-17:00</p>
+              </div>
+            </div>
+            
+            <div class="info-card">
+              <div class="info-icon">📍</div>
+              <div class="info-content">
+                <h4>Besøksadresse</h4>
+                <p>Storgata 1<br />0123 Oslo<br />Norge</p>
+              </div>
+            </div>
+            
+            <div class="info-card">
+              <div class="info-icon">💬</div>
+              <div class="info-content">
+                <h4>Live Chat</h4>
+                <p>Klikk på chat-ikonet for øyeblikkelig hjelp</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="business-info">
+            <h3>Bedriftsinformasjon</h3>
+            <p>
+              <strong>SENKMER AS</strong><br />
+              Organisasjonsnummer: 123 456 789 MVA<br />
+              Storgata 1, 0123 Oslo, Norge
+            </p>
+          </div>
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper">
+          <h2>Send oss en melding</h2>
+          <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <label for="name">Navn *</label>
+              <input type="text" id="name" name="name" required placeholder="Ditt fulle navn" />
+            </div>
+            
+            <div class="form-group">
+              <label for="email">E-post *</label>
+              <input type="email" id="email" name="email" required placeholder="din@epost.no" />
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Telefon</label>
+              <input type="tel" id="phone" name="phone" placeholder="+47 123 45 678" />
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Emne *</label>
+              <select id="subject" name="subject" required>
+                <option value="">Velg et emne</option>
+                <option value="pricing">Spørsmål om priser</option>
+                <option value="demo">Bestill demo</option>
+                <option value="support">Teknisk support</option>
+                <option value="partnership">Samarbeid</option>
+                <option value="other">Annet</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Melding *</label>
+              <textarea id="message" name="message" required rows="6" placeholder="Skriv din melding her..."></textarea>
+            </div>
+            
+            <div class="form-group checkbox-group">
+              <label>
+                <input type="checkbox" name="consent" required />
+                <span>Jeg godtar <a href="../pages/personvern.html" target="_blank">personvernerklæringen</a> *</span>
+              </label>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-lg">Send melding</button>
+            
+            <div id="form-message" class="form-message" style="display: none;"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section bg-gradient">
+      <div class="container">
+        <div class="faq-section">
+          <h2>Ofte stilte spørsmål</h2>
+          <p class="section-desc">Finner du ikke svar her? Bruk kontaktskjemaet over eller chatten.</p>
+          
+          <div class="faq-grid">
+            <div class="faq-item">
+              <h4>Hvor raskt får jeg svar?</h4>
+              <p>Vi svarer normalt innen 24 timer på hverdager. Hastesaker behandles prioritert.</p>
+            </div>
+            <div class="faq-item">
+              <h4>Tilbyr dere gratis demo?</h4>
+              <p>Ja! Vi tilbyr gratis demo og konsultasjon for å vise hvordan våre løsninger kan hjelpe din bedrift.</p>
+            </div>
+            <div class="faq-item">
+              <h4>Hva koster tjenestene deres?</h4>
+              <p>Vi har pakker fra 990 kr/mnd. Se vår <a href="priser.html">prisside</a> for fullstendig oversikt.</p>
+            </div>
+            <div class="faq-item">
+              <h4>Har dere support på norsk?</h4>
+              <p>Ja, all vår kundeservice er på norsk med dedikerte supportmedarbeidere i Norge.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+  
   <div data-include="../components/footer.html"></div>
+  <div data-include="../components/chatbot-widget.html"></div>
   <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/chatbot.js"></script>
+  <script src="../assets/js/contact.js"></script>
 </body>
 </html>

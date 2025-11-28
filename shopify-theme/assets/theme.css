@@ -9,6 +9,11 @@
   padding: 0;
 }
 
+/* Chatbot chips */
+.chatbot-suggestions{display:flex;flex-wrap:wrap;gap:8px;padding:8px 12px}
+.chatbot-suggestions .chip{background:#f3f4f6;border:1px solid #e5e7eb;border-radius:999px;padding:6px 10px;font-size:.9rem;cursor:pointer}
+.chatbot-suggestions .chip:hover{background:#eef2ff;border-color:#c7d2fe}
+
 .page-width {
   max-width: 1200px;
   margin: 0 auto;
