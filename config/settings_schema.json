@@ -109,5 +109,34 @@
         "default": "+47 123 45 678"
       }
     ]
+  },
+  {
+    "name": "Chatbot",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "chatbot_enabled",
+        "label": "Aktiver chatbot",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "chatbot_title",
+        "label": "Chatbot tittel",
+        "default": "Kundeservice"
+      },
+      {
+        "type": "textarea",
+        "id": "chatbot_welcome_message",
+        "label": "Velkomstmelding",
+        "default": "Hei! Hvordan kan jeg hjelpe deg i dag?"
+      },
+      {
+        "type": "text",
+        "id": "chatbot_input_placeholder",
+        "label": "Input placeholder",
+        "default": "Skriv din melding..."
+      }
+    ]
   }
 ]

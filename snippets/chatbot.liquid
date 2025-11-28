@@ -8,45 +8,20 @@
   
   <div class="chatbot-window" id="chatbot-window">
     <div class="chatbot-header">
-      <h3>{{ section.settings.chatbot_title }}</h3>
+      <h3>{{ settings.chatbot_title }}</h3>
       <button class="chatbot-close" id="chatbot-close" aria-label="Lukk chat">×</button>
     </div>
     
     <div class="chatbot-messages" id="chatbot-messages">
       <div class="chatbot-message bot-message">
-        <p>{{ section.settings.welcome_message }}</p>
+        <p>{{ settings.chatbot_welcome_message }}</p>
       </div>
     </div>
     
     <div class="chatbot-input">
-      <input type="text" placeholder="{{ section.settings.input_placeholder }}" id="chatbot-input">
+      <input type="text" placeholder="{{ settings.chatbot_input_placeholder }}" id="chatbot-input">
       <button id="chatbot-send">Send</button>
     </div>
   </div>
 </div>
 
-{% schema %}
-{
-  "name": "Chatbot",
-  "settings": [
-    {
-      "type": "text",
-      "id": "chatbot_title",
-      "label": "Chatbot Tittel",
-      "default": "Kundeservice"
-    },
-    {
-      "type": "textarea",
-      "id": "welcome_message",
-      "label": "Velkomstmelding",
-      "default": "Hei! Hvordan kan jeg hjelpe deg i dag?"
-    },
-    {
-      "type": "text",
-      "id": "input_placeholder",
-      "label": "Input Placeholder",
-      "default": "Skriv din melding..."
-    }
-  ]
-}
-{% endschema %}

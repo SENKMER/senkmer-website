@@ -32,7 +32,9 @@
   {% section 'footer' %}
   
   <!-- Chatbot -->
-  {% render 'chatbot' %}
+  {% if settings.chatbot_enabled %}
+    {% render 'chatbot' %}
+  {% endif %}
   
   <!-- Scripts -->
   <script src="{{ 'theme.js' | asset_url }}" defer></script>
