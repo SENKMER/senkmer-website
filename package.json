@@ -4,8 +4,9 @@
   "description": "SENKMER - Moderne nettside for digitale løsninger",
   "main": "index.html",
   "scripts": {
-    "start": "python3 -m http.server 8000",
-    "dev": "python3 -m http.server 8000",
+    "start": "node scripts/dev-server.mjs",
+    "dev": "node scripts/dev-server.mjs",
+    "preview": "node scripts/dev-server.mjs",
     "build": "echo 'No build step required for static site'",
     "test": "echo 'Tests coming soon'"
   },
